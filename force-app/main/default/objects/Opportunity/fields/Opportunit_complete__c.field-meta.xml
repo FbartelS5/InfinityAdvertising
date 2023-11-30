@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunit_complete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>A remplir par le contrôle de gestion.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A remplir par le contrôle de gestion.</inlineHelpText>
+    <label>Dossier administratif complet</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,1361 @@
+<apex:page standardController="Opportunity" extensions="OIDocumentController" showHeader="false" renderAs="pdf">
+    <apex:stylesheet value="{!$Resource.io_css}"/>
+    <apex:stylesheet value="{!$Resource.io_operation_products_css}"/>
+    
+    <div>
+        <div rendered="{!isTelemarketing}">
+            <apex:panelGrid columns="3" width="100%" style="padding-bottom: 10px;" styleClass="header">
+                <apex:panelGroup >
+                    <apex:outputtext value="{!Opportunity.BillingEntity__r.logo__c}" escape="false" styleClass="logo"/>
+                </apex:panelGroup>
+                
+                <!--Added!
+                <apex:panelGroup style="width:60%;font-size:24px;" rendered="{!Test2}">
+                    <span style="margin-top:20px">Bon de commande</span>
+                </apex:panelGroup>-->
+                <apex:panelGroup style="width:60%;font-size:24px;">
+                    <span style="margin-top:20px">Ordre d'insertion</span>
+                </apex:panelGroup>
+                
+                <apex:panelGroup style="font-size:14px">
+                    N° d'ordre <br/>
+                    <apex:outputText value="{!Opportunity.Numero_OI_BDC__c}" /> <br/>
+                    <span style="font-size:12px" class="">Date : 
+                        <apex:outputText value="{0, date, dd/MM/yyyy}">
+                            <apex:param value="{!TODAY()}" /> 
+                        </apex:outputText>
+                    </span>
+                </apex:panelGroup>
+            </apex:panelGrid>
+            <div style="padding:5px;border:1px solid black">
+                <div style="width:30%;float:left"> Contact commercial:<span class="bold"><apex:outputText value="{!Opportunity.Owner.Name}" /></span></div>
+                <div style="width:30%;float:left"> Tél: /Fax: <span class="bold"><apex:outputText value="{!Opportunity.Owner.Phone}" /></span></div>
+                <div style="width:30%;float:left"> Email :<span class="bold"><apex:outputText value="{!Opportunity.Owner.Email}" /></span></div>
+                <div style="clear: left;margin-top:20px">
+                    {!Opportunity.BillingEntity__r.Name} - {!Opportunity.BillingEntity__r.Street__c} {!Opportunity.BillingEntity__r.PostalCode__c} {!Opportunity.BillingEntity__r.City__c} - RCS : {!Opportunity.BillingEntity__r.Siret__c} RCS {!Opportunity.BillingEntity__r.RCS__c} - {!Opportunity.BillingEntity__r.IntracomVatNumber__c} 
+                </div>
+            </div>
+            <apex:panelGrid columns="2" width="100%" style="padding-bottom: 10px;" columnClasses="middle" styleClass="">
+                <apex:panelGroup rendered="{!Opportunity.Agency__c != null}" >
+                    
+                    <apex:panelGrid columns="2" width="100%" style="padding-bottom: 10px;" columnClasses="trleftalign" styleClass="NoBorder">
+                        <apex:panelGroup >
+                            AGENCE :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.Agency__r.Name}" />
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            N° TVA Intra :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.Agency__r.IntracomVatNumber__c}" />
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            Adresse : 
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.Agency__r.BillingStreet}" /><br/>
+                            <apex:outputText value="{!Opportunity.Agency__r.BillingPostalCode &' '& Opportunity.Agency__r.BillingCity }" />
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            Contact :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.AgencyContact__r.Name}" />
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            Tél :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.AgencyContact__r.Phone}" />
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            Email :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.AgencyContact__r.Email}" />
+                        </apex:panelGroup>
+                    </apex:panelGrid>
+                    
+                </apex:panelGroup>
+                <apex:panelGroup >
+                    <apex:panelGrid columns="2" width="100%" style="padding-bottom: 10px;" columnClasses="trleftalign" styleClass="NoBorder">
+                        <apex:panelGroup >
+                            ANNONCEUR :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.Account.Name}" />
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            N° TVA Intra :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.Account.IntracomVatNumber__c}" />
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            Adresse : 
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.Account.BillingStreet}" /><br/>
+                            <apex:outputText value="{!Opportunity.Account.BillingPostalCode &' '& Opportunity.Account.BillingCity }" />
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            Contact :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.AdvertiserContact__r.Name}" />
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            Tél :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.AdvertiserContact__r.Phone}" />
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            Email :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.AdvertiserContact__r.Email}" />
+                        </apex:panelGroup>
+                        
+                    </apex:panelGrid>
+                </apex:panelGroup>
+            </apex:panelGrid>
+            <div style="padding:5px;border:1px solid black;height:20px;display:{!IF( Opportunity.Agency__c == null, 'none', '')}">
+                <span style="float:left">Responsable du paiement :</span> 
+                <div class="box" style="background-color:{!IF( Opportunity.InvoicedAccount__c == 'Agence', 'black', 'white')}"/>
+                <span style="float:left">Agence</span> 
+                <div class="box" style="background-color:{!IF( Opportunity.InvoicedAccount__c == 'Annonceur', 'black', 'white')}"/>
+                <span style="float:left">Annonceur</span>
+            </div>
+            
+            <div style="border:1px solid black;margin-top:10px">
+                <apex:panelGrid columns="2" width="100%" style="padding-bottom: 10px;" columnClasses="middle" styleClass="NoBorder">
+                    <apex:panelGroup >
+                        
+                        <apex:panelGrid columns="2" width="100%" style="padding-bottom: 10px;" columnClasses="trleftalign" styleClass="NoBorder">
+                            <apex:panelGroup >
+                                Référence :
+                            </apex:panelGroup>
+                            <apex:panelGroup >
+                                <apex:outputText value="{!Opportunity.CustomerReference__c}" />
+                            </apex:panelGroup>
+                            
+                            <apex:panelGroup >
+                                Campagne :
+                            </apex:panelGroup>
+                            <apex:panelGroup >
+                                <apex:outputText value="{!Opportunity.Name}" />
+                            </apex:panelGroup>
+                            
+                            <apex:panelGroup >
+                                Date de début de campagne : 
+                            </apex:panelGroup>
+                            <apex:panelGroup >
+                                <apex:outputText value="{0, date, dd/MM/yyyy}">
+                                    <apex:param value="{!Opportunity.CampaignStartDate__c}" /> 
+                                </apex:outputText>
+                            </apex:panelGroup>
+                            
+                            <apex:panelGroup >
+                                Observations :
+                            </apex:panelGroup>
+                            <apex:panelGroup >
+                                <apex:outputText value="{!Opportunity.ioObservations__c}"/>
+                            </apex:panelGroup>
+                        </apex:panelGrid>
+                        
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:panelGrid columns="2" width="100%" style="padding-bottom: 10px;" columnClasses="trleftalign" styleClass="NoBorder">
+                            <apex:panelGroup >
+                                Secteur(s) :
+                            </apex:panelGroup>
+                            <apex:panelGroup >
+                                <apex:outputText value="{!Opportunity.Account.Industry}" />
+                            </apex:panelGroup>
+                            
+                            <apex:panelGroup >
+                                Date de fin de campagne :
+                            </apex:panelGroup>
+                            <apex:panelGroup >
+                                <apex:outputText value="{0, date, dd/MM/yyyy}">
+                                    <apex:param value="{!Opportunity.CampaignEndDate__c}" /> 
+                                </apex:outputText>
+                            </apex:panelGroup>
+                            
+                            
+                        </apex:panelGrid>
+                    </apex:panelGroup>
+                </apex:panelGrid>
+            </div>
+            <apex:outputPanel layout="block" rendered="{! Opportunity.BU__c != 'ESPPUBRP' && Opportunity.BU__c != 'Maxit' && Opportunity.hideProductPrices__c == false}">
+                <table border="0" cellpadding="3" cellspacing="0" style="width:100%;border-collapse:collapse;-fs-table-paginate:paginate;margin-top:20px;" class="table">
+                    <thead>
+                        <tr style="background:#ccc;">
+                            <th width="70%">Produit</th>
+                            <th>Tarif unitaire Brut € HT</th>
+                            <th>Remise</th>
+                            <th>Budget Net € HT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!Opportunity.Products__r}" var="line">
+                            <tr>
+                                <td class="trleftalign"> 
+                                    <b><h3>{!line.Name}</h3></b><br/>
+                                    <apex:outputText value="{!line.Description__c}<br/>" escape="false"/>
+                                    <b>Période: </b><apex:outputField value="{!line.StartDate__c}"/> &nbsp; au <apex:outputField value="{!line.EndDate__c}"/><br/>
+                                    <apex:outputText value="<b>Ciblage: </b>{!line.Targeting__c}<br/>" rendered="{!line.Targeting__c != 'non applicable'}" escape="false"/>
+                                    <b>Mode de com: </b><apex:outputField value="{!line.PricingModel__c}"/><br/>
+                                    <apex:outputText value="<b>Volume: </b>" rendered="{!line.ioHideQuantity__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                    <apex:outputField value="{!line.Quantity__c}" rendered="{!line.ioHideQuantity__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" />
+                                    <apex:outputText value="<br/>" rendered="{!line.ioHideQuantity__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                    
+                                    <apex:outputText value="<b>Tarif Net: </b>" rendered="{!line.ioHideUnitPrice__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                    <apex:outputField value="{!line.UnitPrice__c}" rendered="{!line.ioHideUnitPrice__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }"/>
+                                    <apex:outputText value="<br/>" rendered="{!line.ioHideUnitPrice__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                    
+                                    <apex:outputText value="<b>Offert: </b>" rendered="{!line.Offert__c == true}" escape="false"/>
+                                    <apex:outputField value="{!line.UnitPrice__c}" rendered="{!line.Offert__c == true}"/>
+                                    <apex:outputText value="<br/>" rendered="{!line.Offert__c == true}" escape="false"/>
+                                </td>
+                                <td><apex:outputField value="{!line.GrossTotal__c}"/></td>
+                                <td><apex:outputField value="{!line.Discount__c}"/></td>
+                                <td><apex:outputField value="{!line.Total__c}"/></td>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </apex:outputPanel>
+            <apex:outputPanel layout="block" rendered="{! Opportunity.BU__c != 'ESPPUBRP' && Opportunity.BU__c != 'Maxit' && Opportunity.hideProductPrices__c == true}">
+                <table border="0"  cellspacing="0" style="width:100%;border-collapse:collapse;-fs-table-paginate:paginate;margin-top:20px;" class="table">
+                    <thead>
+                        <tr style="background:#ccc;">
+                            <th width="70%">Produit</th>
+                            <th>Tarif unitaire Brut € HT</th>
+                            <th>Remise</th>
+                            <th>Budget Net € HT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="trleftalign" style="padding: 0px"> 
+                                <apex:repeat value="{!Opportunity.Products__r}" var="line">
+                                    <div class="trleftalign" style="width:100%;border-bottom: 1px solid black;">
+                                        <div style="padding: 5px"> 
+                                            <b><h3> {!line.Name}</h3></b><br/>
+                                            <apex:outputText value=" {!line.Description__c}<br/>" escape="false"/>
+                                            <b> Période: </b><apex:outputField value="{!line.StartDate__c}"/> &nbsp; au <apex:outputField value="{!line.EndDate__c}"/><br/>
+                                            <apex:outputText value="<b>Ciblage: </b>{!line.Targeting__c}" rendered="{!line.Targeting__c != 'non applicable'}" escape="false"/><br/>
+                                            <b> Mode de com: </b><apex:outputField value="{!line.PricingModel__c}"/><br/> 
+                                            <apex:outputText value="<b>Volume: </b>" rendered="{!line.ioHideQuantity__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                            <apex:outputField value="{!line.Quantity__c}" rendered="{!line.ioHideQuantity__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" />
+                                            <apex:outputText value="<br/>" rendered="{!line.ioHideQuantity__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                            
+                                            <apex:outputText value="<b>Tarif Net: </b>" rendered="{!line.ioHideUnitPrice__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                            <apex:outputField value="{!line.UnitPrice__c}" rendered="{!line.ioHideUnitPrice__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }"/>
+                                            <apex:outputText value="<br/>" rendered="{!line.ioHideUnitPrice__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </td>
+                            <td><apex:outputField value="{!Opportunity.GrossTotal__c}"/></td>
+                            <td>85 %</td>
+                            <td><apex:outputField value="{!Opportunity.Amount}"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </apex:outputPanel>
+            
+            <apex:outputPanel layout="block" rendered="{! Opportunity.BU__c == 'ESPPUBRP' || Opportunity.BU__c == 'Maxit'}">
+                <table border="0" cellpadding="3" cellspacing="0" style="width:100%;border-collapse:collapse;-fs-table-paginate:paginate;margin-top:20px;" class="table">
+                    <thead>
+                        <tr style="background:#ccc;">
+                            <th width="70%">Produit</th>
+                            <th>
+                                <apex:outputText value="Budget Brut € HT" rendered="{!Opportunity.InvoicedAccount__c == 'Agence'}"/>
+                                <apex:outputText value="Budget Net € HT" rendered="{!Opportunity.InvoicedAccount__c == 'Annonceur'}"/>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!Opportunity.Products__r}" var="line">
+                            <tr>
+                                <td class="trleftalign"> 
+                                    <b>{!line.Name}</b><br/>
+                                    Support: {!line.Type__c}<br/>
+                                    Enseignes: {!line.Medium__c}<br/>
+                                    Nombre de PDV Total: {!line.Number_of_POS__c}<br/>
+                                </td>
+                                
+                                <td class="trrightalign">
+                                    <apex:outputField value="{!line.GrossTotalRegiePhysique__c}" rendered="{!Opportunity.InvoicedAccount__c == 'Agence'}"/>
+                                    <apex:outputField value="{!line.Total__c}" rendered="{!Opportunity.InvoicedAccount__c == 'Annonceur'}"/>
+                                </td>
+                                
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </apex:outputPanel>
+            
+            <apex:panelGrid columns="2" width="100%" style="padding-top: 10px" styleClass="NoBorder" rowClasses="verticalAlignTop">
+                <apex:panelGroup >
+                    <div style="padding:7px 0;border:1px solid black;border-bottom:0;width:350px;">
+                        <span class="bold">
+                            Ordre à nous retourner dûment renseigné, OI/BDC Signé et accompagné de
+                            toutes les informations requises impérativement avant le :
+                            <apex:outputField value="{!Opportunity.ioExpirationDate__c}"/>
+                        </span> <br/>
+                        (à défaut l'ordre ne sera plus opposable)
+                    </div>
+                    <div style="border:1px solid black;height:20px;width:350px;">
+                        
+                    </div>
+                </apex:panelGroup>
+                
+                <apex:panelGroup rendered="{! Opportunity.BU__c != 'ESPPUBRP' && Opportunity.BU__c != 'Maxit' }">
+                    <table style="float: right;width: 100%;" class="table">
+                        <tr  class="bold">
+                            <td colspan="2" style="background:#ccc;"  class="trleftalign">TOTAL BRUT € HT</td>
+                            <td class="trrightalign"><apex:outputField value="{!Opportunity.GrossTotal__c}"/></td>
+                        </tr>
+                        <tr style="background:#ccc;"  class="bold">
+                            <td class="trleftalign">Remises</td>
+                            <td>Taux</td>
+                            <td>Montant €</td>
+                        </tr>
+                        <tr style="display:{!IF( Opportunity.InvoicedAccount__c == 'Annonceur', '', 'None')}">
+                            <td class="trleftalign">Volume</td>
+                            <td>-85%</td>
+                            <td class="trrightalign"><apex:outputField value="{!Opportunity.VolumeDiscount__c}"/></td>
+                        </tr>
+                        <tr style="display:{!IF( Opportunity.GrossTotalFree__c > 0, '', 'None')}">
+                            <td class="trleftalign">Offert</td>
+                            <td>-100%</td>
+                            <td class="trrightalign"><apex:outputField value="{!Opportunity.GrossTotalFree__c}"/></td>
+                        </tr>
+                        <tr style="display:{!IF( Opportunity.InvoicedAccount__c == 'Agence', '', 'None')}"  class="bold">
+                            <td colspan="2" style="background:#ccc;" class="trleftalign">Total net € av remise agence</td>
+                            <td class="trrightalign"><apex:outputField value="{!Opportunity.TotalBeforeAgencyDiscount__c}"/></td>
+                        </tr>
+                        <tr style="display:{!IF( Opportunity.InvoicedAccount__c == 'Agence', '', 'None')}">
+                            <td class="trleftalign">Cumul des mandats</td>
+                            <td>-3%</td>
+                            <td class="trrightalign"><apex:outputField value="{!Opportunity.MandateDiscount__c}"/></td>
+                        </tr>
+                        <tr style="display:{!IF( Opportunity.InvoicedAccount__c == 'Agence', '', 'None')}">
+                            <td class="trleftalign">Remise professionnelle</td>
+                            <td>-15%</td>
+                            <td class="trrightalign"><apex:outputField value="{!Opportunity.AgencyDiscount__c}"/></td>
+                        </tr>
+                        <tr style="display:{!IF( Opportunity.InvoicedAccount__c == 'Agence', '', 'None')}"  class="bold">
+                            <td colspan="2" style="background:#ccc;" class="trleftalign">Total net € hors frais</td>
+                            <td class="trrightalign"><apex:outputField value="{!Opportunity.Amount}"/></td>
+                        </tr>
+                        <tr style="background:#ccc;"  class="bold">
+                            <td colspan="2" class="trleftalign">TOTAL NET € HT</td>
+                            <td class="trrightalign"><apex:outputField value="{!Opportunity.Amount}"/></td>
+                        </tr>
+                    </table>
+                </apex:panelGroup>
+                
+                <apex:panelGroup rendered="{! Opportunity.BU__c == 'ESPPUBRP' || Opportunity.BU__c == 'Maxit'}" >
+                    <table style="float: right;width: 100%;" class="table">
+                        <tr  class="bold" style="display:{!IF( Opportunity.InvoicedAccount__c == 'Agence', '', 'None')}">
+                            <td colspan="2" style="background:#ccc;"  class="trleftalign">TOTAL BRUT € HT</td>
+                            <td class="trrightalign"><apex:outputField value="{!Opportunity.GrossTotalRegiePhysique__c}"/></td>
+                        </tr>
+                        <tr class="bold"  style="display:{!IF( Opportunity.InvoicedAccount__c == 'Agence', '', 'None')}">
+                            <td colspan="2" class="trleftalign">Remise</td>
+                            <td class="trrightalign"><apex:outputField value="{!Opportunity.Discount__c}"/></td>
+                        </tr>
+                        <tr style="background:#ccc;"  class="bold">
+                            <td colspan="2" class="trleftalign">TOTAL NET € HT</td>
+                            <td class="trrightalign"><apex:outputField value="{!Opportunity.Amount}"/></td>
+                        </tr>
+                    </table>
+                </apex:panelGroup>
+            </apex:panelGrid>
+            
+            
+            
+            <div style="page-break-inside: avoid;font-size:10px;">
+                <div style="border:1px solid black;padding:3px;display:{!IF( Opportunity.Agency__c == null, 'none', '')}">
+                    <span class="bold">Remise professionnelle</span> : merci de nous faire parvenir dès signature du présent Ordre d'Insertion une attestation de mandat par retour de courrier ou <span class="colored bold"><apex:outputText value="{!Opportunity.Owner.Email}" /></span>
+                </div>
+                <div style="border:1px solid black;padding:3px">
+                    <span class="bold">Eléments techniques</span> à nous fournir dans les délais et selon les prescriptions techniques communiquées par 3WRégie pour une mise en ligne de l'Annonce aux dates convenues
+                    dans le présent Ordre d'Insertion. Spécifications techniques accessible ici <a style="text-decoration:none;color:#98bf64;" href="http://www.3wregie.com/specs-techniques.html  ">http://www.3wregie.com/specs-techniques.html  </a>  
+                </div>
+                <div style="border:1px solid black;padding:3px">
+                    <span class="bold">Conditions de règlement</span> : <span class="colored">60 JOURS DATE FACTURE </span>
+                </div>
+                <div style="border:1px solid black;padding:3px">
+                    <span>La mise à disposition (licence) non-exclusive par RelevanC au Client de la Base de données est consentie pour la durée de la campagne de prospection et en tout état de cause pour une durée maximale de <strong>3</strong> mois. A l’issue de ce délai, le Client s’engage à ce que lui-même et l’Annonceur et/ou l’Agence détruisent la Base de données mise à disposition, tel que prévu aux CGL RelevanC. Si la Campagne de démarchage téléphonique dure plus de 30 jours, le Client rappellera à l’Annonceur que ce dernier devra confronter le fichier à Bloctel tous les mois aux fins de mise à jour.</span>
+                </div>
+                
+                <div style="border:1px solid black;margin-top:8px;padding:3px">
+                    <span class="bold">Le signataire reconnait avoir pris connaissance des Conditions Générales de Licence (CGL) de RelevanC ci-après attachées et les accepter sans réserve.</span> <br/>
+                    <br/>
+                    <span  class="bold">Nom et fonction</span> (dûment habilité aux fins des présentes) : <span style="margin-top:5px;float:right;margin-right:120px"><apex:outputText value="\n1\" style="color:white"/></span>
+                    <br/><span style="font-size:8px;clear:both;">Annonceur et/ou Agence agissant en son nom et pour le compte de l'Annonceur</span>
+                    
+                    <br/>
+                    <br/>
+                    <apex:panelGroup rendered="{! Opportunity.BU__c != 'Maxit' }">
+                        <span class="bold">Bordeaux,</span> <span style="margin-left:300px" class="bold">Signature ET Cachet :</span>
+                    </apex:panelGroup>
+                    <apex:panelGroup rendered="{! Opportunity.BU__c == 'Maxit' }">
+                        <span class="bold">Saint-Étienne,</span> <span style="margin-left:300px" class="bold">Signature ET Cachet :</span>
+                    </apex:panelGroup>
+                    <br/>
+                    <apex:outputText value="\s1\" style="color:white;float:right;margin-right:120px"/>
+                    <span class="bold">Date :</span> 
+                    <apex:outputText value="{0, date, dd/MM/yyyy}">
+                        <apex:param value="{!TODAY()}" /> 
+                    </apex:outputText>
+                    <br/>
+                    
+                    <apex:panelGroup rendered="{! Opportunity.BU__c != 'Maxit' }">
+                        <apex:image value="{!$Resource.io_signature}" width="200" height="200" style="margin-left:30px;"/>
+                        <br/>
+                        <span style="margin-left:30px;">
+                            Blandine Multrier, Directrice Général de RelevanC
+                        </span>
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup rendered="{! Opportunity.BU__c == 'Maxit' }">
+                        <span style="margin-left:30px;">
+                            Alban Schleuniger, Directeur du Publishing RelevanC
+                        </span>
+                    </apex:panelGroup>
+                    
+                </div>
+            </div>
+        </div>
+            
+        <apex:outputText value="{!Opportunity.SpecialConditions__c}" escape="false" />
+        <div style="page-break-before: always;font-size:10px;">
+            <div>
+                <h2 class="center terms-title blue">
+                    Conditions générales de vente (« CGL ») 
+                </h2>
+                <h4 class="center terms-title">
+                    Version applicable au 22/04/2020
+                </h4>
+            </div>
+            <div>
+                <div class="terms-columns">
+                    <h4 style="margin:0;padding:0;">
+                        Article 1 - Définitions
+                    </h4>
+                    <ul style="margin-top:0;" class="terms-list">
+                        <li>
+                            <strong>Agence</strong> : tout intermédiaire réalisant des opérations
+                            d’achat d’emplacements publicitaires au nom et pour le
+                            compte de l’Annonceur en vertu d’un contrat de mandat
+                            en cours de validité conformément aux stipulations de la
+                            loi n°93-122 du 29 janvier 1993 (la “Loi Sapin”).
+                        </li>
+                        <li><strong>Annonce</strong> : tout message ou annonce promotionnelle de
+                            l’Annonceur, notamment sous forme d’élément
+                            graphique contenant la ou les marques de l’Annonceur.
+                        </li>
+                        <li>
+                            <strong>Annonceur</strong> : le ou les annonceur(s)/marque(s)
+                        </li>
+                        <li>
+                            <strong>Base(s) de données</strong> : base(s) de données dont RelevanC
+                            détient les droits d’exploitation et/ou est producteur
+                            conformément aux dispositions de la loi n° 98-536 du 1er
+                            juillet 1998 portant transposition dans le Code de la
+                            Propriété Intellectuelle de la Directive 96/9/CE du 11
+                            Mars 1996 concernant la protection juridique des bases
+                            de données
+                        </li>
+                        <li>
+                            <strong>Broker</strong> : entreprise dont l'activité est basée sur la revente
+                            de données à des Annonceurs 
+                        </li>
+                        <li>
+                            <strong>Client</strong> : le Broker ayant accepté et OI/BDC Signé l’Ordre
+                            d’Insertion auquel les présentes sont attachées 
+                        </li>
+                        <li>
+                            <strong>Ordre d'insertion</strong> : le document émis par RelevanC par
+                            lequel RelevanC et le Client formalisent leur accord quant
+                            aux conditions selon lesquelles RelevanC réalisera le
+                            Service Loc Data décrit à l’article 4.
+                        </li>
+                        <li>
+                            <strong>Réglementation données personnelles </strong>:  toute loi ou
+                            règlement relatif aux données à caractère personnel et
+                            applicable au Service Loc Data, en particulier la loi n°78-
+                            17 du 6 janvier 1978 modifiée relative à l'Informatique,
+                            aux Fichiers et aux Libertés et le règlement général sur la
+                            protection des données 2016/679 du Parlement
+                            européen et du Conseil du 27 avril 2016 (<strong>RGPD</strong>)
+                        </li>
+                        <li>
+                            <strong>RelevanC</strong> :  Société par Actions Simplifiée dont le siège est
+                            sis 1 cours Antoine Guichard, 42000 Saint-Etienne,
+                            immatriculée au RCS de Saint-Etienne sous le numéro 824
+                            155 824
+                        </li>
+                        <li>
+                            <strong>Service Loc Data</strong> :  prestation décrite à l’article 4 consistant
+                            à la mise à disposition (licence) non-exclusive par
+                            RelevanC d’une partie des Bases de données dont
+                            RelevanC détient les droits d’exploitation, à des fins de
+                            diffusion d’une Annonce via la réalisation de campagnes
+                            de prospection commerciale ou d’information par voie
+                            électronique, téléphonique ou postale.
+                        </li>
+                    </ul>
+                    
+                    <h4 style="margin-top:10px;margin-bottom:0;padding:0;">
+                        Article 2. Objet des CGL
+                    </h4>
+                    <p style="margin-top:0">
+                        Les CGL ont pour objet de définir les conditions selon
+                        lesquelles les parties collaboreront à la réalisation du
+                        Service Loc Data commandé par le Client auprès de
+                        RelevanC.
+                    </p>
+                    
+                    <h4 style="margin-top:10px;margin-bottom:0;padding:0;">
+                        Article 3. Application et opposabilité des CGL 
+                    </h4>
+                    <p style="margin-top:0">
+                        Les CGL complétées par l’Ordre d’insertion (collectivement le « <strong>Contrat</strong> »)), ainsi que, le cas échéant, par des conditions
+                        particulières acceptées par écrit par RelevanC, constituent
+                        l’accord intégral entre les parties, et ce même si un Ordre
+                        d'insertion se référait à d'autres documents (et notamment
+                        aux conditions d'achat du Client). Le Contrat complété le cas
+                        échéant par des conditions particulières s'applique, à
+                        l'exclusion de tout autre document contractuel.
+                        Toute clause contraire invoquée par le Client sera donc, à
+                        défaut d’acceptation expresse, inopposable à RelevanC,
+                        quel que soit le moment où elle aura pu être portée à la
+                        connaissance de RelevanC.
+                        Les CGL applicables sont celles en vigueur à la date de
+                        signature de l’Ordre d’insertion par le Client.
+                        RelevanC se réserve la possibilité de modifier ses CGL à tout
+                        moment ; dans un tel cas, les nouvelles CGL seront,
+                        préalablement à la réalisation du Service Loc Data
+                        commandé à RelevanC, portées à la connaissance du Client
+                        qui devra expressément les accepter lors de la signature de
+                        l’Ordre d’insertion. La nouvelle version des CGL sera
+                        applicable aux Ordres d’Insertion passés après l’entrée en
+                        vigueur de la nouvelle version.
+                    </p>
+                    <h4>
+                        Article 4. Description du Service Loc Data 
+                    </h4>
+                    <p>
+                        Le Service Loc data est une prestation de mise à disposition
+                        (licence) non-exclusive par RelevanC au Client d’une partie
+                        des Bases de données dont RelevanC détient les droits
+                        d’exploitation ou est producteur. Le périmètre et détail des
+                        Bases de données mises à disposition est décrit dans l’Ordre
+                        d’Insertion. Cette mise à disposition (licence) par RelevanC
+                        d’une partie de la Base de données est réalisée uniquement
+                        pour que le Client puisse, à son tour, les mettre à disposition
+                        (sous-licence) à des Annonceurs et/ou des Agences
+                    </p>
+                </div>
+                <div style="margin-left:20px;" class="terms-columns">
+                    <p style="margin-top:5px;margin-bottom:5px;">
+                        identifiés dans l’Ordre d’insertion aux seules et uniques fins
+                        de diffusion d’une Annonce via la réalisation de campagnes
+                        de prospection commerciale ou d’information par voie
+                        électronique, téléphonique ou postale et dans les limites et
+                        conditions prévues aux présentes.
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:20px">
+                        4.1 Généralités
+                    </h4>
+                    <p style="margin-top:5px;margin-bottom:5px;">
+                        Le Client, en signant l’Ordre d’Insertion, pourra demander à
+                        RelevanC de mettre à sa disposition (licence) une partie des
+                        Bases de données contenant notamment des données de
+                        personnes. L’Ordre d’insertion précisera le type de données
+                        et les utilisations souhaitées, étant précisé que ces données
+                        ne pourront être utilisées par le Client, que pour les mettre
+                        à disposition (sous-licence) des Annonceurs et/ou des
+                        Agences identifiés dans l’Ordre d’insertion à des fins de
+                        prospection commerciale et/ou d’information du public, et
+                        dans les limites et conditions prévues aux présentes.
+                        Le Client reconnait et accepte expressément que les Bases
+                        de données mises à disposition par RelevanC ne pourront
+                        être utilisées que pour la finalité mentionnée dans l’Ordre
+                        d’insertion et pour les Annonceurs et/ou Agences identifiés
+                        dans l’Ordre d’insertion. Afin de permettre à RelevanC de
+                        contrôler le respect de cette règle de « l’usage unique »,
+                        RelevanC se réserve le droit d’inclure des adresses email et
+                        de numéros de téléphone « pièges » dans la Base de
+                        données, objet de la licence.
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:20px">
+                        4.2 Licence de tout ou partie de la Base de données
+                    </h4>
+                    <p style="margin-top:5px;margin-bottom:5px;">
+                        Lors de la transmission de la Base de données à l’Annonceur
+                        et/ou à l’Agence, le Client sera responsable de la sécurité et
+                        de la confidentialité de la Base de données communiquée
+                        par RelevanC. Le Client fera son affaire d’imposer aux
+                        Annonceurs et/ou aux Agences des mesures de sécurité et
+                        de confidentialité conformes aux meilleurs standards et
+                        conformes aux lois et règlements en vigueur.
+                        A ce titre, le Client s’engage également à suivre l’ensemble
+                        des recommandations qui lui seront communiquées par
+                        RelevanC. Dans le cadre de l’exploitation de la Base de
+                        données, le Client s’engage, en qualité de responsable de
+                        traitement, à respecter la Réglementation données
+                        personnelles ainsi que les dispositions légales et
+                        réglementaires en vigueur concernant la prospection
+                        commerciale par voie électronique, téléphonique ou postale
+                        et notamment à fournir aux personnes concernées toutes
+                        les informations requises par la Réglementation données
+                        personnelles.
+                        A l’issue de la campagne de prospection ou d’information,
+                        le Client s’engage à ce que lui-même et l’Annonceur et/ou
+                        l’Agence détruisent sans délai les données et fichiers qui
+                        leur auront été communiqués et à produire, sans délai, au
+                        Client, un constat d’huissier attestant de cette destruction
+                        ou à certifier par écrit par un représentant dûment habilité
+                        avoir procéder à la destruction de l’ensemble des données
+                        et fichiers communiquées. Le Client s’engage à
+                        communiquer une copie de ce constat à première demande
+                        de RelevanC.
+                        La licence de la Base de données par RelevanC n’aura pas
+                        pour objet ni pour effet d’en transférer la propriété (ni la
+                        propriété de son contenu) au Client et/ou à l’Annonceur
+                        et/ou à l’Agence.
+                        Le Client est seul responsable, vis-à-vis de RelevanC, de
+                        l’usage des données et fichiers résultant du Service Loc Data
+                        et garantit RelevanC contre toute réclamation ou recours, à
+                        quelque titre que ce soit, de la part d’un tiers concerné par
+                        le traitement des données à caractère personnel ou d’une
+                        administration en rapport avec les conditions de
+                        conservation et d’utilisation des données à caractères
+                        personnel et fichiers contenus dans les Bases de données de
+                        RelevanC.
+                    </p>
+                    <h4 style="margin-top:10px;margin-bottom:0;padding:0;">
+                        Article 5. Formation du Contrat par Ordre d’insertion 
+                    </h4>
+                    <h4 style="margin-bottom:0;margin-left:20px">
+                        5.1 Validation de l’Ordres d’insertion
+                    </h4>
+                    <p style="margin-top:5px;margin-bottom:5px;">
+                        Les demandes de Service Loc Data doivent être
+                        matérialisées par l’Ordre d'insertion fourni par RelevanC,
+                        dûment complété et OI/BDC Signé par le Client. Les stipulations cidessous relatives notamment à la validation, au refus, à la
+                        formalisation et à l’exécution d’un Ordre d’insertion
+                        s’appliquent à l’ensemble des demandes de Service Loc
+                        Data.
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:20px">
+                        5.2 Formalisation des Ordres d’insertion
+                    </h4>
+                    <p style="margin-top:5px;margin-bottom:5px;">
+                        A réception d’une demande du Client, et sous réserve de son
+                        agrément par RelevanC (et notamment de son service
+                        financier), RelevanC établit une offre qu’elle transmet au
+                        Client pour acceptation. Le Client, s’il accepte l’offre de
+                        RelevanC, communique les documents et/ou
+                        renseignements requis par RelevanC. Cette acceptation
+                    </p>
+                </div>
+                <div style="margin-left:20px;" class="terms-columns">
+                    <p style="margin-top:5px;margin-bottom:5px;">
+                        devra intervenir dans le délai mentionné dans l’offre.
+                        RelevanC fera alors parvenir au Client l’Ordre d’insertion
+                        que le Client devra retourner à RelevanC dûment OI/BDC Signé, dans
+                        le délai mentionné dans l’Ordre d’insertion. Toute offre ou
+                        Ordre d’insertion non retourné dans les délais ou retourné
+                        de manière incomplète par le Client sera inopposable à
+                        RelevanC.
+                        Chaque Ordre d’insertion est strictement personnel au
+                        Client. Il est établi par RelevanC et ne peut être modifié sans
+                        son autorisation ni être cédé sous quelque forme et à
+                        quelque titre que ce soit sauf autorisation expresse écrite de
+                        RelevanC. En tout état de cause, dans le cas du transfert,
+                        sous quelque forme que ce soit du fonds de commerce du
+                        Client, il est précisé que ce dernier est tenu d’en imposer
+                        l’exécution à son successeur en restant solidairement garant
+                        de ce dernier.
+                        Les Ordres d’insertion engagent le Client et ne peuvent pas
+                        être annulés, reportés ni résiliés par le Client
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:20px">
+                        5.3. Refus d’Ordre d’insertion
+                    </h4>
+                    <p style="margin:0;">
+                        RelevanC se réserve le droit de refuser une demande ou un
+                        Ordre d’insertion si elle estime que la demande du Client
+                        pourrait mettre en jeu, à quelque titre que ce soit, sa
+                        responsabilité et/ou sa déontologie, notamment si la
+                        demande :
+                    </p>
+                    <ul style="margin-left:5px" class="terms-list">
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;est non conforme aux CGL et/ou aux prérequis
+                            techniques ; </li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contrevient à la réglementation applicable, notamment la Réglementation données personnelles ; </li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;est soumise dans l’intérêt d’un concurrent direct ou indirect de RelevanC (sauf accord préalable écrit de RelevanC)</li>
+                    </ul>
+                    <h4>
+                        Article 6. Tarifs
+                    </h4>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        6.1 Généralités
+                    </h4>
+                    <p style="margin:0;">
+                        Les tarifs, sauf conditions particulières, sont ceux
+                        mentionnés sur l’Ordre d’insertion. Les tarifs s’entendent
+                        hors taxes. RelevanC se réserve le droit de changer ses tarifs
+                        à tout moment. Ces modifications tarifaires sont sans
+                        incidence sur les Ordres d’insertion déjà transmis et
+                        acceptés par RelevanC
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        6.2 Cas particuliers des Ordres d’insertion
+                    </h4>
+                    <p style="margin:0;">
+                        Les tarifs indiqués sur l’Ordre d’insertion n’incluent pas les
+                        éventuels frais techniques et/ou frais de réalisation. Le
+                        montant des frais techniques n’est pas inclus dans le calcul
+                        des dégressifs et des remises et les frais techniques sont
+                        individualisés sur l’Ordre d’insertion. 
+                    </p>
+                    <h4>
+                        Article 7. Obligations du Client
+                    </h4>
+                    <p style="margin:0;">
+                        Le Client s’engage à payer à RelevanC les sommes dues au
+                        titre des CGL et du / des Ordre(s) d’insertion y afférent(s)
+                        dans les conditions prévues à l’article 14 ci-après.
+                        Le Client s’engage également à accomplir les démarches et
+                        obligations liées à l’exercice de son activité.
+                        Par ailleurs, le Client est responsable de l’utilisation qui sera
+                        faite par les Annonceurs et/ou les Agences de la Base de
+                        données qui sera mise à disposition par RelevanC au Client.
+                        Dans ce cadre, le Client doit s’assurer que l’Annonce diffusée
+                        par l’Annonceur ne contrevient pas aux obligations ci-après
+                        décrites aux article <strong>7.1</strong> et <strong>7.2</strong>.
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        6.2 Cas particuliers des Ordres d’insertion
+                    </h4>
+                    <p style="margin:0;">
+                        Le Client s’engage à répercuter aux Annonceurs et/ou
+                        Agences les obligations suivantes quant à l’utilisation de la
+                        Base Données mise à disposition par RelevanC dans le cadre
+                        de la diffusion d’une Annonce :
+                    </p>
+                    <ul style="margin-left:5px" class="terms-list">
+                        <li>&nbsp;&nbsp;- le caractère publicitaire de l’Annonce doit être aisément identifiable </li>
+                        <li>&nbsp;&nbsp;- l’Annonce doit être non mensongère, loyale et décente, et ne doit pas porter atteinte aux droits de tiers, </li>
+                        <li>&nbsp;&nbsp;respecter les principes de l’ordre public, de loyauté, de dignité et de bonnes mœurs ainsi que les prescriptions propres à certains secteurs ou produits réglementés (jeux et loteries, tabac, alcool, produits pharmaceutiques,</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="page-break-before: always;font-size:10px;">
+            <div>
+                <h2 class="center terms-title blue">
+                    Conditions générales de vente (« CGL ») 
+                </h2>
+                <h4 class="center terms-title">
+                    Version applicable au 22/04/2020
+                </h4>
+            </div>
+            <div>
+                <div class="terms-columns">
+                    <ul style="margin-left:5px" class="terms-list">
+                        <li>services juridiques, comptables, financiers, etc.), ainsi que
+                            les recommandations de l’Autorité de Régulation
+                            Professionnelle de la Publicité (ARPP) et notamment
+                            celles concernant les enfants et l’image de la femme </li>
+                        <li>&nbsp;&nbsp;- respecter l’obligation légale d’utiliser la langue française et les dispositions du droit de la consommation (en matière notamment de mentions sanitaires de publicité comparative, mensongère ou de nature à induire en erreur, trompeuse, imitante), </li>
+                        <li>&nbsp;&nbsp;- le format de l’Annonce ne doit pas induire en erreur les consommateurs sur le contenu et les possibilités des produits ou services proposés</li>
+                        <li>&nbsp;&nbsp;- le format de l’Annonce ne doit pas induire les consommateurs en erreur en reprenant dans la création les sigles de navigation (restaurer, réduire ou fermer),</li>
+                        <li>&nbsp;&nbsp;- intégrer dans le contenu de l’Annonce la mention « publirédactionnel », « publi-reportage » ou « communiqué » lorsque le message publicitaire est sous format éditorial,</li>
+                        <li>&nbsp;&nbsp;- contenir toute information nécessaire en vertu de la Réglementation données personnelles.</li>
+                    </ul>
+                    <p style="margin:0;">
+                        L’Annonceur doit s’engager à respecter les lois, règlements
+                        et règles déontologiques applicables (notamment ARPP,
+                        FEVAD et/ou toute autre charte applicable).
+                        L’Annonceur doit s’engager à assumer la responsabilité
+                        pleine et entière de son message publicitaire (textes et/ou
+                        visuels) et de ses suites.
+                        Dans ce cadre, le Client garantit et relèvera indemne
+                        RelevanC de toute action relative au contenu et à la
+                        diffusion d’une Annonce par un Annonceur. 
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        7.2 Cas particuliers : règles relatives au contenu du
+                        site Internet accessible depuis l’Annonce
+                    </h4>
+                    <p style="margin:0;">
+                        L’Annonceur doit s’engager à ce que le contenu du site
+                        Internet auquel il est possible d’accéder par reroutage
+                        depuis l'Annonce soit en relation directe avec le contenu de
+                        cette Annonce.
+                        L’Annonceur doit s’engager à ce que ce site Internet (ainsi
+                        que les autres sites Internet qui lui sont affiliés le cas
+                        échéant ou accessibles via un lien hypertexte) soi(en)t
+                        conforme(s) à l’ordre public, aux bonnes mœurs, à toute
+                        règle légale, réglementaire, administrative ou
+                        déontologique applicable.
+                        L’Annonceur doit s'engager à refuser sur les pages du site
+                        Internet accessible depuis l'Annonce tout contenu à
+                        caractère religieux, sectaire, politique, syndical, à caractère
+                        raciste, contraire aux bonnes mœurs, à l’ordre public ou
+                        susceptible de porter atteinte à la dignité humaine ou à la
+                        protection des mineurs. De même, l’Annonceur doit
+                        s'engager à refuser, sur les pages du site Internet accessible
+                        depuis l'Annonce, toute insertion publicitaire ou lien
+                        hypertexte renvoyant vers un site Internet de nature raciste,
+                        contraire aux bonnes mœurs ou à l'ordre public.
+                        L’Annonceur doit faire son affaire, tant au plan de leur
+                        traitement que des frais/indemnités (échange de produit,
+                        remboursement, geste commercial, etc.) en découlant, de
+                        toutes demandes éventuellement formulées par les
+                        internautes qui lui sont adressées consécutivement au
+                        renvoi d'audience vers le site Internet accessible depuis
+                        l’Annonce. L’Annonceur sera seul responsable de toutes
+                        réclamations et litiges éventuels avec les internautes
+                        précités, notamment ceux relatifs à ses engagements
+                        contractuels, offres, ou encore ventes réalisées sur le site
+                        Internet. L’Annonceur doit faire clairement apparaitre sur
+                        son site le principe de sa responsabilité au titre de son
+                        activité propre.
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        Article 8. Données personnelles
+                    </h4>
+                    <p style="margin:0;">
+                        Chacune des parties s’engage à respecter la Réglementation
+                        données personnelles.
+                    </p><br/>
+                    <p style="margin:0;">
+                        Tout traitement par le Client en relation avec les données à
+                        caractère personnel, communiquées par RelevanC dans le
+                        cadre du Service Loc Data, est effectué sous la seule
+                        responsabilité du Client, agissant en qualité de responsable
+                        de traitement ne collectant pas directement les données
+                        personnelles des personnes concernées en application de
+                        l’article 14 du RGPD données personnelles. Le Client
+                        conserve l’entière maîtrise des moyens mis en œuvre et des
+                        finalités des données à caractère personnel collectées, dans
+                        les limites prévues à ce Contrat et dans le respect de la
+                        Réglementation données personnelles, et en accepte seul la
+                        responsabilité en qualité de responsable de traitement.
+                        Le Client reconnaît et accepte expressément que les
+                        données louées par RelevanC ne puissent être utilisées que
+                        pour la finalité mentionnée dans l’Ordre d’insertion et pour
+                        la durée prévue dans celui-ci. A ce titre, il est formellement
+                    </p>
+                </div>
+                <div style="margin-left:20px;" class="terms-columns">
+                    <p class="NoMargin">
+                        interdit au Client d’intégrer les données louées dans une
+                        base mutualisée.
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        Article 9. Exclusivité
+                    </h4>
+                    <p class="NoMargin">
+                        La licence de tout ou partie des données issues des Bases de
+                        données gérées par RelevanC interviendra à titre non
+                        exclusif. RelevanC ne certifie ni ne garantit l’adéquation à un
+                        usage particulier et notamment d’atteindre les
+                        consommateurs cibles de nature à répondre aux besoins de
+                        l’Annonceur.
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        Article 10. Annonceurs et Agences exclues
+                    </h4>
+                    <p class="NoMargin">
+                        Le Client s’interdit de proposer la Base de données aux
+                        Annonceurs et/ou aux Agences suivantes :
+                    </p>
+                    <ul style="margin-left:5px" class="terms-list">
+                        <li>&nbsp;&nbsp;- Leaderprice </li>
+                        <li>&nbsp;&nbsp;- Casino </li>
+                        <li>&nbsp;&nbsp;- Orange </li>
+                        <li>&nbsp;&nbsp;- Capelli </li>
+                        <li>&nbsp;&nbsp;- Franprix </li>
+                        <li>&nbsp;&nbsp;- Monoprix </li>
+                        <li>&nbsp;&nbsp;- Bestdrive </li>
+                        <li>&nbsp;&nbsp;- RégiEx </li>
+                        <li>&nbsp;&nbsp;- BYTEL </li>
+                        <li>&nbsp;&nbsp;- SFAM </li>
+                        <li>&nbsp;&nbsp;- ADVISE </li>
+                    </ul>
+                    <p class="NoMargin">
+                        Le Client reconnait et accepte que cette liste puisse évoluer
+                        à la demande de RelevanC. RelevanC notifiera par écrit au
+                        Client les mises à jour de cette liste que le Client devra
+                        respecter.
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        Article 11. Garanties
+                    </h4>
+                    <p class="NoMargin">
+                        DE MANIERE GENERALE, LE CLIENT GARANTIT RELEVANC
+                        CONTRE TOUT RECOURS EMANANT DE TIERS QUI POURRAIT
+                        ETRE INTENTE CONTRE RELEVANC AU TITRE DU SERVICE LOC
+                        DATA, NOTAMMENT CEUX RESULTANT D’UNE ATTEINTE
+                        AUX DROITS DE LA PERSONNALITE, AU DROIT DE LA
+                        CONSOMMATION, A UN DROIT DE PROPRIETE LIE A UNE
+                        MARQUE, A DES DROITS D’AUTEUR Y COMPRIS LE DROIT
+                        MORAL OU CEUX RESULTANT D’UN ACTE DE CONCURRENCE
+                        DELOYALE ET/OU PARASITAIRE. A CE TITRE, LE CLIENT
+                        INDEMNISERA RELEVANC DE TOUS FRAIS, CHARGES ET
+                        DEPENSES QUE CETTE DERNIERE AURAIT A SUPPORTER DE
+                        CE FAIT, EN CE COMPRIS LES HONORAIRES ET FRAIS DES
+                        CONSEILS DE RELEVANC, MEME PAR UNE DECISION DE
+                        JUSTICE NON ENCORE DEFINITIVE.
+                    </p>
+                    <p class="NoMargin">
+                        En cas de non-respect par le Client des présentes CGL,
+                        RelevanC se réserve le droit de suspendre ou d’annuler sans
+                        délai sur simple notification (qui pourra être réalisée par
+                        email) et sans autre formalité préalable, l’exécution du
+                        Service Loc Data sans que le Client soit en droit de réclamer
+                        une indemnité de quelque nature que ce soit à son profit. Le
+                        Client restera redevable de l’intégralité des sommes dues à
+                        RelevanC au titre de l’Ordre d’insertion litigieux.
+                        Le Client s’engage à régler directement à l’auteur de la
+                        réclamation toutes les sommes que celui-ci exigerait de
+                        RelevanC. En outre, le Client s’engage à intervenir si
+                        nécessaire à toute instance engagée contre RelevanC ainsi
+                        qu’à la garantir de toutes les condamnations qui seraient
+                        prononcées contre elle à cette occasion.
+                        En conséquence, le Client s’engage à faire son affaire
+                        personnelle de toute réclamation et/ou procédure quelle
+                        qu’en soit la forme, l’objet ou la nature qui serait formée
+                        contre RelevanC et qui se rattacherait aux prestations,
+                        fournitures et obligations mises à la charge du Client et/ou
+                        de l’Annonceur et/ou de l’Agence au titre du Contrat.
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        Article 12. Limitation de responsabilité
+                    </h4>
+                    <p class="NoMargin">
+                        RelevanC est soumise, de convention expresse, à une
+                        obligation de moyens.
+                        RelevanC est libérée de son obligation d’exécuter le Service
+                        Loc Data par suite de la survenance de tout cas fortuit ou de
+                        force majeure tel que retenu par la jurisprudence des cours
+                        et tribunaux français en application de l’article 1218 alinéa
+                        1 du Code civil ou de tout fait imputable à un tiers ou toute
+                        autre circonstance ayant une cause extérieure et/ou
+                        indépendante du fait personnel de RelevanC, et
+                        l’empêchant directement ou indirectement de répondre à
+                        ses obligations. Dans ces circonstances, tout retard ou
+                        défaut d’exécution de la prestation ne peut justifier la
+                        résiliation de l’Ordre d’insertion par le Client, ni donner droit
+                        à des dommages et intérêts à son profit.
+                    </p>
+                </div>
+                <div style="margin-left:20px;" class="terms-columns">
+                    <p style="margin-top:0">
+                        ABSENCE DE DECLARATION OU DE GARANTIE ET ABSENCE
+                        DE DOMMAGES-INTERETS : TOUS LES SERVICES LOC DATA
+                        OFFERTS PAR RELEVANC AU CLIENT QUI SONT SOUMIS AUX
+                        PRESENTES CGL LE SONT SANS GARANTIE D’AUCUNE SORTE,
+                        NOTAMMENT DE NIVEAU DE PERFORMANCE
+                        COMMERCIALE RESULTANT DES SERVICES LOC DATA
+                        COMMANDES PAR LE CLIENT A RELEVANC. RELEVANC
+                        DECLINE TOUTE GARANTIE, EXPRESSE OU TACITE.
+                        RELEVANC NE PEUT ETRE TENUE RESPONSABLE EN CAS DE
+                        DOMMAGES INDIRECTS, Y COMPRIS TOUT MANQUE A
+                        GAGNER, PERTE DE BENEFICES, INTERRUPTION
+                        D’EXPLOITATION, PERTE D’INFORMATIONS OU ACCES NON
+                        AUTORISES AUX INFORMATIONS. DANS TOUTE LA MESURE
+                        PERMISE PAR LE DROIT APPLICABLE, RELEVANC NE PEUT
+                        ETRE TENUE RESPONSABLE ENVERS LE CLIENT POUR UN
+                        MONTANT SUPERIEUR AU MONTANT EFFECTIVEMENT
+                        REÇU DU CLIENT PAR RELEVANC AU TITRE DE L’ORDRE
+                        D’INSERTION CONCERNE. 
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        Article 13. Résiliation
+                    </h4>
+                    <p style="margin-top:0">
+                        RelevanC aura la faculté (i) de mettre en œuvre l’une des
+                        sanctions de l’inexécution visées à l’article 1217 du Code
+                        civil, après mise en demeure par lettre recommandée, le cas
+                        échant, restée sans effet à l’expiration du délai accordé ou
+                        (ii) de résilier de plein droit partiellement ou totalement dès
+                        notification (qui pourra être réalisée par email) le Contrat
+                        et/ou des Ordres d’insertion en cas de manquement par
+                        l’Annonceur à l’une de ses obligations résultant des
+                        présentes, notamment en cas de :
+                    </p>
+                    <ul style="margin-left:5px" class="terms-list">
+                        <li>&nbsp;&nbsp;- non-respect des obligations prévues à l’article 5,</li>
+                        <li>&nbsp;&nbsp;- non-paiement des factures dues,</li>
+                        <li>&nbsp;&nbsp;- retards répétés de paiement (matérialisés a minima par 3 retards consécutifs ou non),</li>
+                    </ul>
+                    <p style="margin-top:0">
+                        et, ce sans préjudice des dommages et intérêts éventuels
+                        que RelevanC sera susceptible de lui réclamer en réparation
+                        de son préjudice.
+                        En cas de résiliation, l’Annonceur restera redevable de
+                        l’intégralité des sommes dues à RelevanC au titre de l’Ordre
+                        d’insertion.
+                    </p>
+                    <h4>
+                        Article 14. Facturation et conditions de paiement
+                    </h4>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        14.1 Facturation des Ordres d’insertion
+                    </h4>
+                    <p class="NoMargin">
+                        <strong>14.1.1.</strong>
+                        La facture est établie au nom du Client et est
+                        adressée directement au Client quels que soient sa
+                        matérialisation et son mode de transmission.
+                        Une facture sera établie au terme du Service Loc Data ou, en
+                        cas de prestations échelonnées sur plusieurs mois, au début
+                        de chaque mois suivant l’exécution du Service Loc Data le
+                        mois précédent, pour un montant déterminé dans l’Ordre
+                        d’insertion. Tout élément qui pourrait entraîner un risque de nonpaiement des factures, tel que la modification dans la
+                        situation juridique ou financière du Client, paiement partiel,
+                        incident ou retard de paiement, justifie que RelevanC
+                        modifie, du moins provisoirement, les conditions
+                        particulières de paiement accordées au Client dans les
+                        conditions visées aux présentes CGL 
+                    </p>
+                    <p class="NoMargin">
+                        <strong>14.1.2. Règlement anticipé &amp; Acompte</strong> Pour tout nouveau Client et/ou pour toute commande inférieure à 3000 (trois
+                        mille) euros HT, le règlement pourra être exigé par virement
+                        dès la remise de l’Ordre d’insertion. L’exécution de l’Ordre
+                        d’insertion par RelevanC n’interviendra qu’à l’issue de
+                        l’encaissement effectif du règlement.
+                        RelevanC se réserve le droit de demander au Client un
+                        acompte, par chèque ou virement bancaire, à la commande.
+                        Seul l’encaissement du chèque ou du virement bancaire
+                        d’acompte peut déclencher l’exécution de l’Ordre
+                        d’insertion. L’encaissement est considéré acquis après
+                        dépôt du chèque et écoulement du délai bancaire de contrepassation de l’écriture, sans modification du montant porté
+                        au crédit de RelevanC.
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        14.2 Délai de paiement
+                    </h4>
+                    <p class="NoMargin">
+                        Sauf conditions particulières déterminées avec RelevanC, le
+                        paiement des factures devra intervenir dans un délai
+                        maximum de 60 jours à compter de la date d'émission de la
+                        facture. Le Client reconnaît que le règlement du prix
+                        convenu au Contrat constitue une condition essentielle.
+                    </p>
+                    <h4 style="margin-bottom:0;margin-left:15px">
+                        14.3 Défaut de paiement
+                    </h4>
+                    <p class="NoMargin">
+                        Tout défaut de paiement d’une facture à son échéance
+                        entraînera de plein droit le refus et/ou la suspension de
+                        l’exécution du Contrat sans formalité préalable et ce,
+                        jusqu’au complet paiement des factures arrivées à échéance
+                        par le Client.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div style="page-break-before: always;font-size:10px;">
+            <div>
+                <h2 class="center terms-title blue">
+                    Conditions générales de vente (« CGL ») 
+                </h2>
+                <h4 class="center terms-title">
+                    Version applicable au 22/04/2020
+                </h4>
+            </div>
+            <div class="terms-columns">
+                <p class="NoMargin">
+                    En cas de défaut de paiement, RelevanC peut, à sa
+                    convenance, considérer comme exigibles toutes les sommes
+                    dues par le Client au titre des prestations déjà exécutées.
+                    Par ailleurs, et sans préjudice des autres droits de RelevanC,
+                    des pénalités de retard seront applicables dans le cas où les
+                    sommes dues par le Client sont payées par le Client après la
+                    date de paiement figurant sur la facture. Ces pénalités de
+                    retard sont exigibles, sans qu'un rappel soit nécessaire, le
+                    jour suivant la date de règlement figurant sur la facture. Ces
+                    pénalités de retard seront calculées sur la base du taux
+                    d’intérêt appliqué par la Banque Centrale européenne à son
+                    opération de refinancement la plus récente majoré de 10
+                    points de pourcentage, en sus d’une compensation pour les
+                    frais de recouvrement supportés par RelevanC, qui ne
+                    saurait être inférieure à l’indemnité forfaitaire pour frais de
+                    recouvrement prévue par l’article L. 441-6 I 12° du Code de
+                    commerce et son décret d’application (40 euros), étant
+                    précisé que RelevanC pourra demander une indemnité
+                    complémentaire sur justification, sans préjudice de la
+                    suspension et/ou de la résiliation du Contrat et/ou des
+                    éventuels dommages-intérêts qui pourraient être réclamés
+                </p>
+                <h4 style="margin-bottom:0;margin-left:15px">
+                    14.4 Déchéance du terme
+                </h4>
+                <p class="NoMargin">
+                    En cas de règlement échelonné ou d’Ordres d’insertion
+                    successifs, le non-paiement ou le paiement partiel d'une
+                    seule échéance ou d’un seul Ordre d’insertion rend
+                    immédiatement exigibles de plein droit, à la demande de
+                    RelevanC, toutes les sommes restant dues, y compris celles
+                    non encore échues pour les prestations réalisées.
+                </p>
+                <h4 style="margin-bottom:0;margin-left:15px">
+                    14.5 Clause Pénale
+                </h4>
+                <p class="NoMargin">
+                    Si la carence du Client rend nécessaire un recouvrement
+                    contentieux ou judiciaire, le Client supportera en sus du
+                    principal, des intérêts, des frais, dépends et émoluments
+                    ordinairement et légalement à sa charge, une indemnité
+                    non libératoire fixée à 15% du montant en principal TTC de
+                    la créance, et ce, à titre de dommages et intérêts
+                    conventionnels et forfaitaires. Cette indemnité versée au
+                    titre de l’impayé est due nonobstant les dommages et
+                    intérêts résultant d’un autre préjudice éventuellement subi
+                    par RelevanC et pour lequel la responsabilité du Client
+                    pourrait être engagée.
+                </p>
+                <h4 style="margin-bottom:0;margin-left:15px">
+                    14.6 Garantie de paiement
+                </h4>
+                <p class="NoMargin">
+                    Au-delà de l’encours autorisé pour le Client par la
+                    Compagnie française d'assurance pour le commerce
+                    extérieur (COFACE) auprès de laquelle RelevanC a souscrit
+                    une assurance-crédit, tout Ordre d’insertion sera payable au
+                    comptant, à sa date de signature par l’Annonceur ou son
+                    Agence.
+                    RelevanC pourra accroitre sa cadence de facturation dès lors
+                    que l’Annonceur approche la limite de l’encours couvert par
+                    la COFACE.
+                </p>
+                <h4 style="margin-bottom:0;margin-left:15px">
+                    14.7 Compensation / Affection conventionnelle
+                </h4>
+                <p class="NoMargin">
+                    Une compensation s’opèrera de plein droit entre les
+                    sommes dues par le Client à RelevanC et celles dues par
+                    RelevanC au Client.
+                    En conséquence, le Client consent expressément à ce que la
+                    compensation des sommes dues par le Client à RelevanC,
+                    que ce soit au titre des présentes CGL ou au titre de toute
+                    autre relation commerciale que les parties pourraient
+                    entretenir par ailleurs, avec toutes les créances que
+                    RelevanC doit au Client et/ou avec toutes autres sommes
+                    que RelevanC détient au nom et pour le compte du Client, à
+                    quelque titre que ce soit, soit automatique et immédiate.
+                </p>
+                <h4 style="margin-bottom:0">
+                    Article 15. Audit 
+                </h4>
+                <p class="NoMargin">
+                    Aux frais avancés de RelevanC, celle-ci pourra faire procéder
+                    à un audit des conditions d’exécution du Contrat par le
+                    Client dans les locaux dudit Client. Cet audit pourra être
+                    effectué par un cabinet extérieur choisi par RelevanC.
+                    L’audit peut être effectué à tout moment, moyennant un
+                    délai de prévenance de 3 (trois) jours ouvrés, et ne doit pas
+                    perturber le déroulement des prestations à la charge du
+                    Client.
+                    Cet audit pourra porter, notamment, sur les points suivants
+                </p>
+                <ul style="margin-left:5px" class="terms-list">
+                    <li>&nbsp;&nbsp;- respect des normes techniques en vigueur ;</li>
+                    <li>&nbsp;&nbsp;- contrôle des conditions de conservation, de sécurisation et d'utilisation des données (notamment personnelles);</li>
+                    <li>&nbsp;&nbsp;- contrôle de la facturation concernant exclusivement RelevanC.</li>
+                </ul>
+                <p class="NoMargin">
+                    Le Client s’engage à permettre à l’auditeur d’examiner les
+                    données enregistrées par ses serveurs, et inspecter et
+                </p>
+            </div>
+            <div style="margin-left:20px;" class="terms-columns">
+                <p class="NoMargin">
+                    prélever des extraits ou prendre copie de tous documents
+                    en sa possession, sur quelque support que ce soit, relatifs à
+                    l’exécution des CGL et de tout Ordre d’insertion y afférent.
+                    Les documents seront conservés par l’auditeur. Le Client
+                    s’engage à fournir une assistance à l’auditeur afin qu’il
+                    puisse se livrer à sa mission d’audit. Si RelevanC décide de
+                    faire suite aux conclusions du rapport, un exemplaire du
+                    rapport d’audit sera remis au Client, lequel sera tenu de
+                    formuler ses observations éventuelles dans un délai de trois
+                    (3) jours ouvrés.
+                    Le Client reconnaît et accepte de s’en tenir aux conclusions
+                    du rapport de l’auditeur et d’en tirer toutes les
+                    conséquences nécessaires. Au cas où un rapport d’audit
+                    ferait apparaître une contravention aux obligations du Client
+                    ou à l’ordre public, le Client, d’une part, s’engage à mettre
+                    en œuvre à ses frais les mesures correctives nécessaires
+                    dans un délai de (8) huit jours à compter de la notification
+                    de RelevanC, sauf si le Client démontre que ce délai est
+                    insuffisant, les parties pouvant alors convenir d’un délai
+                    supplémentaire et sans préjudice d’autres éventuelles
+                    mesures pouvant être prises par RelevanC des suites de ce
+                    constat, d’autre part, à prendre en charge les frais de l’audit
+                    avancés par RelevanC. Si les conclusions des audits
+                    contiennent des recommandations tendant à la
+                    modification ou à l’amélioration des règles et procédures
+                    auditées, la mise en œuvre de ces recommandations
+                    s’effectuera dans le cadre d’une réunion entre les parties.
+                    Les parties conviennent qu’en tout état de cause la
+                    procédure d’audit ou sa non mise en œuvre n’exonère en
+                    aucune manière le Client du respect de ses obligations
+                    contractuelles et légales
+                </p>
+                <h4 class="NoMarginBottom">
+                    Article 16. Indépendance des parties
+                </h4>
+                <p class="NoMargin">
+                    Le Client demeure seul responsable, notamment vis-à-vis de
+                    ses clients, de ses actes, allégations, engagements,
+                    prestations, produits et personnels y compris des contrats
+                    pouvant résulter de la réalisation d’un Ordre d’insertion.
+                    RelevanC et le Client sont indépendants l’un par rapport à
+                    l’autre et rien dans les présentes ne pourra être interprété
+                    comme créant une société commune entre les Parties ou
+                    établissant une relation de mandant entre les parties.
+                </p>
+                <h4 class="NoMarginBottom">
+                    Article 17. Autorisations légales
+                </h4>
+                <p class="NoMarginBottom">
+                    Les parties s’engagent à disposer de l’ensemble des
+                    autorisations légales et administratives nécessaires à
+                    l’exécution des présentes. Les parties s’engagent à
+                    collaborer pour la réalisation de nouvelles autorisations
+                    légales et administratives et pour toutes modifications
+                    d’autorisations déjà réalisées. Les parties s’engagent à
+                    obtenir et à maintenir en vigueur, pendant toute la durée
+                    des présentes, les autorisations légales, réglementaires et
+                    administratives qui leur incombent et qui sont nécessaires à
+                    la mise en œuvre des présentes.
+                </p>
+                <h4 class="NoMarginBottom">
+                    Article 18. Tolérance 
+                </h4>
+                <p class="NoMargin">
+                    Les parties conviennent réciproquement que le fait pour
+                    l’une des parties de tolérer une situation n’a pas pour effet
+                    d’accorder à l’autre partie des droits acquis. De plus, une
+                    telle tolérance ne peut être interprétée comme une
+                    renonciation à faire valoir les droits en cause.
+                </p>
+                <h4 class="NoMarginBottom">
+                    Article 19. Nullité
+                </h4>
+                <p class="NoMargin">
+                    Si une ou plusieurs stipulations des présentes CGL sont
+                    tenues pour non valides ou déclarées telles en application
+                    d’une loi, d’un règlement ou à la suite d’une décision
+                    définitive d’une juridiction compétente, les autres
+                    stipulations des présentes garderont toute leur force et leur
+                    portée.
+                </p>
+                <h4 class="NoMarginBottom">
+                    Article 20. Convention de preuve
+                </h4>
+                <p class="NoMargin">
+                    Les documents sous forme électronique échangés entre les
+                    parties feront preuve, sous réserve que puisse être dûment
+                    identifiée la personne dont ils émanent et qu’ils soient
+                    établis et conservés dans des conditions raisonnables
+                    permettant d’en garantir l’intégrité
+                </p>
+                <h4 class="NoMarginBottom">
+                    Article 21. Suivi de la dépendance économique
+                </h4>
+                <p class="NoMargin">
+                    Le Client informera RelevanC dès lors qu’il se trouverait en
+                    situation de dépendance économique à l’égard de cette
+                    dernière.
+                    Dès lors que sa situation évoluerait significativement,
+                    l’Annonceur informera immédiatement RelevanC, les deux 
+                </p>
+            </div>
+            <div style="margin-left:20px;" class="terms-columns">
+                <p style="margin-left:5px;">
+                    parties convenant de se rencontrer pour trouver des
+                    solutions préservant leurs intérêts respectifs.
+                    Le Client informera RelevanC de toute prise de contrôle
+                    et/ou de participation de son entreprise directement ou
+                    indirectement par un tiers au présent contrat. Il signalera
+                    son appartenance éventuelle à un Groupe et communiquera
+                    les renseignements de chiffres d’affaires de chaque entité
+                    dès lors que cette modification sera susceptible de créer,
+                    d’aggraver ou de réduire un risque de dépendance. Le Client
+                    communiquera au plus tôt à RelevanC les renseignements
+                    comptables ou financiers utiles si sa situation venait à
+                    comporter un risque d’insolvabilité et / ou un risque de
+                    perturbation de la relation.
+                    Ces informations sont essentielles pour permettre aux
+                    parties de conserver des relations équilibrées et sereines.
+                    RelevanC dégage toute responsabilité au titre du choix
+                    stratégique que ferait le Client en se plaçant et/ou en se
+                    maintenant en situation de dépendance.
+                </p>
+                <h4>
+                    Article 22. Election de domicile
+                </h4>
+                <p class="NoMargin">
+                    Pour l’exécution des présentes les parties conviennent de
+                    s’adresser toute correspondance à leur siège social
+                    respectif.
+                </p>
+                <h4 class="NoMarginBottom">
+                    Article 23. Loi applicable et attribution de compétence 
+                </h4>
+                <p class="NoMargin">
+                    LES PRESENTES CGL ET TOUT ORDRE D’INSERTION Y
+                    AFFERENT SONT SOUMIS A LA LEGISLATION FRANÇAISE. IL
+                    EN EST AINSI POUR LES REGLES DE FOND ET LES REGLES DE
+                    FORME ET CE, NONOBSTANT LES LIEUX D’EXECUTION DES
+                    OBLIGATIONS SUBSTANTIELLES OU ACCESSOIRES. EN CAS
+                    DE LITIGE CONCERNANT NOTAMMENT LA FORMATION,
+                    VALIDITE, INTERPRETATION, EXECUTION ET RESILIATION
+                    DES PRESENTES, COMPETENCE EXPRESSE EST ATTRIBUEE
+                    AU TRIBUNAL DE COMMERCE DE PARIS, NONOBSTANT
+                    PLURALITE DE DEFENDEURS OU APPEL EN GARANTIE, MEME
+                    POUR LES PROCEDURES D’URGENCE OU POUR LES
+                    PROCEDURES CONSERVATOIRES, EN REFERE OU PAR
+                    REQUETE.
+                </p>
+            </div>
+        </div>
+    </div>
+    <apex:include pageName="io_CPV" rendered="{!isTelemarketing}">
+        </apex:include>
+    
+    <apex:repeat value="{!listDocs}" var="doc">
+        <div style="page-break-before:always;"/>
+        <apex:outputText value="{!doc}" escape="false"/>
+    </apex:repeat>
+</apex:page>

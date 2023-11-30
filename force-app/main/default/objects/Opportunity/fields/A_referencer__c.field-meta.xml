@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>A_referencer__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR(
+ (NOT( BEGINS( Account.SapCode__c , &quot;S&quot; )) || ISBLANK( Account.SapCode__c )) &amp;&amp;
+ IsClosed = false
+,
+ NOT( ISBLANK( Agency__c )) &amp;&amp;
+ ( NOT( BEGINS( Agency__r.SapCode__c , &quot;S&quot; )) || ISBLANK( Agency__r.SapCode__c )) &amp;&amp;
+ IsClosed = false
+)</formula>
+    <label>A référencer</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

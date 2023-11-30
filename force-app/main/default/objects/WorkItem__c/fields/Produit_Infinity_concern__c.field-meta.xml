@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Produit_Infinity_concern__c</fullName>
+    <externalId>false</externalId>
+    <label>Produit(s) Infinity concerné(s)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Retail Media OnSite</fullName>
+                <default>false</default>
+                <label>Retail Media OnSite</label>
+            </value>
+            <value>
+                <fullName>Extension d&apos;audience</fullName>
+                <default>false</default>
+                <label>Extension d&apos;audience</label>
+            </value>
+            <value>
+                <fullName>Promogaming</fullName>
+                <default>false</default>
+                <label>Promogaming</label>
+            </value>
+            <value>
+                <fullName>Promotion personnalisée</fullName>
+                <default>false</default>
+                <label>Promotion personnalisée</label>
+            </value>
+            <value>
+                <fullName>Search</fullName>
+                <default>false</default>
+                <label>Search</label>
+            </value>
+            <value>
+                <fullName>Autre</fullName>
+                <default>false</default>
+                <label>Autre</label>
+            </value>
+            <value>
+                <fullName>Tous les produits</fullName>
+                <default>true</default>
+                <label>Tous les produits</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TechnicalFeesInvoicing__c</fullName>
+    <externalId>false</externalId>
+    <label>Facturation des frais techniques</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agence/Annonceur</fullName>
+                <default>false</default>
+                <label>Agence/Annonceur</label>
+            </value>
+            <value>
+                <fullName>Agence</fullName>
+                <default>true</default>
+                <label>Agence</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

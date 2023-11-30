@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Ajout de produits d&apos;opportunité</description>
+    <flowDefinition>Ajouter_des_Produits_d_opportunite_ScreenFlow</flowDefinition>
+    <label>Ajouter des produits d&apos;opportunité</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

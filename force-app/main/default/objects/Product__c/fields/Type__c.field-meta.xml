@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3W Retail media plateform</fullName>
+                <default>false</default>
+                <label>3W Retail media plateform</label>
+            </value>
+            <value>
+                <fullName>Adresses postales</fullName>
+                <default>false</default>
+                <label>Adresses postales</label>
+            </value>
+            <value>
+                <fullName>Affichage chariot</fullName>
+                <default>false</default>
+                <label>Affichage chariot</label>
+            </value>
+            <value>
+                <fullName>Analyse de mixités</fullName>
+                <default>false</default>
+                <label>Analyse de mixités</label>
+            </value>
+            <value>
+                <fullName>Bannière HP Premium 1600x200</fullName>
+                <default>false</default>
+                <label>Bannière HP Premium 1600x200</label>
+            </value>
+            <value>
+                <fullName>bannières multiformats</fullName>
+                <default>false</default>
+                <label>bannières multiformats</label>
+            </value>
+            <value>
+                <fullName>Bannières order process</fullName>
+                <default>false</default>
+                <label>Bannières order process</label>
+            </value>
+            <value>
+                <fullName>Cache antenne</fullName>
+                <default>false</default>
+                <label>Cache antenne</label>
+            </value>
+            <value>
+                <fullName>Cash Back</fullName>
+                <default>false</default>
+                <label>Cash Back</label>
+            </value>
+            <value>
+                <fullName>Clab</fullName>
+                <default>false</default>
+                <label>Clab</label>
+            </value>
+            <value>
+                <fullName>Concurrence win/lost sur Cdiscount</fullName>
+                <default>false</default>
+                <label>Concurrence win/lost sur Cdiscount</label>
+            </value>
+            <value>
+                <fullName>Echantillons</fullName>
+                <default>false</default>
+                <label>Echantillons</label>
+            </value>
+            <value>
+                <fullName>emailing BtoB</fullName>
+                <default>false</default>
+                <label>emailing BtoB</label>
+            </value>
+            <value>
+                <fullName>emailing BtoC</fullName>
+                <default>false</default>
+                <label>emailing BtoC</label>
+            </value>
+            <value>
+                <fullName>Etude Ad hoc</fullName>
+                <default>false</default>
+                <label>Etude Ad hoc</label>
+            </value>
+            <value>
+                <fullName>Etude lancement de produit</fullName>
+                <default>false</default>
+                <label>Etude lancement de produit</label>
+            </value>
+            <value>
+                <fullName>Etude produit à maturité/en déclin</fullName>
+                <default>false</default>
+                <label>Etude produit à maturité/en déclin</label>
+            </value>
+            <value>
+                <fullName>Frais technique</fullName>
+                <default>false</default>
+                <label>Frais technique</label>
+            </value>
+            <value>
+                <fullName>Frais technique push SMS</fullName>
+                <default>false</default>
+                <label>Frais technique push SMS</label>
+            </value>
+            <value>
+                <fullName>Google adsense</fullName>
+                <default>false</default>
+                <label>Google adsense</label>
+            </value>
+            <value>
+                <fullName>Google adx</fullName>
+                <default>false</default>
+                <label>Google adx</label>
+            </value>
+            <value>
+                <fullName>Google shopping</fullName>
+                <default>false</default>
+                <label>Google shopping</label>
+            </value>
+            <value>
+                <fullName>Habillage de page</fullName>
+                <default>false</default>
+                <label>Habillage de page</label>
+            </value>
+            <value>
+                <fullName>Interstitiel</fullName>
+                <default>false</default>
+                <label>Interstitiel</label>
+            </value>
+            <value>
+                <fullName>Kakémono</fullName>
+                <default>false</default>
+                <label>Kakémono</label>
+            </value>
+            <value>
+                <fullName>Leaflets</fullName>
+                <default>false</default>
+                <label>Leaflets</label>
+            </value>
+            <value>
+                <fullName>Lien partenaire</fullName>
+                <default>false</default>
+                <label>Lien partenaire</label>
+            </value>
+            <value>
+                <fullName>Lien sponso Google</fullName>
+                <default>false</default>
+                <label>Lien sponso Google</label>
+            </value>
+            <value>
+                <fullName>Loc data - SMS</fullName>
+                <default>false</default>
+                <label>Loc data - SMS</label>
+            </value>
+            <value>
+                <fullName>Locdata - emailing BtoC</fullName>
+                <default>false</default>
+                <label>Locdata - emailing BtoC</label>
+            </value>
+            <value>
+                <fullName>Menu déroulant</fullName>
+                <default>false</default>
+                <label>Menu déroulant</label>
+            </value>
+            <value>
+                <fullName>Mesure ventes en magasin</fullName>
+                <default>false</default>
+                <label>Mesure ventes en magasin</label>
+            </value>
+            <value>
+                <fullName>Native ads</fullName>
+                <default>false</default>
+                <label>Native ads</label>
+            </value>
+            <value>
+                <fullName>Online shoppers</fullName>
+                <default>false</default>
+                <label>Online shoppers</label>
+            </value>
+            <value>
+                <fullName>Opération spéciale BOA</fullName>
+                <default>false</default>
+                <label>Opération spéciale BOA</label>
+            </value>
+            <value>
+                <fullName>Opération spéciale Jeu concours</fullName>
+                <default>false</default>
+                <label>Opération spéciale Jeu concours</label>
+            </value>
+            <value>
+                <fullName>Opération spéciale Le Lab</fullName>
+                <default>false</default>
+                <label>Opération spéciale Le Lab</label>
+            </value>
+            <value>
+                <fullName>page intégrée</fullName>
+                <default>false</default>
+                <label>page intégrée</label>
+            </value>
+            <value>
+                <fullName>Page post link</fullName>
+                <default>false</default>
+                <label>Page post link</label>
+            </value>
+            <value>
+                <fullName>Parcours d&apos;achat sur Cdiscount</fullName>
+                <default>false</default>
+                <label>Parcours d&apos;achat sur Cdiscount</label>
+            </value>
+            <value>
+                <fullName>Post fil d&apos;actualité</fullName>
+                <default>false</default>
+                <label>Post fil d&apos;actualité</label>
+            </value>
+            <value>
+                <fullName>Profiling des acheteurs sur Cdiscount</fullName>
+                <default>false</default>
+                <label>Profiling des acheteurs sur Cdiscount</label>
+            </value>
+            <value>
+                <fullName>Prospectus</fullName>
+                <default>false</default>
+                <label>Prospectus</label>
+            </value>
+            <value>
+                <fullName>Push SMS</fullName>
+                <default>false</default>
+                <label>Push SMS</label>
+            </value>
+            <value>
+                <fullName>Régule</fullName>
+                <default>false</default>
+                <label>Régule</label>
+            </value>
+            <value>
+                <fullName>Segment data</fullName>
+                <default>false</default>
+                <label>Segment data</label>
+            </value>
+            <value>
+                <fullName>Shop in shop</fullName>
+                <default>false</default>
+                <label>Shop in shop</label>
+            </value>
+            <value>
+                <fullName>Slider catégorie</fullName>
+                <default>false</default>
+                <label>Slider catégorie</label>
+            </value>
+            <value>
+                <fullName>Stop rayon avec bon de réduction</fullName>
+                <default>false</default>
+                <label>Stop rayon avec bon de réduction</label>
+            </value>
+            <value>
+                <fullName>Stop rayon sans bon de réduction</fullName>
+                <default>false</default>
+                <label>Stop rayon sans bon de réduction</label>
+            </value>
+            <value>
+                <fullName>Téléphones fixes</fullName>
+                <default>false</default>
+                <label>Téléphones fixes</label>
+            </value>
+            <value>
+                <fullName>Téléphones mobiles</fullName>
+                <default>false</default>
+                <label>Téléphones mobiles</label>
+            </value>
+            <value>
+                <fullName>Vidéo</fullName>
+                <default>false</default>
+                <label>Vidéo</label>
+            </value>
+            <value>
+                <fullName>Vignette</fullName>
+                <default>false</default>
+                <label>Vignette</label>
+            </value>
+            <value>
+                <fullName>Search</fullName>
+                <default>false</default>
+                <label>Search</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

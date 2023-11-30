@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Plan_action__c</columns>
+    <columns>NAME</columns>
+    <columns>Avant_Apres__c</columns>
+    <columns>Declencheur__c</columns>
+    <columns>Evenement__c</columns>
+    <columns>Assigne__c</columns>
+    <columns>Titre_tache__c</columns>
+    <columns>Nombre_Jours__c</columns>
+    <columns>Declenche_Tache__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Declenche_Tache__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>All</label>
+</ListView>

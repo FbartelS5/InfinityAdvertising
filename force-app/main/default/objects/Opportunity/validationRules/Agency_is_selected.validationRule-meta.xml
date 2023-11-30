@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agency_is_selected</fullName>
+    <active>true</active>
+    <description>Lorsque la valeur &quot;Agence&quot; est sélectionnée dans payeur, le champ agence doit être rempli.</description>
+    <errorConditionFormula>AND(
+ ISBLANK( Agency__c ),
+ ISPICKVAL(InvoicedAccount__c  , &quot;Agence&quot;),
+ NOT( ISPICKVAL( BU__c , &quot;Maxit&quot;))
+)&amp;&amp; NOT($Setup.lazyLoading__c.DisableValidationRule__c)</errorConditionFormula>
+    <errorDisplayField>Agency__c</errorDisplayField>
+    <errorMessage>Lorsque la valeur &quot;Agence&quot; est sélectionnée dans payeur, le champs agence doit être rempli.</errorMessage>
+</ValidationRule>

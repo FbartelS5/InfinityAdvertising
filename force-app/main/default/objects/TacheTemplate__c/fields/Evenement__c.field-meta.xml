@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evenement__c</fullName>
+    <externalId>false</externalId>
+    <label>Evénement</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Opportunite_Date_Debut_Campagne</fullName>
+                <default>false</default>
+                <label>Opportunité - Date de début théorique campagne</label>
+            </value>
+            <value>
+                <fullName>Opportunite_Date_Fin_Campagne</fullName>
+                <default>false</default>
+                <label>Opportunité - Date de fin théorique campagne</label>
+            </value>
+            <value>
+                <fullName>Requete_Date_Debut_Campagne</fullName>
+                <default>false</default>
+                <label>Requête - Date de début réel campagne</label>
+            </value>
+            <value>
+                <fullName>Requete_Date_Fin_Campagne</fullName>
+                <default>false</default>
+                <label>Requête - Date de fin réelle campagne</label>
+            </value>
+            <value>
+                <fullName>Creation_opportunite</fullName>
+                <default>false</default>
+                <label>Création de l&apos;opportunité</label>
+            </value>
+            <value>
+                <fullName>OpportunityStartDate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Opportunité - Date de début réel</label>
+            </value>
+            <value>
+                <fullName>OpportunityEndDate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Opportunité - Date de fin réelle</label>
+            </value>
+            <value>
+                <fullName>Requête - Date de début théorique</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Requête - Date de début théorique</label>
+            </value>
+            <value>
+                <fullName>Requête - Date de fin théorique</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Requête - Date de fin théorique</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

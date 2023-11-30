@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_OPP003_PassageSigne</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(StageName),
+    ISPICKVAL(StageName, &quot;Signé&quot;),
+    NOT($Permission.Admin_Fonctionnel),
+    NOT($Permission.ResponsableSales),
+    NOT($Setup.CS1_ByPass__c.ByPass_Validation_Rules__c)
+
+)</errorConditionFormula>
+    <errorMessage>Seul un Responsable Sales peut mettre à jour le statut de l&apos;opportunité à &quot;Signé&quot;.</errorMessage>
+</ValidationRule>

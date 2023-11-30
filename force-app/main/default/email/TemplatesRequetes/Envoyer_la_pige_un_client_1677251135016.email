@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Bonjour<span style="color:#c0392b;"><strong> [Prénom Contact à renseigner]</strong></span>,&nbsp;</span></span></span><br />
+<br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Vous trouverez en pièce jointe la pige de mise en ligne concernant la campagne <strong><span style="color:#c0392b;">[Insérer les marques</span>]</strong> sur les enseignes&nbsp;{{{Case.Enseignes__c}}}.</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">N’hésitez pas si vous avez des questions !</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Bonne journée,</span></span></span><br />
+<br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">{{{Sender.Name}}}<br />
+{{{Sender.Email}}}<br />
+{{{Sender.MobilePhone}}}</span></span></span></body>
+</html>

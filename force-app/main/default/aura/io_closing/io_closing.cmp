@@ -1,0 +1,140 @@
+<aura:component  controller="io_controller" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="userProfile" type="String"/>
+    <aura:attribute name="userBU" type="String"/>
+    <aura:attribute name="allData" type="Object"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="total" type="Currency"/>
+    <aura:attribute name="filters" type="Object"/>
+    <aura:attribute name="range" type="String"/>
+    <aura:attribute name="errors" type="Object" default="[]"/>
+    <aura:attribute name="draftValues" type="Object" default="[]"/>
+    <aura:attribute name="options" type="List" access="PRIVATE"/>
+    <aura:attribute name="selectedRows" type="List"/>
+    <aura:attribute name="sortedBy" type="String" />
+    <aura:attribute name="sortedDirection" type="Boolean" default="true" />
+    <aura:attribute name="isAdmin" type="Boolean" default="true" />
+    <ltng:require 
+                  scripts="{!join(',', 
+                           $Resource.moment + '/moment.js', 
+                           $Resource.moment + '/moment-range.js')}"
+                  afterScriptsLoaded="{!c.doInit}" />
+    <lightning:overlayLibrary aura:id="overlayLib" />
+
+    
+    <lightning:spinner variant="brand" size="medium" aura:id="spin" />
+    <lightning:layout verticalAlign="end"  multipleRows="true" >
+        <lightning:layoutItem flexibility="auto"  size="3"  padding="horizontal-small" >
+            <lightning:select aura:id="filterRange" label="Période" onchange="{!c.rangeChange}" value="{!v.range}">
+                <aura:iteration items="{!v.options}" var="o">
+                    <option text="{!o.label}" value="{!o.value}"  selected="{!o.selected}" />
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="3" padding="horizontal-small">
+            <lightning:select aura:id="filterProduct" name="option" label="Produit" onchange="{!c.search}">
+                <option text="- Tout -" value=""  />
+                <aura:iteration items="{!v.filters.product}" var="o">
+                    <option text="{!o.label}" value="{!o.value}"  selected="{!o.selected}" />
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="3" padding="horizontal-small">
+            <lightning:select aura:id="filterType" name="option" label="Type" onchange="{!c.search}">
+                <option text="- Tout -" value=""  />
+                <aura:iteration items="{!v.filters.type}" var="o">
+                    <option text="{!o.label}" value="{!o.value}"  selected="{!o.selected}" />
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="3" padding="horizontal-small">
+            <lightning:select aura:id="filterTargeting" name="option" label="Ciblage" onchange="{!c.search}">
+                <option text="- Tout -" value=""  />
+                <aura:iteration items="{!v.filters.targeting}" var="o">
+                    <option text="{!o.label}" value="{!o.value}"  selected="{!o.selected}" />
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="3" padding="horizontal-small">
+            <lightning:select aura:id="filterMedium" name="option" label="Support" onchange="{!c.search}">
+                <option text="- Tout -" value=""  />
+                <aura:iteration items="{!v.filters.medium}" var="o">
+                    <option text="{!o.label}" value="{!o.value}"  selected="{!o.selected}" />
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="3" padding="horizontal-small">
+            <lightning:select aura:id="filterOrder" name="option" label="Réf. Bon de commande" onchange="{!c.search}">
+                <option text="- Tout -" value=""  />
+                <aura:iteration items="{!v.filters.order}" var="o">
+                    <option text="{!o.label}" value="{!o.value}"  selected="{!o.selected}" />
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="3" padding="horizontal-small">
+            <lightning:select aura:id="filterCampaign" name="option" label="Campaign n°" onchange="{!c.search}">
+                <option text="- Tout -" value=""  />
+                <aura:iteration items="{!v.filters.campaign}" var="o">
+                    <option text="{!o.label}" value="{!o.value}"  selected="{!o.selected}" />
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="3" padding="horizontal-small">
+            <lightning:select aura:id="filterDevices" name="option" label="Devices" onchange="{!c.search}">
+                <option text="- Tout -" value=""  />
+                <aura:iteration items="{!v.filters.devices}" var="o">
+                    <option text="{!o.label}" value="{!o.value}"  selected="{!o.selected}" />
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="3" padding="horizontal-small">
+            <lightning:select aura:id="filterPricing" name="option" label="Mode de com" onchange="{!c.search}">
+                <option text="- Tout -" value=""  />
+                <aura:iteration items="{!v.filters.pricing}" var="o">
+                    <option text="{!o.label}" value="{!o.value}"  selected="{!o.selected}" />
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem>  
+        <!-- by zaiba 24-08-2022 relsoved Component Loading-->
+        <lightning:layoutItem size="3" padding="horizontal-small">
+            <lightning:select aura:id="filterPromo" name="option" label="Type Promogaming" onchange="{!c.search}">
+                <option text="- Tout -" value=""  />
+                <aura:iteration items="{!v.filters.promo}" var="o">
+                    <option text="{!o.label}" value="{!o.value}"  selected="{!o.selected}" />
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem> 
+        <!-- / by zaiba-->
+        <lightning:layoutItem size="3" padding="horizontal-small">
+            <lightning:select aura:id="filterStatus" name="option" label="Statut" onchange="{!c.search}">
+                <option text="- Tout -" value=""  />
+                <aura:iteration items="{!v.filters.status}" var="o">
+                    <option text="{!o.label}" value="{!o.value}"  selected="{!o.selected}" />
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem>
+        <lightning:layoutItem flexibility="auto"  padding="horizontal-small" alignmentBump="left"  class="right-align slds-m-top_small">
+            <lightning:button variant="brand" label="Contrôler" onclick="{!c.setControlled}" disabled="{!v.selectedRows.length == 0}" />
+            <lightning:button variant="brand" label="Clôturer" onclick="{!c.setClosed}" class="{!(and(v.isAdmin == false, v.userProfile != 'INFINITY ADS - DAF CDG') ? 'slds-hide' : '')}" disabled="{!v.selectedRows.length == 0}"/>
+            <lightning:button variant="brand" label="Clôturer" onclick="{!c.setClosed}" class="{!(and(v.userBU != 'ESPPUBPART', v.userBU != 'ESPPUBPROG') ? 'slds-hide' : '')}" disabled="{!v.selectedRows.length == 0}"/>
+            <lightning:button variant="brand" label="Annuler clôture" onclick="{!c.unsetClosed}" class="{!(and(v.isAdmin == false, v.userProfile != 'INFINITY ADS - DAF CDG') ? 'slds-hide' : '')}" disabled="{!v.selectedRows.length == 0}"/>
+            <lightning:button variant="brand" label="Dupliquer" onclick="{!c.duplicateInsertions}" disabled="{!v.selectedRows.length == 0}" />
+            <lightning:button variant="brand" label="Ajouter" onclick="{!c.addInsertion}" /> Total: <lightning:formattedNumber value="{!v.total}" style="currency" currencyCode="EUR"/>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <div>&nbsp;</div>
+    <lightning:datatable aura:id="table"
+                         columns="{! v.columns }"
+                         data="{! v.data }"
+                         keyField="Id"
+                         errors="{! v.errors }"
+                         draftValues="{! v.draftValues }"
+                         onsave="{! c.handleSaveEdition }"
+                         showRowNumberColumn="false"
+                         onrowaction="{! c.handleRowAction }"
+                         onrowselection="{! c.updateRowSelection  }"
+                         sortedBy="{!v.sortedBy}"
+                         onsort="{!c.updateColumnSorting}"
+                         sortedDirection="{!v.sortedDirection}"
+                         />
+</aura:component>

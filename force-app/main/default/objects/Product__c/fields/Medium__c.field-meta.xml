@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medium__c</fullName>
+    <externalId>false</externalId>
+    <label>Support</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3WRelevanc</fullName>
+                <default>false</default>
+                <label>3WRelevanc</label>
+            </value>
+            <value>
+                <fullName>AppNexus</fullName>
+                <default>false</default>
+                <label>AppNexus</label>
+            </value>
+            <value>
+                <fullName>Après l&apos;achat</fullName>
+                <default>false</default>
+                <label>Après l&apos;achat</label>
+            </value>
+            <value>
+                <fullName>Banque Casino</fullName>
+                <default>false</default>
+                <label>Banque Casino</label>
+            </value>
+            <value>
+                <fullName>Base test</fullName>
+                <default>false</default>
+                <label>Base test</label>
+            </value>
+            <value>
+                <fullName>Bonial</fullName>
+                <default>false</default>
+                <label>Bonial</label>
+            </value>
+            <value>
+                <fullName>Cap Pépita</fullName>
+                <default>false</default>
+                <label>Cap Pépita</label>
+            </value>
+            <value>
+                <fullName>Caradisiac group</fullName>
+                <default>false</default>
+                <label>Caradisiac group</label>
+            </value>
+            <value>
+                <fullName>CarData</fullName>
+                <default>false</default>
+                <label>CarData</label>
+            </value>
+            <value>
+                <fullName>Carla Bikini</fullName>
+                <default>false</default>
+                <label>Carla Bikini</label>
+            </value>
+            <value>
+                <fullName>Casino Drive</fullName>
+                <default>false</default>
+                <label>Casino Drive</label>
+            </value>
+            <value>
+                <fullName>Casino group</fullName>
+                <default>false</default>
+                <label>Casino group</label>
+            </value>
+            <value>
+                <fullName>Casino HM</fullName>
+                <default>false</default>
+                <label>Casino HM</label>
+            </value>
+            <value>
+                <fullName>Casino SM</fullName>
+                <default>false</default>
+                <label>Casino SM</label>
+            </value>
+            <value>
+                <fullName>Cdiscount</fullName>
+                <default>false</default>
+                <label>Cdiscount</label>
+            </value>
+            <value>
+                <fullName>Cdiscount Pro</fullName>
+                <default>false</default>
+                <label>Cdiscount Pro</label>
+            </value>
+            <value>
+                <fullName>Cdiscount Voyages</fullName>
+                <default>false</default>
+                <label>Cdiscount Voyages</label>
+            </value>
+            <value>
+                <fullName>Chefclub</fullName>
+                <default>false</default>
+                <label>Chefclub</label>
+            </value>
+            <value>
+                <fullName>Conforama</fullName>
+                <default>false</default>
+                <label>Conforama</label>
+            </value>
+            <value>
+                <fullName>DBM</fullName>
+                <default>false</default>
+                <label>DBM</label>
+            </value>
+            <value>
+                <fullName>Email Retargeting</fullName>
+                <default>false</default>
+                <label>Email Retargeting</label>
+            </value>
+            <value>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+                <label>Facebook</label>
+            </value>
+            <value>
+                <fullName>Fidall</fullName>
+                <default>false</default>
+                <label>Fidall</label>
+            </value>
+            <value>
+                <fullName>Franprix</fullName>
+                <default>false</default>
+                <label>Franprix</label>
+            </value>
+            <value>
+                <fullName>Géant</fullName>
+                <default>false</default>
+                <label>Géant</label>
+            </value>
+            <value>
+                <fullName>Google</fullName>
+                <default>false</default>
+                <label>Google</label>
+            </value>
+            <value>
+                <fullName>Go Sport</fullName>
+                <default>false</default>
+                <label>Go Sport</label>
+            </value>
+            <value>
+                <fullName>Kontiki Média</fullName>
+                <default>false</default>
+                <label>Kontiki Média</label>
+            </value>
+            <value>
+                <fullName>Leader Price</fullName>
+                <default>false</default>
+                <label>Leader Price</label>
+            </value>
+            <value>
+                <fullName>Lucky Cart</fullName>
+                <default>false</default>
+                <label>Lucky Cart</label>
+            </value>
+            <value>
+                <fullName>Lydia</fullName>
+                <default>false</default>
+                <label>Lydia</label>
+            </value>
+            <value>
+                <fullName>Lyfpay</fullName>
+                <default>false</default>
+                <label>Lyfpay</label>
+            </value>
+            <value>
+                <fullName>Médiarithmics (DSP)</fullName>
+                <default>false</default>
+                <label>Médiarithmics (DSP)</label>
+            </value>
+            <value>
+                <fullName>Mes courses Casino</fullName>
+                <default>false</default>
+                <label>Mes courses Casino</label>
+            </value>
+            <value>
+                <fullName>Mister Good Deal</fullName>
+                <default>false</default>
+                <label>Mister Good Deal</label>
+            </value>
+            <value>
+                <fullName>Monoprix</fullName>
+                <default>false</default>
+                <label>Monoprix</label>
+            </value>
+            <value>
+                <fullName>Ocommerce</fullName>
+                <default>false</default>
+                <label>Ocommerce</label>
+            </value>
+            <value>
+                <fullName>Orange</fullName>
+                <default>false</default>
+                <label>Orange</label>
+            </value>
+            <value>
+                <fullName>Sarenza</fullName>
+                <default>false</default>
+                <label>Sarenza</label>
+            </value>
+            <value>
+                <fullName>SLS Data</fullName>
+                <default>false</default>
+                <label>SLS Data</label>
+            </value>
+            <value>
+                <fullName>Tiendeo</fullName>
+                <default>false</default>
+                <label>Tiendeo</label>
+            </value>
+            <value>
+                <fullName>Toutypasse</fullName>
+                <default>false</default>
+                <label>Toutypasse</label>
+            </value>
+            <value>
+                <fullName>Troc.com</fullName>
+                <default>false</default>
+                <label>Troc.com</label>
+            </value>
+            <value>
+                <fullName>Vindemia</fullName>
+                <default>false</default>
+                <label>Vindemia</label>
+            </value>
+            <value>
+                <fullName>Wanimo</fullName>
+                <default>false</default>
+                <label>Wanimo</label>
+            </value>
+            <value>
+                <fullName>Wanimo group</fullName>
+                <default>false</default>
+                <label>Wanimo group</label>
+            </value>
+            <value>
+                <fullName>Wellpack</fullName>
+                <default>false</default>
+                <label>Wellpack</label>
+            </value>
+            <value>
+                <fullName>WRPay</fullName>
+                <default>false</default>
+                <label>WRPay</label>
+            </value>
+            <value>
+                <fullName>Infinity Advertising</fullName>
+                <default>false</default>
+                <label>Infinity Advertising</label>
+            </value>
+            <value>
+                <fullName>Intermarché</fullName>
+                <default>false</default>
+                <label>Intermarché</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

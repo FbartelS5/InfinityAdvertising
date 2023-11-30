@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Univers__c</fullName>
+    <externalId>false</externalId>
+    <label>Univers</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alimentation alternative</fullName>
+                <default>false</default>
+                <label>Alimentation alternative</label>
+            </value>
+            <value>
+                <fullName>Animaux</fullName>
+                <default>false</default>
+                <label>Animaux</label>
+            </value>
+            <value>
+                <fullName>Bébé</fullName>
+                <default>false</default>
+                <label>Bébé</label>
+            </value>
+            <value>
+                <fullName>Bio</fullName>
+                <default>false</default>
+                <label>Bio</label>
+            </value>
+            <value>
+                <fullName>Boissons</fullName>
+                <default>false</default>
+                <label>Boissons</label>
+            </value>
+            <value>
+                <fullName>Charcuterie et Traiteur</fullName>
+                <default>false</default>
+                <label>Charcuterie et Traiteur</label>
+            </value>
+            <value>
+                <fullName>Culture et Papeterie</fullName>
+                <default>false</default>
+                <label>Culture et Papeterie</label>
+            </value>
+            <value>
+                <fullName>Électroménager</fullName>
+                <default>false</default>
+                <label>Électroménager</label>
+            </value>
+            <value>
+                <fullName>Entretien et Nettoyage</fullName>
+                <default>false</default>
+                <label>Entretien et Nettoyage</label>
+            </value>
+            <value>
+                <fullName>Épicerie salée</fullName>
+                <default>false</default>
+                <label>Épicerie salée</label>
+            </value>
+            <value>
+                <fullName>Épicerie sucrée</fullName>
+                <default>false</default>
+                <label>Épicerie sucrée</label>
+            </value>
+            <value>
+                <fullName>Fruits et Légumes</fullName>
+                <default>false</default>
+                <label>Fruits et Légumes</label>
+            </value>
+            <value>
+                <fullName>High Tech</fullName>
+                <default>false</default>
+                <label>High Tech</label>
+            </value>
+            <value>
+                <fullName>Hygiène et Beauté</fullName>
+                <default>false</default>
+                <label>Hygiène et Beauté</label>
+            </value>
+            <value>
+                <fullName>Jardin, Bricolage et Auto</fullName>
+                <default>false</default>
+                <label>Jardin, Bricolage et Auto</label>
+            </value>
+            <value>
+                <fullName>Jeux, Sports et Loisirs</fullName>
+                <default>false</default>
+                <label>Jeux, Sports et Loisirs</label>
+            </value>
+            <value>
+                <fullName>Maison</fullName>
+                <default>false</default>
+                <label>Maison</label>
+            </value>
+            <value>
+                <fullName>Mode et Bagagerie</fullName>
+                <default>false</default>
+                <label>Mode et Bagagerie</label>
+            </value>
+            <value>
+                <fullName>Nos offres partenaires</fullName>
+                <default>false</default>
+                <label>Nos offres partenaires</label>
+            </value>
+            <value>
+                <fullName>Pains et Pâtisseries</fullName>
+                <default>false</default>
+                <label>Pains et Pâtisseries</label>
+            </value>
+            <value>
+                <fullName>Produits laitiers et Œufs</fullName>
+                <default>false</default>
+                <label>Produits laitiers et Œufs</label>
+            </value>
+            <value>
+                <fullName>Soldes</fullName>
+                <default>false</default>
+                <label>Soldes</label>
+            </value>
+            <value>
+                <fullName>Surgelés</fullName>
+                <default>false</default>
+                <label>Surgelés</label>
+            </value>
+            <value>
+                <fullName>Viandes et Poissons</fullName>
+                <default>false</default>
+                <label>Viandes et Poissons</label>
+            </value>
+            <value>
+                <fullName>Vrac</fullName>
+                <default>false</default>
+                <label>Vrac</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

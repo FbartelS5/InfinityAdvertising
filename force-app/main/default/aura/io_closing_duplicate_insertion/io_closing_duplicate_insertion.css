@@ -1,0 +1,3 @@
+.THIS div[style*="height"] {
+    height: unset!important;
+}

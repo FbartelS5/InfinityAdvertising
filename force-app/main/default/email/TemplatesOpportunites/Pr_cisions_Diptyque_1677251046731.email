@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Bonjour&nbsp;{{{Recipient.FirstName}}},&nbsp;<br />
+<br />
+J’espère que tu vas bien.</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Je me permets de te contacter par rapport au diptyque des marques&nbsp;<span style="color:#c0392b;">[Mettre les marques]</span>&nbsp;prévu à partir du {{{Opportunity.CampaignStartDate__c}}} &nbsp;sur Intermarché.</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Pourriez-vous, je vous prie, me partager :</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; La fiche de programmation jointe avec les EANs des produits à animer</span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Les créas de la campagne au format diptyque selon les specs en PJ et avec tous les formats suivants :</span></span></span>
+<div style="margin-left: 40px;"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Desktop : 270x390px.&nbsp;</span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mobile web : 300x300px.</span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tablette web : 420x390px</span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Application : 1242x300px.</span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Header web : 2048x500px.&nbsp;</span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Header app : 1125x480px.</span></span></span></div>
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Concernant les créas, veillez à ne rien mettre sur le bas de la créa lorsqu’il y a un CTA.</span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Pour un démarrage au date de début de campagne, la deadline est au j-20.</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Bonne journée et n’hésitez pas si vous avez des questions !</span></span></span><br />
+<br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">{{{Sender.Name}}}<br />
+{{{Sender.Email}}}<br />
+{{{Sender.MobilePhone}}}</span></span></span></body>
+</html>

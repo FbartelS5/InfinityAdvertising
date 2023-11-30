@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opt_out__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Le contact a demandé à ne pas être destinataire de campagnes publicitaires.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Le contact a demandé à ne pas être destinataire de campagnes publicitaires.</inlineHelpText>
+    <label>Opt-out ?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

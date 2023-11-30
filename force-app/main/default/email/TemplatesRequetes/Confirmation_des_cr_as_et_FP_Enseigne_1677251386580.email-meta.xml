@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Confirmation des créas et FP Enseigne</name>
+    <relatedEntityType>Case</relatedEntityType>
+    <style>none</style>
+    <subject>Confirmation des créas de campagnes et FP pour l&apos;enseigne</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

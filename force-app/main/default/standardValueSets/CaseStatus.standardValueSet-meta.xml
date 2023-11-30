@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>On Hold</fullName>
+        <default>false</default>
+        <label>On Hold</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Escalated</fullName>
+        <default>false</default>
+        <label>Escalated</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed</fullName>
+        <default>false</default>
+        <label>Closed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>New</fullName>
+        <default>false</default>
+        <label>New</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Nouveau</fullName>
+        <default>true</default>
+        <label>Nouveau</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>En cours</fullName>
+        <default>false</default>
+        <label>En cours 🟢</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>En attente d&apos;éléments</fullName>
+        <default>false</default>
+        <label>En attente d&apos;éléments</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>En cours de comptage</fullName>
+        <default>false</default>
+        <label>En cours de comptage</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Mise en place campagne</fullName>
+        <default>false</default>
+        <label>Mise en place campagne</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>En attente de dédup/pression co</fullName>
+        <default>false</default>
+        <label>En attente de dédup/pression co</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Statistiques Campagnes</fullName>
+        <default>false</default>
+        <label>Statistiques Campagnes</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>En attente demandeur</fullName>
+        <default>false</default>
+        <label>En attente demandeur</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Terminé</fullName>
+        <default>false</default>
+        <label>Terminé ✅</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>En cours 🟢</fullName>
+        <default>false</default>
+        <label>En cours2</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>A venir</fullName>
+        <default>false</default>
+        <label>A venir 🔵</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Terminé2</fullName>
+        <default>false</default>
+        <label>Terminé2</label>
+        <closed>false</closed>
+    </standardValue>
+</StandardValueSet>

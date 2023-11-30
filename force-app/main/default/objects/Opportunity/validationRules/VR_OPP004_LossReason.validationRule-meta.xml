@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_OPP004_LossReason</fullName>
+    <active>true</active>
+    <description>Un utilisateur ne pas passer le statut de l&apos;opportunité à &quot;Proposition perdue&quot; sans avoir renseigné la  raison.</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(StageName),
+    ISPICKVAL(StageName, &quot;Proposition perdue&quot;),
+    ISBLANK(TEXT(Loss_Reason__c)),
+    NOT($Setup.CS1_ByPass__c.ByPass_Validation_Rules__c)
+)</errorConditionFormula>
+    <errorMessage>Pour passer le statut à &quot;Clôturé&quot;, vous devez indiquer la raison de la perte de l&apos;opportunité.</errorMessage>
+</ValidationRule>

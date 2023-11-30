@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity</fullName>
+    <fields>Name</fields>
+    <fields>RecordTypeId</fields>
+    <fields>Numero_OI_BDC__c</fields>
+    <fields>AccountId</fields>
+    <fields>Amount</fields>
+    <fields>InvoicedAmount__c</fields>
+    <fields>StageName</fields>
+    <fields>InsertionOrderId__c</fields>
+    <label>Opportunité</label>
+</CompactLayout>

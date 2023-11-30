@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Topic__c</fullName>
+    <externalId>false</externalId>
+    <label>Topic</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+                <label>Mobile</label>
+            </value>
+            <value>
+                <fullName>Gestion des campagnes</fullName>
+                <default>true</default>
+                <label>Gestion des campagnes</label>
+            </value>
+            <value>
+                <fullName>Gestion de la facturation</fullName>
+                <default>false</default>
+                <label>Gestion de la facturation</label>
+            </value>
+            <value>
+                <fullName>Gestion des opportunités</fullName>
+                <default>false</default>
+                <label>Gestion des opportunités</label>
+            </value>
+            <value>
+                <fullName>Organisation</fullName>
+                <default>false</default>
+                <label>Organisation</label>
+            </value>
+            <value>
+                <fullName>Report &amp; Dashboard</fullName>
+                <default>false</default>
+                <label>Report &amp; Dashboard</label>
+            </value>
+            <value>
+                <fullName>Connaissance Client</fullName>
+                <default>false</default>
+                <label>Connaissance Client</label>
+            </value>
+            <value>
+                <fullName>Gestion des produits d&apos;oppportunité</fullName>
+                <default>false</default>
+                <label>Gestion des produits d&apos;oppportunité</label>
+            </value>
+            <value>
+                <fullName>Gestion des tâches</fullName>
+                <default>false</default>
+                <label>Gestion des tâches</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

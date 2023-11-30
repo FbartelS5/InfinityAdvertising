@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Bonjour<span style="color:#e74c3c;"> [Insérer le prénom],&nbsp;</span><br />
+<br />
+J’espère que tu vas bien.</span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Je te transmets en PJ les créas de ta campagne concernant la campagne <span style="color:#c0392b;">[Insérer les marques</span>] sur les enseignes&nbsp;{{{Case.Enseignes__c}}} pour validation.</span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Peux-tu stp revenir rapidement vers moi avec ta validation ou tes remarques ?</span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Merci par avance,</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Bonne journée,</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">{{{Sender.Name}}}<br />
+{{{Sender.Email}}}<br />
+{{{Sender.MobilePhone}}}</span></span></span></body>
+</html>

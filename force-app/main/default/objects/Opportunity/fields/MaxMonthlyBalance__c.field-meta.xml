@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MaxMonthlyBalance__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE ( InvoicedAccount__c ,
+&quot;Agence&quot;, Agency__r.MaxMonthlyBalance__c ,
+&quot;Annonceur&quot;, Account.MaxMonthlyBalance__c  ,
+null)</formula>
+    <inlineHelpText>Solde associé au payeur de l&apos;Open Order. Si vide, contactez la comptabilité pour qu&apos;il soit renseigné au niveau du compte payeur.</inlineHelpText>
+    <label>Solde de dépense maximum mensuel</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

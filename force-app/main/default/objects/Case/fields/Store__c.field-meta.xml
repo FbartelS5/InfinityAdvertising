@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Store__c</fullName>
+    <externalId>false</externalId>
+    <label>Enseigne</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Casino</fullName>
+                <default>false</default>
+                <label>Casino</label>
+            </value>
+            <value>
+                <fullName>Cmax</fullName>
+                <default>false</default>
+                <label>Cmax</label>
+            </value>
+            <value>
+                <fullName>Franprix</fullName>
+                <default>false</default>
+                <label>Franprix</label>
+            </value>
+            <value>
+                <fullName>Intermarché</fullName>
+                <default>false</default>
+                <label>Intermarché</label>
+            </value>
+            <value>
+                <fullName>Monoprix</fullName>
+                <default>false</default>
+                <label>Monoprix</label>
+            </value>
+            <value>
+                <fullName>Monoprix &amp; moi</fullName>
+                <default>false</default>
+                <label>Monoprix &amp; moi</label>
+            </value>
+            <value>
+                <fullName>Campagnes Hors catalogue</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Campagnes Hors catalogue</label>
+            </value>
+            <value>
+                <fullName>Casino Supermarché</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Casino Supermarché</label>
+            </value>
+            <value>
+                <fullName>Display AE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Display AE</label>
+            </value>
+            <value>
+                <fullName>Géant Casino</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Géant Casino</label>
+            </value>
+            <value>
+                <fullName>Leader Price</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Leader Price</label>
+            </value>
+            <value>
+                <fullName>Monopix</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Monopix</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TechnicalFees__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(
+INCLUDES(Type__c, &quot;Frais technique push SMS&quot;),
+INCLUDES(Type__c, &quot;Frais technique&quot;)
+),
+true,
+false
+)</formula>
+    <label>Frais techniques ?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MaxMonthlyBalance__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Solde associé au payeur de l&apos;Open Order</inlineHelpText>
+    <label>Solde de dépense maximum mensuel</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

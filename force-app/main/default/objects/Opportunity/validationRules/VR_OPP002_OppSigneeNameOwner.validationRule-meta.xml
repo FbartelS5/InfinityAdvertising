@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_OPP002_OppSigneeNameOwner</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT($Setup.CS1_ByPass__c.ByPass_Validation_Rules__c),
+    NOT($Permission.Admin_Fonctionnel),
+    NOT($Permission.ResponsableSales),
+    ISPICKVAL(StageName,&apos;Signé&apos;),
+    ISCHANGED(Name) || 
+    ISCHANGED(OwnerId)
+)</errorConditionFormula>
+    <errorMessage>Vous ne pouvez pas modifier une opportunité au statut &quot;Signé&quot;. Demandez de l&apos;aide à votre responsable Sales.</errorMessage>
+</ValidationRule>

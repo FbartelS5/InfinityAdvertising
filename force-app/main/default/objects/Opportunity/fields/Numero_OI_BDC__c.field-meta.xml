@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Numero_OI_BDC__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(OR(RecordType.DeveloperName =&apos;Promogaming&apos;,RecordType.DeveloperName =&apos;Promotion_Personnalisee&apos;,RecordType.DeveloperName =&apos;Autres&apos;) , &apos;BDC&apos;, &apos;OI&apos;) +
+TRIM(right(AutoOppId__c, (LEN(AutoOppId__c) - 2)))</formula>
+    <label>Numéro OI/BDC</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

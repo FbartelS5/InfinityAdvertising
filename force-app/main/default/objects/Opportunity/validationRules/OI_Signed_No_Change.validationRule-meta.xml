@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OI_Signed_No_Change</fullName>
+    <active>false</active>
+    <description>Un OI au statut &quot;Signé&quot; ne peut que passer au statut &quot;Clôturé&quot;</description>
+    <errorConditionFormula>AND(
+TEXT(PRIORVALUE(StageName )) = &quot;Signé&quot;,
+ISCHANGED( StageName ),
+NOT(ISPICKVAL(StageName , &quot;Clôturé&quot;)))</errorConditionFormula>
+    <errorMessage>Le statut d’un OI/BDC Signé ne peut pas être changé sauf pour passer en Clôturé et le statut d’un Clôturé ne peut pas être changé</errorMessage>
+</ValidationRule>

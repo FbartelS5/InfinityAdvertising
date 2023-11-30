@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Bonjour<span style="color:#e74c3c;"><strong>&nbsp;[Insérer nom du contact]</strong></span>,&nbsp;</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Je me permets de vous contacter car je vais m’occuper de la mise en place de votre campagne&nbsp;{{{Opportunity.Developer_Name__c}}} sur les enseignes {{{Opportunity.Enseignes__c}}} qui aura lieu du&nbsp;{{{Opportunity.CampaignStartDate__c}}} au&nbsp;{{{Opportunity.CampaignEndDate__c}}}</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Je vous vous prie de bien vouloir m’envoyer les éléments suivant avant le {{{Opportunity.Date_Collecte__c}}} afin de respecter la date de lancement de votre campagne :</span></span></span>
+<ol>
+	<li style="margin-left:32px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Renseigner la fiche technique en PJ en incluant les EANs à animer et leur libellé.</span></span></span></li>
+	<li style="margin-left:32px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Nous partager tous les éléments suivants afin que nous réalisions vos créas à la charte de l’enseigne :</span></span></span>
+	<ul style="list-style-type:circle">
+		<li style=""><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Le brief créa précis de vos attentes (car le studio nous accorde 2 aller/retour maximum)</span></span></span></li>
+		<li style=""><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Le logo de marque</span></span></span></li>
+		<li style=""><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Les packshots (2 ou 3) par ordre de priorité </span></span></span></li>
+		<li style=""><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">L’arrière-plan/fond que vous souhaitez sur la créa ou la couleur souhaitée si c’est un fond uni</span></span></span></li>
+		<li style=""><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">La typographie de votre marque et éventuels slogans</span></span></span></li>
+		<li style=""><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">D’éventuels éléments additionnels que vous souhaiteriez</span></span></span></li>
+	</ul>
+	</li>
+</ol>
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Voilà, n’hésitez surtout pas si vous avez des questions <span lang="EN-US" style="font-family:&quot;Segoe UI Emoji&quot;,sans-serif">😊</span></span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Bonne journée,<br />
+<br />
+{{{Sender.Name}}}<br />
+{{{Sender.Email}}}<br />
+{{{Sender.MobilePhone}}}</span></span></span></body>
+</html>

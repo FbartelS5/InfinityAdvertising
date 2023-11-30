@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Declenche_Tache__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Déclenche tâche à la clôture</label>
+    <referenceTo>TacheTemplate__c</referenceTo>
+    <relationshipLabel>Templates de tâches dépendantes</relationshipLabel>
+    <relationshipName>Tache_declencheuse</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

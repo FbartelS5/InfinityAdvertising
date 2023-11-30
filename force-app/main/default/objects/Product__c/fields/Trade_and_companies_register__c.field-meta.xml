@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trade_and_companies_register__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(BrandName__c,
+&quot;Distribution Casino France&quot;, &quot;Saint-Etienne&quot;,
+&quot;Leader Price&quot;, &quot;Melun&quot;,
+&quot;Franprix&quot;, &quot;Créteil&quot;,
+&quot;Monoprix&quot;, &quot;Nanterre&quot;,
+&quot;&quot;)</formula>
+    <label>RCS</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

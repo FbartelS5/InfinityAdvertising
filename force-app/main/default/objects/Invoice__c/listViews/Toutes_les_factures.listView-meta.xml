@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Toutes_les_factures</fullName>
+    <columns>OI_Number__c</columns>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>TotalExcludingVat__c</columns>
+    <columns>TotalWithVat__c</columns>
+    <columns>Paid__c</columns>
+    <columns>Status__c</columns>
+    <columns>InvoiceTerm__c</columns>
+    <columns>InvoiceDate__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>PaymentDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Paid__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Toutes les factures</label>
+</ListView>

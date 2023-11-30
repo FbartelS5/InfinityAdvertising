@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_BLOQUE</fullName>
+    <active>false</active>
+    <errorConditionFormula>(ISPICKVAL( Agency__r.CreditManagementStatus__c, &quot;BLOQUE&quot;) ||
+ISPICKVAL( Account.CreditManagementStatus__c, &quot;BLOQUE&quot;))</errorConditionFormula>
+    <errorMessage>Le statut Crédit Management de l&apos;annonceur/agence payeur est bloqué (voir avec Jean-Bernard pour débloquer si besoin).</errorMessage>
+</ValidationRule>

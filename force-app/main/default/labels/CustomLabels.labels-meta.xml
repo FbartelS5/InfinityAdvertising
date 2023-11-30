@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Email_Equipe_Mesure</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email_Equipe_Mesure</shortDescription>
+        <value>marina.gaultier@infinity-advertising.fr.invalid</value>
+    </labels>
+    <labels>
+        <fullName>OpportunityPromotionPersonnalisee</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OpportunityPromotionPersonnalisee</shortDescription>
+        <value>Promotion_Personnalisee</value>
+    </labels>
+    <labels>
+        <fullName>Owner_Requete_Extension_audience_Retail_Media</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Owner Requête Extention d&apos;audience/Retail Media</shortDescription>
+        <value>paula.alves@relevanc.com.invalid</value>
+    </labels>
+</CustomLabels>

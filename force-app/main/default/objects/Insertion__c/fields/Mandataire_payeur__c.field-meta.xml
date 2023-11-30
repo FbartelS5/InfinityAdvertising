@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandataire_payeur__c</fullName>
+    <description>Utilisé en reporting</description>
+    <externalId>false</externalId>
+    <formula>IF( 
+ ISPICKVAL( Opportunity__r.InvoicedAccount__c , &quot;Agence&quot; ),  
+ Opportunity__r.Agency__r.Name ,
+ Opportunity__r.Account.Name 
+)</formula>
+    <label>Mandataire payeur</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

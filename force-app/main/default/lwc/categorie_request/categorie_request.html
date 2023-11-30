@@ -1,0 +1,87 @@
+<template>
+    <!-- 
+    <div>
+        <lightning-tree-grid
+            columns={gridColumns}
+            data={gridData}
+            is-loading={isLoading}
+            key-field="Id"
+            ontoggle={handleOnToggle}
+            selected-rows={selectedRows}
+            onrowselection={handleRowSelection}
+            >
+
+        ></lightning-tree-grid>
+    </div>-->
+
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" 
+    aria-labelledby="element-with-table-label other-element-with-table-label">
+<thead>
+<tr class="slds-line-height_reset">
+
+    <th class="" scope="col">
+        <div class="slds-truncate" title=""></div>
+    </th>
+ 
+ <th class="" scope="col">
+   <div class="slds-truncate" title="Product">CATEGORY</div>
+ </th>
+ 
+</tr>
+</thead>
+<tbody>
+ <template if:true={universalList}>
+
+     <template for:each={universalList} for:item="c">
+         <tr key={c}  class="slds-hint-parent">
+             <td data-label="" >
+               <template if:false={c.isShown}>
+                 <div data-id={c.universeID}  onclick={handleShow}>
+                   <span>
+                      <lightning-icon icon-name="utility:chevronright" alternative-text="Accordian"  size="xx-small"></lightning-icon>
+                   </span>
+                </div>
+               </template>
+               <template if:true={c.isShown}>
+                 <div data-id={c.universeID}  onclick={handleShow}>
+                   <span>
+                      <lightning-icon icon-name="utility:chevrondown" alternative-text="Accordian"  size="xx-small"></lightning-icon>
+                   </span>
+                </div>
+               </template>
+               
+                 <!--<div class="slds-truncate" data-id={c.cCItemId}  onclick={handleShow}><span>Expand</span></div>-->
+             </td>
+
+             <td data-label="Name">
+                                  
+                <div class="slds-truncate slds-cell-wrap" title="Name">{c.name}</div>
+              </td>
+            
+            </tr>
+
+            <tr key={c}  >  
+                <td colspan="11"> 
+            <template if:true={c.isShown}>
+                
+                <template if:true={c.rayonlist}>
+
+                    <template for:each={c.rayonlist} for:item="s">
+                        <tr key={s}  class="slds-hint-parent">
+                            <td data-label="checkBox"  style><div class="slds-truncate" title="Select Serial Number"> <lightning-input checked={s.isChecked} data-uid={s.universeID} data-id={s.rayonID} type="checkbox" onchange={handleSelectLeft}></lightning-input></div></td>
+                            <td data-label="Serial Numbers"><div class="slds-truncate" title="Serial Numbers">{s.name}</div></td>
+                        </tr>
+                    </template>
+                 
+                 
+                        
+               
+            </template>
+         
+            </template></td></tr>
+            </template>
+     </template>
+</tbody>
+</table>  
+</template>

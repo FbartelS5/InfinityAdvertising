@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_de_fin_theorique__c</fullName>
+    <description>Date remplie automatiquement lors de la génération de la requête par la date de fin théorique du produit d&apos;opportunité lié à la requête.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date remplie automatiquement lors de la génération de la requête par la date de fin théorique du produit d&apos;opportunité lié à la requête.</inlineHelpText>
+    <label>Date de fin théorique</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

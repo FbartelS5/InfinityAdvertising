@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_BillingAddress</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR(
+ ISBLANK ( BillingCountry ),
+ ISBLANK ( BillingStreet ),
+ ISBLANK ( BillingPostalCode ),
+ ISBLANK ( BillingCity )
+)</errorConditionFormula>
+    <errorMessage>L&apos;adresse de facturation du compte doit être renseignée</errorMessage>
+</ValidationRule>

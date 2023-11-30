@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_Enregistrement__c</fullName>
+    <externalId>false</externalId>
+    <label>Type de requête/opportunité</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Objet__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Retail_Media_OnSite</fullName>
+                <default>false</default>
+                <label>Retail Media onSite</label>
+            </value>
+            <value>
+                <fullName>Extension_audience</fullName>
+                <default>false</default>
+                <label>Extension d&apos;audience</label>
+            </value>
+            <value>
+                <fullName>Promogaming</fullName>
+                <default>false</default>
+                <label>Promogaming</label>
+            </value>
+            <value>
+                <fullName>Promotion_personnalisee</fullName>
+                <default>false</default>
+                <label>Promotion personnalisée</label>
+            </value>
+            <value>
+                <fullName>Autres</fullName>
+                <default>false</default>
+                <label>Autres</label>
+            </value>
+            <value>
+                <fullName>Search</fullName>
+                <default>false</default>
+                <label>Search</label>
+            </value>
+            <value>
+                <fullName>Frais_Graphiques</fullName>
+                <default>false</default>
+                <label>Frais Graphiques</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <controllingFieldValue>Case</controllingFieldValue>
+            <valueName>Retail_Media_OnSite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <controllingFieldValue>Case</controllingFieldValue>
+            <valueName>Extension_audience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <valueName>Promogaming</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <controllingFieldValue>Case</controllingFieldValue>
+            <valueName>Promotion_personnalisee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <controllingFieldValue>Case</controllingFieldValue>
+            <valueName>Autres</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity</controllingFieldValue>
+            <controllingFieldValue>Case</controllingFieldValue>
+            <valueName>Search</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Case</controllingFieldValue>
+            <valueName>Frais_Graphiques</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

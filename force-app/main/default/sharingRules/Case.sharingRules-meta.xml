@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Cases_Only</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Cases Only</label>
+        <sharedTo>
+            <group>Cases_only</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Demande Mise en Ligne - Activation Data,Demande Mise en Ligne - Ecommerce,Vérification volumes activation data</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>InternalUsers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Utilisateurs internes</label>
+        <sharedTo>
+            <group>Tous_sauf_Case_Only</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vérification volumes activation data,Facturation,Brief Créa,Mesure,Demande Mise en Ligne - Ecommerce,Segment Data,Demande Mise en Ligne - Activation Data,Demande Mise en Ligne - Promogaming</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>S5_Cases_Only</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This sharing rule is created by SpringFive to give access to users with Cases Only Profile access to cases of type Extension d&apos;audience and Retail Media OnSite.</description>
+        <label>S5_Cases Only</label>
+        <sharedTo>
+            <group>Cases_only</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Extension d&apos;audience,Retail Media OnSite</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>S5_UtilisateursInternes</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This sharing rules gives all users expect traders Read/Write access to all types of cases (with new record types)</description>
+        <label>S5_UtilisateursInternes</label>
+        <sharedTo>
+            <group>Tous_sauf_Case_Only</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Extension d&apos;audience,Frais Graphiques,Promotion Personnalisée,Mesure,Retail Media OnSite,Search</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

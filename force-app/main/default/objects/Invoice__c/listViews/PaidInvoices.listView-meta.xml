@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PaidInvoices</fullName>
+    <columns>OI_Number__c</columns>
+    <columns>Account__c</columns>
+    <columns>BU__c</columns>
+    <columns>Sales_OI__c</columns>
+    <columns>NAME</columns>
+    <columns>TotalExcludingVat__c</columns>
+    <columns>Status__c</columns>
+    <columns>SentInvoice__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>InvoiceDate__c</columns>
+    <columns>PaymentDate__c</columns>
+    <columns>BillingEntity__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PaymentDate__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Factures réglées</label>
+</ListView>

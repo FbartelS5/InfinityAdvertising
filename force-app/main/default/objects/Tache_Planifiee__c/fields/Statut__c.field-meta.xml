@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Statut__c</fullName>
+    <externalId>false</externalId>
+    <label>Statut</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Planifiee</fullName>
+                <default>false</default>
+                <label>Planifiée</label>
+            </value>
+            <value>
+                <fullName>Tâche créée</fullName>
+                <default>false</default>
+                <label>Tâche créée</label>
+            </value>
+            <value>
+                <fullName>Echec de création</fullName>
+                <default>false</default>
+                <label>Echec de création</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

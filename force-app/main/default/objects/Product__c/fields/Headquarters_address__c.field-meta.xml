@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Headquarters_address__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(BrandName__c,
+&quot;Distribution Casino France&quot;, &quot;1 cours Antoine Guichard à Saint-Etienne (42000)&quot;,
+&quot;Leader Price&quot;, &quot;Route d’Aubepierre, 77220 Gretz Armainvilliers&quot;,
+&quot;Franprix&quot;, &quot;2 route du Plessis à Chennevières-sur-Marne (94430)&quot;,
+&quot;Monoprix&quot;, &quot;14-16 rue Marc Bloch à Clichy (92110)&quot;,
+&quot;&quot;)</formula>
+    <label>Adresse siège social</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Offert__c = true, 0,
+
+
+  IF ( TEXT( PricingModel__c ) == &quot;CPM&quot; , UnitPrice__c * Quantity__c /1000 * (1- CustomDiscount__c ), 
+  
+  IF ( OR(TEXT( PricingModel__c ) == &quot;Prix Unitaire&quot;, TEXT( PricingModel__c ) == &quot;Forfait&quot;), UnitPrice__c * Quantity__c  * (1- CustomDiscount__c ), 
+
+  IF ( TEXT( PricingModel__c ) == &quot;Montant&quot; ,  Montant__c , 
+  
+  IF ( TEXT( PricingModel__c ) == &quot;% de la générosité&quot;,   Total_Frais_de_performance__c ,
+ 
+  IF ( TEXT( PricingModel__c ) == &quot;Euros par coupon&quot; , UnitPrice__c * Nb_de_coupons__c * (1- CustomDiscount__c ) ,0
+
+      ) 
+      )
+      )
+      )
+      )
+      )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

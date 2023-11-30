@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PricingModel__c</fullName>
+    <externalId>false</externalId>
+    <label>Mode de com</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type_de_produit__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CPM</fullName>
+                <default>false</default>
+                <label>CPM</label>
+            </value>
+            <value>
+                <fullName>Forfait</fullName>
+                <default>true</default>
+                <label>Forfait</label>
+            </value>
+            <value>
+                <fullName>Prix unitaire</fullName>
+                <default>false</default>
+                <label>Prix unitaire</label>
+            </value>
+            <value>
+                <fullName>Euros par coupon</fullName>
+                <default>false</default>
+                <label>Euros par coupon</label>
+            </value>
+            <value>
+                <fullName>Montant</fullName>
+                <default>false</default>
+                <label>Montant</label>
+            </value>
+            <value>
+                <fullName>% de la générosité</fullName>
+                <default>false</default>
+                <label>% de la générosité</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Frais_de_media</controllingFieldValue>
+            <controllingFieldValue>Search</controllingFieldValue>
+            <controllingFieldValue>Autres</controllingFieldValue>
+            <controllingFieldValue>Retail_Media_OnSite</controllingFieldValue>
+            <controllingFieldValue>Frais_Graphiques</controllingFieldValue>
+            <controllingFieldValue>Mesure</controllingFieldValue>
+            <controllingFieldValue>Extension_Audience</controllingFieldValue>
+            <controllingFieldValue>Promogaming Multimarques</controllingFieldValue>
+            <controllingFieldValue>Promogaming Monomarque</controllingFieldValue>
+            <controllingFieldValue>Frais_de_setup</controllingFieldValue>
+            <valueName>Forfait</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Search</controllingFieldValue>
+            <controllingFieldValue>Autres</controllingFieldValue>
+            <controllingFieldValue>Retail_Media_OnSite</controllingFieldValue>
+            <controllingFieldValue>Extension_Audience</controllingFieldValue>
+            <valueName>CPM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Autres</controllingFieldValue>
+            <controllingFieldValue>Extension_Audience</controllingFieldValue>
+            <valueName>Prix unitaire</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Autres</controllingFieldValue>
+            <controllingFieldValue>Generosite</controllingFieldValue>
+            <valueName>Montant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Frais de Gestion</controllingFieldValue>
+            <valueName>Euros par coupon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Frais_de_performance</controllingFieldValue>
+            <valueName>% de la générosité</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,265 @@
+<aura:component controller="io_controller" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="filters" type="Object"/>
+    <aura:attribute name="BU" type="String"/>
+    <aura:attribute name="itemType" type="String"/>
+    <aura:attribute name="loading" type="Boolean"/>
+    <aura:attribute name="items" type="Object"/>
+    <aura:attribute name="btnDisabled" type="Boolean" default="true"/>
+    <aura:registerEvent name="CloseParentModal" type="c:CloseParentModal"/>
+    
+    <aura:attribute name="catalogTypes" type="List" default="[
+        {'label': 'Produits commerciaux', 'value': 'SalesProduct'},
+        {'label': 'Produits d\'opération', 'value': 'TechnicalProduct'}
+    ]"/>
+    <aura:attribute name="catalogType" type="String" default="SalesProduct"/>
+    
+    <aura:attribute name="typeWarnings" type="String" default=""/>
+    <aura:attribute name="mediumWarnings" type="String" default=""/>
+    
+    <aura:attribute name="activeItem" type="String"/>
+    <aura:attribute name="availableItems"  type="List" default="[]"/> 
+    <aura:attribute name="availableTypes" type="List" default="[]"/>
+    <aura:attribute name="availableMediums" type="List" default="[]"/>
+    <aura:attribute name="availableDevices" type="List" default="[]"/>
+    <aura:attribute name="availableTargeting" type="List" default="[]"/>
+    <aura:attribute name="availablePricing" type="List" default="[]"/>
+    <aura:attribute name="availableFormat" type="List" default="[]"/>
+    <aura:attribute name="availableStatsPromo" type="List" default="[]"/>
+    <aura:attribute name="availableBrandName" type="List" default="[]"/>
+    <aura:attribute name="availableDiscount" type="Integer" default="0"/>
+    <aura:attribute name="availablePromogamingTypes" type="List" default="[]"/>
+    <aura:attribute name="availableRetailMediaOnsiteTypes" type="List" default="[]"/>
+    <aura:attribute name="isPromogaming" type="Boolean" default="false"/>
+    <aura:attribute name="isRetail" type="Boolean" default="false"/>
+    <aura:attribute name="isRetailMediaOnsite" type="Boolean" default="true"/>
+    
+    
+    <aura:attribute name="selectedTypes" type="List" default="[]"/>
+    <aura:attribute name="selectedMediums" type="List" default="[]"/>
+    <aura:attribute name="selectedDevices" type="List" default="[]"/>
+    <aura:attribute name="selectedTargeting" type="String" default=""/>
+    <aura:attribute name="selectedPricing" type="String" default=""/>
+    <aura:attribute name="selectedFormat" type="String" default=""/>
+    <aura:attribute name="selectedEAN" type="String" default=""/>
+    <aura:attribute name="selectedAmountExclTaxes" type="String" default=""/>
+    <aura:attribute name="selectedStatsPromo" type="String" default=""/>
+    <aura:attribute name="selectedOffert" type="Boolean" default="false"/>
+    <aura:attribute name="selectedBrandName" type="String" default=""/>
+    <aura:attribute name="selectedFrameworkAgreement" type="String" default=""/>
+    <aura:attribute name="selectedContractProductName" type="String" default=""/>
+    <aura:attribute name="selectedPromogamingTypes" type="List" default="[]"/>
+    <aura:attribute name="selectedRetailMediaOnsiteTypes" type="List" default="[]"/>
+    
+    <aura:attribute name="discount" type="Decimal" default=""/>
+    <aura:attribute name="startDate" type="String" default=""/>
+    <aura:attribute name="endDate" type="String" default=""/>
+    
+    <aura:attribute name="oppRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    
+    <force:recordData aura:id="recordLoader"
+        recordId="{!v.recordId}"
+        fields="CampaignStartDate__c,CampaignEndDate__c"
+        targetFields="{!v.oppRecord}"
+        targetError="{!v.recordLoadError}"
+    />
+    
+    <aura:handler name ="init" value="{!this}" action="{!c.doInit}" />
+    <div class="c-container">
+        <lightning:layout multipleRows="true">
+            <lightning:layoutItem size="4" padding="horizontal-small"> 
+                <lightning:select aura:id="filterBU" name="option" label="BU" onchange="{!c.buChange}">
+                    <aura:iteration items="{!v.filters.BU__c}" var="o">
+                        <option text="{!o.label}" value="{!o.value}" selected="{!o.selected}" />
+                    </aura:iteration>
+                </lightning:select>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="6" padding="horizontal-small"> 
+                <lightning:radioGroup aura:id="catalogTypeChoice"
+                    label="Catalogue"
+                    onchange="{! c.handleCatalogChange }"
+                    options="{! v.catalogTypes }"
+                    value="{! v.catalogType }"
+                    type="button"
+                />
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout>
+            <lightning:layoutItem size="12" padding="around-small"> 
+                <aura:if isTrue="{! not(v.loading) }">
+                    <lightning:accordion aura:id="accordion" activeSectionName="{!v.activeItem}"  onsectiontoggle="{! c.handleSectionToggle }">
+                        <lightning:accordionSection class="slds-hide" name="hidden"/>
+                        <aura:iteration items="{!v.availableItems}" var="i">
+                            <lightning:accordionSection name="{!i}" label="{!i}" >
+                                <div class="slds-clearfix">
+                                    <lightning:buttonIcon iconName="utility:close" variant="bare" onclick="{! c.closeSection }" alternativeText="Close" class="slds-float_right closeBtn" />
+                                </div>
+
+
+                                <aura:if isTrue="{!i == v.activeItem }">
+                                    <lightning:spinner variant="brand" size="small" aura:id="spin" class="slds-hide"/>
+                                    <lightning:recordEditForm
+                                        aura:id="recordForm"
+                                        onload="{!c.handleLoad}"
+                                        onsuccess="{!c.handleSuccess}"
+                                        onsubmit="{!c.handleSubmit}"
+                                        recordTypeId="{!v.recTypeId}"
+                                        objectApiName="Product__c"
+                                        density="comfy"
+                                    >
+                                        
+                                        <lightning:messages/>
+                                        
+                                        <lightning:inputField fieldName="Name"  value="{!i}" />
+                                        
+                                        <lightning:dualListbox aura:id="typesInput"
+                                            value="{!v.selectedTypes}" 
+                                            label="Types" 
+                                            sourceLabel="Disponible" 
+                                            selectedLabel="Selectionné" 
+                                            options="{!v.availableTypes}" 
+                                            onchange="{!c.handleTypeSelected}"
+                                            required="true"
+                                            
+                                            class="{! (v.catalogType == 'SalesProduct') ? 'slds-hiden':''}"
+                                        />
+
+                                        
+                                        <!-- <lightning:select label="Ciblage:" aura:id="targetingInput" onchange="{! c.handleTargetingSelected }" value="{!v.selectedTargeting}" required="true">
+                                            <option text="- Aucun -" value="none"/>
+                                            <aura:iteration items="{!v.availableTargeting}" var="option">
+                                                <option text="{!option.label}" value="{!option.id}" selected="{!option.selected}"/>
+                                            </aura:iteration>
+                                        </lightning:select> -->
+                                        
+                                        <lightning:select label="Mode de com:" aura:id="pricingInput" onchange="{! c.handlePricingSelected }" value="{!v.selectedPricing}" required="true" >
+                                            <option text="- Aucun -" value="none"/>
+                                            <aura:iteration items="{!v.availablePricing}" var="option">
+                                                <option text="{!option.label}" value="{!option.id}" selected="{!option.selected}"/>
+                                            </aura:iteration>
+                                        </lightning:select>
+
+                                        <lightning:select label="Support :" aura:id="mediumsInput" name="option" onchange="{! c.handleMediumSelected}" value="{!v.selectedMediums}" required="true" class="{! (v.catalogType == 'SalesProduct') ? 'slds-hiden':''}">
+                                            <option text="- Aucun -" value="none"/>
+                                            <aura:iteration items="{!v.availableMediums}" var="option">
+                                                <option text="{!option.label}" value="{!option.id}" selected="{!option.selected}"/>
+                                            </aura:iteration>
+                                        </lightning:select>
+
+                                        
+                                        <aura:if isTrue="{!v.isRetail}">
+                                        <lightning:select label="Format:" aura:id="formatInput" name="option" onchange="{! c.handleFormatSelected }" value="{!v.selectedFormat}" required="true">
+                                            <option text="- Aucun -" value="none"/>
+                                            <aura:iteration items="{!v.availableFormat}" var="option">
+                                                <option text="{!option.label}" value="{!option.id}" selected="{!option.selected}"/>
+                                            </aura:iteration>
+                                        </lightning:select>
+                                    </aura:if>
+                        
+                                        <aura:if isTrue="{!v.isPromogaming}">
+                                        <lightning:select label="Type Promogaming:" aura:id="promogamingTypesInput" onchange="{! c.handlePromogamingTypesSelected }" value="{!v.selectedPromogamingTypes}" required="true">
+                                            <option text="- Aucun -" value="none"/>
+                                            <aura:iteration items="{!v.availablePromogamingTypes}" var="option">
+                                                <option text="{!option.label}" value="{!option.id}" selected="{!option.selected}"/>
+                                            </aura:iteration>
+                                        </lightning:select>
+                                        </aura:if>
+                                        
+                                        <aura:if isTrue="{!catalogType == 'SalesProduct'}">
+                                            <lightning:dualListbox aura:id="devicesInput"
+                                                value="{!v.selectedDevices}" 
+                                                label= "Devices" 
+                                                sourceLabel="Disponible" 
+                                                selectedLabel="Selectionné" 
+                                                options="{!v.availableDevices}" 
+                                                required="true"
+                                                onchange="{!c.handleDeviceSelected}"
+                                                disabled="{!v.catalogType == 'SalesProduct'}"
+                                                class="{!(v.catalogType == 'SalesProduct') ? 'slds-hide':''}"
+                                            />
+                                        </aura:if>
+                                        
+                                        <aura:if isTrue="{!isRetailMediaOnsite == True}">
+                                            <lightning:dualListbox aura:id="retailMediaOnsiteTypesInput"
+                                                value="{!v.selectedRetailMediaOnsiteTypes}" 
+                                                label= "Retail Media Onsite" 
+                                                sourceLabel="Disponible" 
+                                                selectedLabel="Selectionné" 
+                                                options="{!v.availableRetailMediaOnsiteTypes}" 
+                                                required="true"
+                                                onchange="{!c.handleRetailTypesSelected}"
+                                                disabled="{!isRetailMediaOnsite == False}"
+                                                class="{!(v.isRetailMediaOnsite == False) ? 'slds-hide':''}"
+                                            />
+                                        </aura:if>
+
+                                        <div class="{! or(v.typeWarnings.length > 0, v.mediumWarnings.length > 0) ? 'slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning' : 'slds-hide'}" role="alert">
+                                            <h2>
+                                                <aura:if isTrue="{!v.typeWarnings.length > 0}"><b>Les types suivants seront ignorés car non disponibles pour les critères indiqués: </b><br/>{!v.typeWarnings}</aura:if><br/>
+                                                <aura:if isTrue="{!v.mediumWarnings.length > 0}"><b>Les supports suivants seront ignorés car non disponibles pour les critères indiqués: </b><br/>{!v.mediumWarnings}</aura:if>
+                                            </h2>
+                                        </div>
+                                        
+                                        <lightning:layout multipleRows="true">
+                                            <!-- <lightning:layoutItem size="12" >
+                                                <lightning:inputField fieldName="Description__c" class="{!(v.isPromogagming == True) ? 'slds-hide':''}"/>
+                                            </lightning:layoutItem> -->
+                                            <lightning:layoutItem size="6" >
+                                                <lightning:inputField fieldName="UnitPrice__c"/>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="6">
+                                                <lightning:inputField fieldName="Quantity__c" value="{!(i == 'Animation' || v.selectedPricing == 'Forfait') ? 1:null}" class="{!(i == 'Animation'|| v.selectedPricing == 'Forfait') ? 'slds-hide':''}"/>
+                                                <lightning:inputField fieldName="Number_of_POS__c"  class="{!(i != 'Animation') ? 'slds-hide':''}"/>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="12" >
+                                                <lightning:input value="{!v.availableDiscount}" type="number" formatter="percent-fixed" step="0.01" label="Remise" fieldName="Discount__c"/>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="6">
+                                                <lightning:input type="date" label="Date de début"  value="{!v.startDate}" aura:id="inputStartDate"/>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="6">
+                                                <lightning:input type="date" label="Date de fin" value="{!v.endDate}" aura:id="inputEndDate"/>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="12">
+                                                <lightning:input value="{!v.selectedAmountExclTaxes}" type="number" formatter="currency" label="Montant HT" fieldName="Amount_Excl_taxes__c" class="{!(v.activeItem == 'Frais technique Web to store' || v.activeItem == 'Mesure 5% NIP 3WRelevanc') ? '':'slds-hide'}"/>
+                                                <lightning:input value="{!v.selectedEAN}" type="text" label="EAN" fieldName="EAN__c" class="{!(v.activeItem == 'Frais technique Web to store') ? '':'slds-hide'}"/>
+                                            </lightning:layoutItem> 
+                                            <lightning:layoutItem size="12">
+                                                <lightning:select value="{!v.selectedStatsPromo}" aura:id="StatsPromoInput" onchange="{!c.handleStatsPromoSelected}" label="Module" class="{!(v.activeItem == 'Mesure stats promo 3WRelevanc') ? '':'slds-hide'}">
+                                                    <option text="- Aucun -" value="none"/>
+                                                    <aura:iteration items="{!v.availableStatsPromo}" var="option">
+                                                        <option text="{!option.label}" value="{!option.value}" selected=""/>
+                                                    </aura:iteration>
+                                                </lightning:select>
+                                                <lightning:input checked="{!v.selectedOffert}" type="checkbox" label="Offert" name="offert"/><!--  -->
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="12">
+                                                <lightning:select value="{!v.selectedBrandName}" aura:id="BrandNameInput" onchange="{!c.handleBrandNameSelected}" label="Nom enseigne" class="{!(v.activeItem == 'Frais technique Web to store') ? '':'slds-hide'}">
+                                                    <option text="- Aucun -" value="none"/>
+                                                    <aura:iteration items="{!v.availableBrandName}" var="option">
+                                                        <option text="{!option.label}" value="{!option.value}" selected=""/>
+                                                    </aura:iteration>
+                                                </lightning:select>
+                                                <lightning:input value="{!v.selectedFrameworkAgreement}" type="text" label="N° accord-cadre" name="FrameworkAgreement" class="{!(v.activeItem == 'Frais technique Web to store') ? '':'slds-hide'}"/>
+                                                <lightning:input value="{!v.selectedContractProductName}" type="text" label="Nom produit de contrat" name="ContractProductName" class="{!(v.activeItem == 'Frais technique Web to store') ? '':'slds-hide'}"/>
+                                            </lightning:layoutItem>
+                                        </lightning:layout>
+                                        
+                                        <lightning:inputField fieldName="Opportunity__c" value="{!v.recordId}" class="slds-hide"/>
+                                        
+                                        <div class="slds-m-top_medium">
+                                            <lightning:button variant="brand" type="submit" name="save" label="Save" />
+                                        </div>
+                                    </lightning:recordEditForm>
+                                </aura:if>
+                            </lightning:accordionSection>
+                        </aura:iteration>
+                    </lightning:accordion>
+                    <aura:set attribute="else">
+                        <lightning:spinner variant="brand" size="medium" />
+                    </aura:set>
+                </aura:if>                
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

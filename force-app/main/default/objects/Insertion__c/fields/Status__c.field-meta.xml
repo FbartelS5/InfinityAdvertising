@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Statut</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>OI facturé</fullName>
+                <default>false</default>
+                <label>OI facturé</label>
+            </value>
+            <value>
+                <fullName>Clôturé</fullName>
+                <default>false</default>
+                <label>Clôturé</label>
+            </value>
+            <value>
+                <fullName>Signé</fullName>
+                <default>false</default>
+                <label>Signé</label>
+            </value>
+            <value>
+                <fullName>Signé/contrôlé</fullName>
+                <default>false</default>
+                <label>Signé/contrôlé</label>
+            </value>
+            <value>
+                <fullName>OI signé/contrôlé</fullName>
+                <default>false</default>
+                <label>OI signé/contrôlé</label>
+            </value>
+            <value>
+                <fullName>OI clôturé</fullName>
+                <default>false</default>
+                <label>OI clôturé</label>
+            </value>
+            <value>
+                <fullName>OI signé</fullName>
+                <default>false</default>
+                <label>OI signé</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

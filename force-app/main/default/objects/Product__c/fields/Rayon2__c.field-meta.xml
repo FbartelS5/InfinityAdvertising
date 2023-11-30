@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rayon2__c</fullName>
+    <externalId>false</externalId>
+    <label>Rayon</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Accessoires Mode et Bagages</fullName>
+                <default>false</default>
+                <label>Accessoires Mode et Bagages</label>
+            </value>
+            <value>
+                <fullName>Aménagement extérieur</fullName>
+                <default>false</default>
+                <label>Aménagement extérieur</label>
+            </value>
+            <value>
+                <fullName>Ampoules et Piles</fullName>
+                <default>false</default>
+                <label>Ampoules et Piles</label>
+            </value>
+            <value>
+                <fullName>Animalerie</fullName>
+                <default>false</default>
+                <label>Animalerie</label>
+            </value>
+            <value>
+                <fullName>Animalerie en vrac</fullName>
+                <default>false</default>
+                <label>Animalerie en vrac</label>
+            </value>
+            <value>
+                <fullName>Apéritif, Entrée et Snacking</fullName>
+                <default>false</default>
+                <label>Apéritif, Entrée et Snacking</label>
+            </value>
+            <value>
+                <fullName>Apéritifs</fullName>
+                <default>false</default>
+                <label>Apéritifs</label>
+            </value>
+            <value>
+                <fullName>Apéritifs et Chips</fullName>
+                <default>false</default>
+                <label>Apéritifs et Chips</label>
+            </value>
+            <value>
+                <fullName>Apéritifs et Digestifs</fullName>
+                <default>false</default>
+                <label>Apéritifs et Digestifs</label>
+            </value>
+            <value>
+                <fullName>Appareils reconditionnés</fullName>
+                <default>false</default>
+                <label>Appareils reconditionnés</label>
+            </value>
+            <value>
+                <fullName>Apprentissage</fullName>
+                <default>false</default>
+                <label>Apprentissage</label>
+            </value>
+            <value>
+                <fullName>Arts de la table et Ustensiles</fullName>
+                <default>false</default>
+                <label>Arts de la table et Ustensiles</label>
+            </value>
+            <value>
+                <fullName>Aspirateur</fullName>
+                <default>false</default>
+                <label>Aspirateur</label>
+            </value>
+            <value>
+                <fullName>Auto et Moto</fullName>
+                <default>false</default>
+                <label>Auto et Moto</label>
+            </value>
+            <value>
+                <fullName>Bagagerie</fullName>
+                <default>false</default>
+                <label>Bagagerie</label>
+            </value>
+            <value>
+                <fullName>Barbecue, Plancha et Charbon</fullName>
+                <default>false</default>
+                <label>Barbecue, Plancha et Charbon</label>
+            </value>
+            <value>
+                <fullName>BD, Manga et Jeunesse</fullName>
+                <default>false</default>
+                <label>BD, Manga et Jeunesse</label>
+            </value>
+            <value>
+                <fullName>Bébé</fullName>
+                <default>false</default>
+                <label>Bébé</label>
+            </value>
+            <value>
+                <fullName>Bières et Cidres</fullName>
+                <default>false</default>
+                <label>Bières et Cidres</label>
+            </value>
+            <value>
+                <fullName>Bijoux et Montre</fullName>
+                <default>false</default>
+                <label>Bijoux et Montre</label>
+            </value>
+            <value>
+                <fullName>Biscuit et Confiserie</fullName>
+                <default>false</default>
+                <label>Biscuit et Confiserie</label>
+            </value>
+            <value>
+                <fullName>Biscuits et Compotes</fullName>
+                <default>false</default>
+                <label>Biscuits et Compotes</label>
+            </value>
+            <value>
+                <fullName>Boisson Bio</fullName>
+                <default>false</default>
+                <label>Boisson Bio</label>
+            </value>
+            <value>
+                <fullName>Boissons</fullName>
+                <default>false</default>
+                <label>Boissons</label>
+            </value>
+            <value>
+                <fullName>Boissons Bio</fullName>
+                <default>false</default>
+                <label>Boissons Bio</label>
+            </value>
+            <value>
+                <fullName>Boucherie</fullName>
+                <default>false</default>
+                <label>Boucherie</label>
+            </value>
+            <value>
+                <fullName>Bricolage</fullName>
+                <default>false</default>
+                <label>Bricolage</label>
+            </value>
+            <value>
+                <fullName>Bûches de Noel</fullName>
+                <default>false</default>
+                <label>Bûches de Noel</label>
+            </value>
+            <value>
+                <fullName>Café et Filtres</fullName>
+                <default>false</default>
+                <label>Café et Filtres</label>
+            </value>
+            <value>
+                <fullName>Café et Thé</fullName>
+                <default>false</default>
+                <label>Café et Thé</label>
+            </value>
+            <value>
+                <fullName>Cave et Brasserie</fullName>
+                <default>false</default>
+                <label>Cave et Brasserie</label>
+            </value>
+            <value>
+                <fullName>Charcuterie</fullName>
+                <default>false</default>
+                <label>Charcuterie</label>
+            </value>
+            <value>
+                <fullName>Charcuterie et Traiteur Bio</fullName>
+                <default>false</default>
+                <label>Charcuterie et Traiteur Bio</label>
+            </value>
+            <value>
+                <fullName>Charcuterie traditionnelle</fullName>
+                <default>false</default>
+                <label>Charcuterie traditionnelle</label>
+            </value>
+            <value>
+                <fullName>Chocolats de Noël</fullName>
+                <default>false</default>
+                <label>Chocolats de Noël</label>
+            </value>
+            <value>
+                <fullName>Compléments alimentaires​</fullName>
+                <default>false</default>
+                <label>Compléments alimentaires​</label>
+            </value>
+            <value>
+                <fullName>Confiseries et Chocolats</fullName>
+                <default>false</default>
+                <label>Confiseries et Chocolats</label>
+            </value>
+            <value>
+                <fullName>Conserves de légumes</fullName>
+                <default>false</default>
+                <label>Conserves de légumes</label>
+            </value>
+            <value>
+                <fullName>Conserves de poissons</fullName>
+                <default>false</default>
+                <label>Conserves de poissons</label>
+            </value>
+            <value>
+                <fullName>Consoles et Jeux vidéo</fullName>
+                <default>false</default>
+                <label>Consoles et Jeux vidéo</label>
+            </value>
+            <value>
+                <fullName>Coque et Accessoire mobile</fullName>
+                <default>false</default>
+                <label>Coque et Accessoire mobile</label>
+            </value>
+            <value>
+                <fullName>Couche-culottes</fullName>
+                <default>false</default>
+                <label>Couche-culottes</label>
+            </value>
+            <value>
+                <fullName>Crème et Beurre</fullName>
+                <default>false</default>
+                <label>Crème et Beurre</label>
+            </value>
+            <value>
+                <fullName>Cuisson et Conservation</fullName>
+                <default>false</default>
+                <label>Cuisson et Conservation</label>
+            </value>
+            <value>
+                <fullName>Culture</fullName>
+                <default>false</default>
+                <label>Culture</label>
+            </value>
+            <value>
+                <fullName>Décoration</fullName>
+                <default>false</default>
+                <label>Décoration</label>
+            </value>
+            <value>
+                <fullName>Décoration extérieure</fullName>
+                <default>false</default>
+                <label>Décoration extérieure</label>
+            </value>
+            <value>
+                <fullName>Dessert et compotes</fullName>
+                <default>false</default>
+                <label>Dessert et compotes</label>
+            </value>
+            <value>
+                <fullName>Dessert et pâtisserie</fullName>
+                <default>false</default>
+                <label>Dessert et pâtisserie</label>
+            </value>
+            <value>
+                <fullName>Du Bio pour bébé</fullName>
+                <default>false</default>
+                <label>Du Bio pour bébé</label>
+            </value>
+            <value>
+                <fullName>DVD et Blu-ray</fullName>
+                <default>false</default>
+                <label>DVD et Blu-ray</label>
+            </value>
+            <value>
+                <fullName>Eau</fullName>
+                <default>false</default>
+                <label>Eau</label>
+            </value>
+            <value>
+                <fullName>Entrée et Apéritif</fullName>
+                <default>false</default>
+                <label>Entrée et Apéritif</label>
+            </value>
+            <value>
+                <fullName>Entretien cuisine et Vaisselle</fullName>
+                <default>false</default>
+                <label>Entretien cuisine et Vaisselle</label>
+            </value>
+            <value>
+                <fullName>Entretien écologique</fullName>
+                <default>false</default>
+                <label>Entretien écologique</label>
+            </value>
+            <value>
+                <fullName>Entretien et Nettoyage</fullName>
+                <default>false</default>
+                <label>Entretien et Nettoyage</label>
+            </value>
+            <value>
+                <fullName>Épicerie salée</fullName>
+                <default>false</default>
+                <label>Épicerie salée</label>
+            </value>
+            <value>
+                <fullName>Epicerie salée Bio</fullName>
+                <default>false</default>
+                <label>Epicerie salée Bio</label>
+            </value>
+            <value>
+                <fullName>Épicerie salée Bio</fullName>
+                <default>false</default>
+                <label>Épicerie salée Bio</label>
+            </value>
+            <value>
+                <fullName>Épicerie salée en vrac</fullName>
+                <default>false</default>
+                <label>Épicerie salée en vrac</label>
+            </value>
+            <value>
+                <fullName>Épicerie sucrée</fullName>
+                <default>false</default>
+                <label>Épicerie sucrée</label>
+            </value>
+            <value>
+                <fullName>Épicerie sucrée Bio</fullName>
+                <default>false</default>
+                <label>Épicerie sucrée Bio</label>
+            </value>
+            <value>
+                <fullName>Épicerie sucrée en vrac</fullName>
+                <default>false</default>
+                <label>Épicerie sucrée en vrac</label>
+            </value>
+            <value>
+                <fullName>Equipement et Accessoire bébé</fullName>
+                <default>false</default>
+                <label>Equipement et Accessoire bébé</label>
+            </value>
+            <value>
+                <fullName>Equipement et Rangement</fullName>
+                <default>false</default>
+                <label>Equipement et Rangement</label>
+            </value>
+            <value>
+                <fullName>Essuie-tout et Papier</fullName>
+                <default>false</default>
+                <label>Essuie-tout et Papier</label>
+            </value>
+            <value>
+                <fullName>Eveil et Jouets</fullName>
+                <default>false</default>
+                <label>Eveil et Jouets</label>
+            </value>
+            <value>
+                <fullName>Farine, Levure et Sucre en vrac</fullName>
+                <default>false</default>
+                <label>Farine, Levure et Sucre en vrac</label>
+            </value>
+            <value>
+                <fullName>Farine et Pâtisserie</fullName>
+                <default>false</default>
+                <label>Farine et Pâtisserie</label>
+            </value>
+            <value>
+                <fullName>Féculents en vrac</fullName>
+                <default>false</default>
+                <label>Féculents en vrac</label>
+            </value>
+            <value>
+                <fullName>Fêtes et Déguisements</fullName>
+                <default>false</default>
+                <label>Fêtes et Déguisements</label>
+            </value>
+            <value>
+                <fullName>Foire aux vins</fullName>
+                <default>false</default>
+                <label>Foire aux vins</label>
+            </value>
+            <value>
+                <fullName>Fournitures de bureau</fullName>
+                <default>false</default>
+                <label>Fournitures de bureau</label>
+            </value>
+            <value>
+                <fullName>Fromage</fullName>
+                <default>false</default>
+                <label>Fromage</label>
+            </value>
+            <value>
+                <fullName>Fruits</fullName>
+                <default>false</default>
+                <label>Fruits</label>
+            </value>
+            <value>
+                <fullName>Fruits et Légumes Bio</fullName>
+                <default>false</default>
+                <label>Fruits et Légumes Bio</label>
+            </value>
+            <value>
+                <fullName>Fruits et Légumes secs</fullName>
+                <default>false</default>
+                <label>Fruits et Légumes secs</label>
+            </value>
+            <value>
+                <fullName>Fruits et Légumes secs en vrac</fullName>
+                <default>false</default>
+                <label>Fruits et Légumes secs en vrac</label>
+            </value>
+            <value>
+                <fullName>Fruits secs en vrac</fullName>
+                <default>false</default>
+                <label>Fruits secs en vrac</label>
+            </value>
+            <value>
+                <fullName>Galettes des rois et Cidres</fullName>
+                <default>false</default>
+                <label>Galettes des rois et Cidres</label>
+            </value>
+            <value>
+                <fullName>Glace et Sorbet</fullName>
+                <default>false</default>
+                <label>Glace et Sorbet</label>
+            </value>
+            <value>
+                <fullName>Goûter et Dessert</fullName>
+                <default>false</default>
+                <label>Goûter et Dessert</label>
+            </value>
+            <value>
+                <fullName>Graines et Céréales en vrac</fullName>
+                <default>false</default>
+                <label>Graines et Céréales en vrac</label>
+            </value>
+            <value>
+                <fullName>Gros électroménager</fullName>
+                <default>false</default>
+                <label>Gros électroménager</label>
+            </value>
+            <value>
+                <fullName>High-Tech</fullName>
+                <default>false</default>
+                <label>High-Tech</label>
+            </value>
+            <value>
+                <fullName>Hygiène dentaire</fullName>
+                <default>false</default>
+                <label>Hygiène dentaire</label>
+            </value>
+            <value>
+                <fullName>Hygiène et Beauté</fullName>
+                <default>false</default>
+                <label>Hygiène et Beauté</label>
+            </value>
+            <value>
+                <fullName>Hygiène et Soin Bio</fullName>
+                <default>false</default>
+                <label>Hygiène et Soin Bio</label>
+            </value>
+            <value>
+                <fullName>Hygiène et Soin du corps</fullName>
+                <default>false</default>
+                <label>Hygiène et Soin du corps</label>
+            </value>
+            <value>
+                <fullName>Hygiène féminine, Incontinence</fullName>
+                <default>false</default>
+                <label>Hygiène féminine, Incontinence</label>
+            </value>
+            <value>
+                <fullName>Informatique</fullName>
+                <default>false</default>
+                <label>Informatique</label>
+            </value>
+            <value>
+                <fullName>Insecticide, Désodorisant, Cirage</fullName>
+                <default>false</default>
+                <label>Insecticide, Désodorisant, Cirage</label>
+            </value>
+            <value>
+                <fullName>Jardin et Aménagement extérieur</fullName>
+                <default>false</default>
+                <label>Jardin et Aménagement extérieur</label>
+            </value>
+            <value>
+                <fullName>Jardinière et Soin des plantes</fullName>
+                <default>false</default>
+                <label>Jardinière et Soin des plantes</label>
+            </value>
+            <value>
+                <fullName>Jeux, Sports et Loisirs</fullName>
+                <default>false</default>
+                <label>Jeux, Sports et Loisirs</label>
+            </value>
+            <value>
+                <fullName>Jeux de café et d&apos;extérieur</fullName>
+                <default>false</default>
+                <label>Jeux de café et d&apos;extérieur</label>
+            </value>
+            <value>
+                <fullName>Jeux et jouets</fullName>
+                <default>false</default>
+                <label>Jeux et jouets</label>
+            </value>
+            <value>
+                <fullName>Jouets 1er âge</fullName>
+                <default>false</default>
+                <label>Jouets 1er âge</label>
+            </value>
+            <value>
+                <fullName>Jus de fruits et de légumes</fullName>
+                <default>false</default>
+                <label>Jus de fruits et de légumes</label>
+            </value>
+            <value>
+                <fullName>Jus de fruits frais</fullName>
+                <default>false</default>
+                <label>Jus de fruits frais</label>
+            </value>
+            <value>
+                <fullName>Jus frais et Soupes fraîches</fullName>
+                <default>false</default>
+                <label>Jus frais et Soupes fraîches</label>
+            </value>
+            <value>
+                <fullName>Lait, œuf et boisson lactée</fullName>
+                <default>false</default>
+                <label>Lait, œuf et boisson lactée</label>
+            </value>
+            <value>
+                <fullName>Lait et Petit-Déjeuner</fullName>
+                <default>false</default>
+                <label>Lait et Petit-Déjeuner</label>
+            </value>
+            <value>
+                <fullName>Laits, Boissons lactées et Végétales</fullName>
+                <default>false</default>
+                <label>Laits, Boissons lactées et Végétales</label>
+            </value>
+            <value>
+                <fullName>Lave-linge et Sèche-linge</fullName>
+                <default>false</default>
+                <label>Lave-linge et Sèche-linge</label>
+            </value>
+            <value>
+                <fullName>Lave-vaisselle</fullName>
+                <default>false</default>
+                <label>Lave-vaisselle</label>
+            </value>
+            <value>
+                <fullName>Légumes</fullName>
+                <default>false</default>
+                <label>Légumes</label>
+            </value>
+            <value>
+                <fullName>Légumes secs en vrac</fullName>
+                <default>false</default>
+                <label>Légumes secs en vrac</label>
+            </value>
+            <value>
+                <fullName>Les Héros</fullName>
+                <default>false</default>
+                <label>Les Héros</label>
+            </value>
+            <value>
+                <fullName>Les lapins et petits mammifères</fullName>
+                <default>false</default>
+                <label>Les lapins et petits mammifères</label>
+            </value>
+            <value>
+                <fullName>Les oiseaux</fullName>
+                <default>false</default>
+                <label>Les oiseaux</label>
+            </value>
+            <value>
+                <fullName>Les poissons</fullName>
+                <default>false</default>
+                <label>Les poissons</label>
+            </value>
+            <value>
+                <fullName>Lessive et Soin du linge</fullName>
+                <default>false</default>
+                <label>Lessive et Soin du linge</label>
+            </value>
+            <value>
+                <fullName>Linge de maison et Literie</fullName>
+                <default>false</default>
+                <label>Linge de maison et Literie</label>
+            </value>
+            <value>
+                <fullName>Littérature</fullName>
+                <default>false</default>
+                <label>Littérature</label>
+            </value>
+            <value>
+                <fullName>Livre Art et Culture</fullName>
+                <default>false</default>
+                <label>Livre Art et Culture</label>
+            </value>
+            <value>
+                <fullName>Livre Loisir et Découverte</fullName>
+                <default>false</default>
+                <label>Livre Loisir et Découverte</label>
+            </value>
+            <value>
+                <fullName>Livres</fullName>
+                <default>false</default>
+                <label>Livres</label>
+            </value>
+            <value>
+                <fullName>Livre sciences Humaine et sociales</fullName>
+                <default>false</default>
+                <label>Livre sciences Humaine et sociales</label>
+            </value>
+            <value>
+                <fullName>Livres et Culture</fullName>
+                <default>false</default>
+                <label>Livres et Culture</label>
+            </value>
+            <value>
+                <fullName>Livres et Cultures</fullName>
+                <default>false</default>
+                <label>Livres et Cultures</label>
+            </value>
+            <value>
+                <fullName>Livre vie pratique</fullName>
+                <default>false</default>
+                <label>Livre vie pratique</label>
+            </value>
+            <value>
+                <fullName>Loisirs créatifs</fullName>
+                <default>false</default>
+                <label>Loisirs créatifs</label>
+            </value>
+            <value>
+                <fullName>Maison</fullName>
+                <default>false</default>
+                <label>Maison</label>
+            </value>
+            <value>
+                <fullName>Maison et Jardinage Bio</fullName>
+                <default>false</default>
+                <label>Maison et Jardinage Bio</label>
+            </value>
+            <value>
+                <fullName>Maquillage</fullName>
+                <default>false</default>
+                <label>Maquillage</label>
+            </value>
+            <value>
+                <fullName>Meuble</fullName>
+                <default>false</default>
+                <label>Meuble</label>
+            </value>
+            <value>
+                <fullName>Meuble de jardin</fullName>
+                <default>false</default>
+                <label>Meuble de jardin</label>
+            </value>
+            <value>
+                <fullName>Micro-ondes</fullName>
+                <default>false</default>
+                <label>Micro-ondes</label>
+            </value>
+            <value>
+                <fullName>Mode, Accessoires et Bagagerie</fullName>
+                <default>false</default>
+                <label>Mode, Accessoires et Bagagerie</label>
+            </value>
+            <value>
+                <fullName>Mode enfant</fullName>
+                <default>false</default>
+                <label>Mode enfant</label>
+            </value>
+            <value>
+                <fullName>Mode femme</fullName>
+                <default>false</default>
+                <label>Mode femme</label>
+            </value>
+            <value>
+                <fullName>Mode homme</fullName>
+                <default>false</default>
+                <label>Mode homme</label>
+            </value>
+            <value>
+                <fullName>Nos autres compagnons</fullName>
+                <default>false</default>
+                <label>Nos autres compagnons</label>
+            </value>
+            <value>
+                <fullName>Nos marques spécialisées</fullName>
+                <default>false</default>
+                <label>Nos marques spécialisées</label>
+            </value>
+            <value>
+                <fullName>Nutrition et Diététique</fullName>
+                <default>false</default>
+                <label>Nutrition et Diététique</label>
+            </value>
+            <value>
+                <fullName>Nutrition et diététique​</fullName>
+                <default>false</default>
+                <label>Nutrition et diététique​</label>
+            </value>
+            <value>
+                <fullName>Objet connecté</fullName>
+                <default>false</default>
+                <label>Objet connecté</label>
+            </value>
+            <value>
+                <fullName>Ordinateur et Tablette</fullName>
+                <default>false</default>
+                <label>Ordinateur et Tablette</label>
+            </value>
+            <value>
+                <fullName>Outillage à main</fullName>
+                <default>false</default>
+                <label>Outillage à main</label>
+            </value>
+            <value>
+                <fullName>Outillage motorisé</fullName>
+                <default>false</default>
+                <label>Outillage motorisé</label>
+            </value>
+            <value>
+                <fullName>Pains de mie</fullName>
+                <default>false</default>
+                <label>Pains de mie</label>
+            </value>
+            <value>
+                <fullName>Pains et Pâtisseries Bio</fullName>
+                <default>false</default>
+                <label>Pains et Pâtisseries Bio</label>
+            </value>
+            <value>
+                <fullName>Pains frais</fullName>
+                <default>false</default>
+                <label>Pains frais</label>
+            </value>
+            <value>
+                <fullName>Panés et Nuggets</fullName>
+                <default>false</default>
+                <label>Panés et Nuggets</label>
+            </value>
+            <value>
+                <fullName>Papiers et Mouchoirs</fullName>
+                <default>false</default>
+                <label>Papiers et Mouchoirs</label>
+            </value>
+            <value>
+                <fullName>Parapharmacie</fullName>
+                <default>false</default>
+                <label>Parapharmacie</label>
+            </value>
+            <value>
+                <fullName>Pâte à tarte et à pizza</fullName>
+                <default>false</default>
+                <label>Pâte à tarte et à pizza</label>
+            </value>
+            <value>
+                <fullName>Pâtes, Riz, Purée et Féculents</fullName>
+                <default>false</default>
+                <label>Pâtes, Riz, Purée et Féculents</label>
+            </value>
+            <value>
+                <fullName>Pâtes fraîches et Gnocchi</fullName>
+                <default>false</default>
+                <label>Pâtes fraîches et Gnocchi</label>
+            </value>
+            <value>
+                <fullName>Pâtisseries</fullName>
+                <default>false</default>
+                <label>Pâtisseries</label>
+            </value>
+            <value>
+                <fullName>Petit Déjeuner</fullName>
+                <default>false</default>
+                <label>Petit Déjeuner</label>
+            </value>
+            <value>
+                <fullName>Petit électroménager</fullName>
+                <default>false</default>
+                <label>Petit électroménager</label>
+            </value>
+            <value>
+                <fullName>Petit repas rapide et Box</fullName>
+                <default>false</default>
+                <label>Petit repas rapide et Box</label>
+            </value>
+            <value>
+                <fullName>Piscine et Accessoire</fullName>
+                <default>false</default>
+                <label>Piscine et Accessoire</label>
+            </value>
+            <value>
+                <fullName>Pizza</fullName>
+                <default>false</default>
+                <label>Pizza</label>
+            </value>
+            <value>
+                <fullName>Pizza, Tarte et Crêpe</fullName>
+                <default>false</default>
+                <label>Pizza, Tarte et Crêpe</label>
+            </value>
+            <value>
+                <fullName>Plaisir intime</fullName>
+                <default>false</default>
+                <label>Plaisir intime</label>
+            </value>
+            <value>
+                <fullName>Plat cuisiné</fullName>
+                <default>false</default>
+                <label>Plat cuisiné</label>
+            </value>
+            <value>
+                <fullName>Plats cuisinés, Pâtés et Foies gras</fullName>
+                <default>false</default>
+                <label>Plats cuisinés, Pâtés et Foies gras</label>
+            </value>
+            <value>
+                <fullName>Poisson et fruit de mer</fullName>
+                <default>false</default>
+                <label>Poisson et fruit de mer</label>
+            </value>
+            <value>
+                <fullName>Poissonnerie</fullName>
+                <default>false</default>
+                <label>Poissonnerie</label>
+            </value>
+            <value>
+                <fullName>Pomme de terre et légume</fullName>
+                <default>false</default>
+                <label>Pomme de terre et légume</label>
+            </value>
+            <value>
+                <fullName>Poussette et Siège-auto</fullName>
+                <default>false</default>
+                <label>Poussette et Siège-auto</label>
+            </value>
+            <value>
+                <fullName>Prêt-à-consommer</fullName>
+                <default>false</default>
+                <label>Prêt-à-consommer</label>
+            </value>
+            <value>
+                <fullName>Prévention virus</fullName>
+                <default>false</default>
+                <label>Prévention virus</label>
+            </value>
+            <value>
+                <fullName>Produit laitier et œuf Bio</fullName>
+                <default>false</default>
+                <label>Produit laitier et œuf Bio</label>
+            </value>
+            <value>
+                <fullName>Produits Bio</fullName>
+                <default>false</default>
+                <label>Produits Bio</label>
+            </value>
+            <value>
+                <fullName>Produits du monde et Spécialités régionales</fullName>
+                <default>false</default>
+                <label>Produits du monde et Spécialités régionales</label>
+            </value>
+            <value>
+                <fullName>Produits frais Bio</fullName>
+                <default>false</default>
+                <label>Produits frais Bio</label>
+            </value>
+            <value>
+                <fullName>Puériculture</fullName>
+                <default>false</default>
+                <label>Puériculture</label>
+            </value>
+            <value>
+                <fullName>Réfrigérateur et Congélateur</fullName>
+                <default>false</default>
+                <label>Réfrigérateur et Congélateur</label>
+            </value>
+            <value>
+                <fullName>Repas de bébé</fullName>
+                <default>false</default>
+                <label>Repas de bébé</label>
+            </value>
+            <value>
+                <fullName>Robot et Mixeur</fullName>
+                <default>false</default>
+                <label>Robot et Mixeur</label>
+            </value>
+            <value>
+                <fullName>Sac et Accessoires</fullName>
+                <default>false</default>
+                <label>Sac et Accessoires</label>
+            </value>
+            <value>
+                <fullName>Sac poubelle, Éponge, Accessoire</fullName>
+                <default>false</default>
+                <label>Sac poubelle, Éponge, Accessoire</label>
+            </value>
+            <value>
+                <fullName>Salade préparée</fullName>
+                <default>false</default>
+                <label>Salade préparée</label>
+            </value>
+            <value>
+                <fullName>Salle de bains et WC</fullName>
+                <default>false</default>
+                <label>Salle de bains et WC</label>
+            </value>
+            <value>
+                <fullName>Sans gluten​</fullName>
+                <default>false</default>
+                <label>Sans gluten​</label>
+            </value>
+            <value>
+                <fullName>Sans lactose​</fullName>
+                <default>false</default>
+                <label>Sans lactose​</label>
+            </value>
+            <value>
+                <fullName>Sauces et Bouillons</fullName>
+                <default>false</default>
+                <label>Sauces et Bouillons</label>
+            </value>
+            <value>
+                <fullName>Saveurs du monde</fullName>
+                <default>false</default>
+                <label>Saveurs du monde</label>
+            </value>
+            <value>
+                <fullName>Sel, Huile, Épices et Condiments</fullName>
+                <default>false</default>
+                <label>Sel, Huile, Épices et Condiments</label>
+            </value>
+            <value>
+                <fullName>Sélection chat</fullName>
+                <default>false</default>
+                <label>Sélection chat</label>
+            </value>
+            <value>
+                <fullName>Sélection chien</fullName>
+                <default>false</default>
+                <label>Sélection chien</label>
+            </value>
+            <value>
+                <fullName>Sélection de Noël</fullName>
+                <default>false</default>
+                <label>Sélection de Noël</label>
+            </value>
+            <value>
+                <fullName>Sel et Epice en vrac</fullName>
+                <default>false</default>
+                <label>Sel et Epice en vrac</label>
+            </value>
+            <value>
+                <fullName>Smartphone et Téléphonie</fullName>
+                <default>false</default>
+                <label>Smartphone et Téléphonie</label>
+            </value>
+            <value>
+                <fullName>Sodas, Colas et Boissons aux fruits</fullName>
+                <default>false</default>
+                <label>Sodas, Colas et Boissons aux fruits</label>
+            </value>
+            <value>
+                <fullName>Soin des cheveux</fullName>
+                <default>false</default>
+                <label>Soin des cheveux</label>
+            </value>
+            <value>
+                <fullName>Soin des hommes</fullName>
+                <default>false</default>
+                <label>Soin des hommes</label>
+            </value>
+            <value>
+                <fullName>Soin du visage</fullName>
+                <default>false</default>
+                <label>Soin du visage</label>
+            </value>
+            <value>
+                <fullName>Solaire</fullName>
+                <default>false</default>
+                <label>Solaire</label>
+            </value>
+            <value>
+                <fullName>Sol et Espace à vivre</fullName>
+                <default>false</default>
+                <label>Sol et Espace à vivre</label>
+            </value>
+            <value>
+                <fullName>Soupes et Croûtons</fullName>
+                <default>false</default>
+                <label>Soupes et Croûtons</label>
+            </value>
+            <value>
+                <fullName>Spécial Barbecue</fullName>
+                <default>false</default>
+                <label>Spécial Barbecue</label>
+            </value>
+            <value>
+                <fullName>Sports</fullName>
+                <default>false</default>
+                <label>Sports</label>
+            </value>
+            <value>
+                <fullName>Sucre et Edulcorant</fullName>
+                <default>false</default>
+                <label>Sucre et Edulcorant</label>
+            </value>
+            <value>
+                <fullName>Surgelés Bio</fullName>
+                <default>false</default>
+                <label>Surgelés Bio</label>
+            </value>
+            <value>
+                <fullName>Terrasse et Sol extérieur</fullName>
+                <default>false</default>
+                <label>Terrasse et Sol extérieur</label>
+            </value>
+            <value>
+                <fullName>Thé, Infusion et Café en vrac</fullName>
+                <default>false</default>
+                <label>Thé, Infusion et Café en vrac</label>
+            </value>
+            <value>
+                <fullName>Thé et Boisson chocolatée</fullName>
+                <default>false</default>
+                <label>Thé et Boisson chocolatée</label>
+            </value>
+            <value>
+                <fullName>Toilette et Soins</fullName>
+                <default>false</default>
+                <label>Toilette et Soins</label>
+            </value>
+            <value>
+                <fullName>Tout le gros-électroménager</fullName>
+                <default>false</default>
+                <label>Tout le gros-électroménager</label>
+            </value>
+            <value>
+                <fullName>Tout le petit-électroménager</fullName>
+                <default>false</default>
+                <label>Tout le petit-électroménager</label>
+            </value>
+            <value>
+                <fullName>Traiteur de la mer</fullName>
+                <default>false</default>
+                <label>Traiteur de la mer</label>
+            </value>
+            <value>
+                <fullName>Traiteur traditionnel</fullName>
+                <default>false</default>
+                <label>Traiteur traditionnel</label>
+            </value>
+            <value>
+                <fullName>Traiteur végétal</fullName>
+                <default>false</default>
+                <label>Traiteur végétal</label>
+            </value>
+            <value>
+                <fullName>Tv, Son, Vidéo</fullName>
+                <default>false</default>
+                <label>Tv, Son, Vidéo</label>
+            </value>
+            <value>
+                <fullName>Végétal et Végétarien ​</fullName>
+                <default>false</default>
+                <label>Végétal et Végétarien ​</label>
+            </value>
+            <value>
+                <fullName>Vêtement bébé</fullName>
+                <default>false</default>
+                <label>Vêtement bébé</label>
+            </value>
+            <value>
+                <fullName>Viande</fullName>
+                <default>false</default>
+                <label>Viande</label>
+            </value>
+            <value>
+                <fullName>Viandes et Poissons à la coupe</fullName>
+                <default>false</default>
+                <label>Viandes et Poissons à la coupe</label>
+            </value>
+            <value>
+                <fullName>Viandes et Poissons Bio</fullName>
+                <default>false</default>
+                <label>Viandes et Poissons Bio</label>
+            </value>
+            <value>
+                <fullName>Viennoiseries et Brioches fraîches</fullName>
+                <default>false</default>
+                <label>Viennoiseries et Brioches fraîches</label>
+            </value>
+            <value>
+                <fullName>Vins et Champagnes</fullName>
+                <default>false</default>
+                <label>Vins et Champagnes</label>
+            </value>
+            <value>
+                <fullName>Volaille</fullName>
+                <default>false</default>
+                <label>Volaille</label>
+            </value>
+            <value>
+                <fullName>Vrac</fullName>
+                <default>false</default>
+                <label>Vrac</label>
+            </value>
+            <value>
+                <fullName>Yaourt et fromage blanc</fullName>
+                <default>false</default>
+                <label>Yaourt et fromage blanc</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

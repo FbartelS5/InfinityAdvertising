@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enseignes__c</fullName>
+    <externalId>false</externalId>
+    <label>Enseignes</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Type_de_produit__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Enseignes</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Frais_de_media</controllingFieldValue>
+            <controllingFieldValue>Search</controllingFieldValue>
+            <controllingFieldValue>Autres</controllingFieldValue>
+            <controllingFieldValue>Retail_Media_OnSite</controllingFieldValue>
+            <controllingFieldValue>Frais_Graphiques</controllingFieldValue>
+            <controllingFieldValue>Mesure</controllingFieldValue>
+            <controllingFieldValue>Extension_Audience</controllingFieldValue>
+            <controllingFieldValue>Promogaming Multimarques</controllingFieldValue>
+            <controllingFieldValue>Promogaming Monomarque</controllingFieldValue>
+            <controllingFieldValue>Frais de Gestion</controllingFieldValue>
+            <controllingFieldValue>Generosite</controllingFieldValue>
+            <controllingFieldValue>Frais_de_setup</controllingFieldValue>
+            <controllingFieldValue>Frais_de_performance</controllingFieldValue>
+            <valueName>Intermarche</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Search</controllingFieldValue>
+            <controllingFieldValue>Autres</controllingFieldValue>
+            <controllingFieldValue>Retail_Media_OnSite</controllingFieldValue>
+            <controllingFieldValue>Frais_Graphiques</controllingFieldValue>
+            <controllingFieldValue>Mesure</controllingFieldValue>
+            <controllingFieldValue>Extension_Audience</controllingFieldValue>
+            <valueName>Casino</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Search</controllingFieldValue>
+            <controllingFieldValue>Autres</controllingFieldValue>
+            <controllingFieldValue>Retail_Media_OnSite</controllingFieldValue>
+            <controllingFieldValue>Frais_Graphiques</controllingFieldValue>
+            <controllingFieldValue>Mesure</controllingFieldValue>
+            <controllingFieldValue>Extension_Audience</controllingFieldValue>
+            <controllingFieldValue>Promogaming Multimarques</controllingFieldValue>
+            <controllingFieldValue>Promogaming Monomarque</controllingFieldValue>
+            <controllingFieldValue>Frais de Gestion</controllingFieldValue>
+            <valueName>Franprix</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Search</controllingFieldValue>
+            <controllingFieldValue>Autres</controllingFieldValue>
+            <controllingFieldValue>Retail_Media_OnSite</controllingFieldValue>
+            <controllingFieldValue>Frais_Graphiques</controllingFieldValue>
+            <controllingFieldValue>Mesure</controllingFieldValue>
+            <controllingFieldValue>Extension_Audience</controllingFieldValue>
+            <controllingFieldValue>Promogaming Multimarques</controllingFieldValue>
+            <controllingFieldValue>Promogaming Monomarque</controllingFieldValue>
+            <controllingFieldValue>Frais de Gestion</controllingFieldValue>
+            <valueName>Monoprix</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promogaming Multimarques</controllingFieldValue>
+            <controllingFieldValue>Promogaming Monomarque</controllingFieldValue>
+            <controllingFieldValue>Frais de Gestion</controllingFieldValue>
+            <valueName>CasinoFr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promogaming Multimarques</controllingFieldValue>
+            <controllingFieldValue>Promogaming Monomarque</controllingFieldValue>
+            <controllingFieldValue>Frais de Gestion</controllingFieldValue>
+            <valueName>Cmax</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

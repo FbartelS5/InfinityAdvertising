@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Formats__c</fullName>
+    <externalId>false</externalId>
+    <label>Formats Extension d&apos;audience</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>IAB</fullName>
+                <default>false</default>
+                <label>IAB</label>
+            </value>
+            <value>
+                <fullName>Native</fullName>
+                <default>false</default>
+                <label>Native</label>
+            </value>
+            <value>
+                <fullName>Habillage</fullName>
+                <default>false</default>
+                <label>Habillage</label>
+            </value>
+            <value>
+                <fullName>VOL</fullName>
+                <default>false</default>
+                <label>VOL</label>
+            </value>
+            <value>
+                <fullName>Social</fullName>
+                <default>false</default>
+                <label>Social</label>
+            </value>
+            <value>
+                <fullName>Youtube Bumper 6s</fullName>
+                <default>false</default>
+                <label>Youtube Bumper 6s</label>
+            </value>
+            <value>
+                <fullName>Intream skippable</fullName>
+                <default>false</default>
+                <label>Intream skippable</label>
+            </value>
+            <value>
+                <fullName>Youtube Instream non skippable</fullName>
+                <default>false</default>
+                <label>Youtube Instream non skippable</label>
+            </value>
+            <value>
+                <fullName>Diptyque</fullName>
+                <default>false</default>
+                <label>Diptyque</label>
+            </value>
+            <value>
+                <fullName>Quadriptyque</fullName>
+                <default>false</default>
+                <label>Quadriptyque</label>
+            </value>
+            <value>
+                <fullName>Display</fullName>
+                <default>false</default>
+                <label>Display</label>
+            </value>
+            <value>
+                <fullName>Sponso</fullName>
+                <default>false</default>
+                <label>Sponso</label>
+            </value>
+            <value>
+                <fullName>Landing Page</fullName>
+                <default>false</default>
+                <label>Landing Page</label>
+            </value>
+            <value>
+                <fullName>Grand angle</fullName>
+                <default>false</default>
+                <label>Grand angle</label>
+            </value>
+            <value>
+                <fullName>Tuile Display</fullName>
+                <default>false</default>
+                <label>Tuile Display</label>
+            </value>
+            <value>
+                <fullName>Tuile produit</fullName>
+                <default>false</default>
+                <label>Tuile produit</label>
+            </value>
+            <value>
+                <fullName>Autres</fullName>
+                <default>false</default>
+                <label>Autres</label>
+            </value>
+            <value>
+                <fullName>Display IAB</fullName>
+                <default>false</default>
+                <label>Display IAB</label>
+            </value>
+            <value>
+                <fullName>1000x90</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>1000x90</label>
+            </value>
+            <value>
+                <fullName>160x600</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>160x600</label>
+            </value>
+            <value>
+                <fullName>170x170</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>170x170</label>
+            </value>
+            <value>
+                <fullName>1800x1000 (Habillage)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>1800x1000 (Habillage)</label>
+            </value>
+            <value>
+                <fullName>300x250</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>300x250</label>
+            </value>
+            <value>
+                <fullName>300x600</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>300x600</label>
+            </value>
+            <value>
+                <fullName>320x100</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>320x100</label>
+            </value>
+            <value>
+                <fullName>320x100 (Bannière mobile)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>320x100 (Bannière mobile)</label>
+            </value>
+            <value>
+                <fullName>320x50 (Bannière Mobile)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>320x50 (Bannière Mobile)</label>
+            </value>
+            <value>
+                <fullName>728x90</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>728x90</label>
+            </value>
+            <value>
+                <fullName>970x250</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>970x250</label>
+            </value>
+            <value>
+                <fullName>Autres formats à préciser</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Autres formats à préciser</label>
+            </value>
+            <value>
+                <fullName>Format Facebook</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Format Facebook</label>
+            </value>
+            <value>
+                <fullName>Interstitiel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Interstitiel</label>
+            </value>
+            <value>
+                <fullName>Kit Email</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kit Email</label>
+            </value>
+            <value>
+                <fullName>Native (180x180 / 1200x627 / 627x627)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Native (180x180 / 1200x627 / 627x627)</label>
+            </value>
+            <value>
+                <fullName>Vidéo &lt; 20sec</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Vidéo &lt; 20sec</label>
+            </value>
+            <value>
+                <fullName>Vidéo &gt; 20sec</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Vidéo &gt; 20sec</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

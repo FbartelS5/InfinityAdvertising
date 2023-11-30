@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR0005_StatutOppSignee</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT($Setup.CS1_ByPass__c.ByPass_Validation_Rules__c),
+    NOT($Permission.Admin_Fonctionnel),
+    ISCHANGED(StageName),
+    ISPICKVAL(PRIORVALUE(StageName), &apos;Signé&apos;))</errorConditionFormula>
+    <errorMessage>Vous ne pouvez pas modifier le statut d&apos;une opportunité signée</errorMessage>
+</ValidationRule>

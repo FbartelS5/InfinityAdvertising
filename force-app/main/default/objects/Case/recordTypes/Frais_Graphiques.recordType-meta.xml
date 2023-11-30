@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Frais_Graphiques</fullName>
+    <active>true</active>
+    <businessProcess>S5_Process Infinity</businessProcess>
+    <compactLayoutAssignment>S5_compact_Layout</compactLayoutAssignment>
+    <label>Frais Graphiques</label>
+    <picklistValues>
+        <picklist>CampaignType__c</picklist>
+        <values>
+            <fullName>Activation Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ecommerce</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Enseignes__c</picklist>
+        <values>
+            <fullName>Casino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CasinoFr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cmax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franprix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intermarche</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monoprix</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Formats__c</picklist>
+        <values>
+            <fullName>Autres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diptyque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Display</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Display IAB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grand angle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Habillage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IAB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intream skippable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Landing Page</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Native</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quadriptyque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sponso</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tuile Display</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tuile produit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VOL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Youtube Bumper 6s</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Youtube Instream non skippable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MainKPI__c</picklist>
+        <values>
+            <fullName>CPC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CTR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cout par acquisition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cout par vidéo lue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cout par visite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Couverture sur cible %28préciser techno%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taux de complétion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taux de visibilité</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Mesure__c</picklist>
+        <values>
+            <fullName>Ne sait pas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oui</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PromogamingProduct__c</picklist>
+        <values>
+            <fullName>1er panier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mono</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Temps fort</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Store__c</picklist>
+        <values>
+            <fullName>Casino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cmax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franprix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intermarché</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monoprix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monoprix %26 moi</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

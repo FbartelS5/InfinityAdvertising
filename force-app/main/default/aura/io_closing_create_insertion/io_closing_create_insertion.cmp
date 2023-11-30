@@ -1,0 +1,52 @@
+<aura:component controller="io_controller">
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    
+    <aura:handler name="CloseParentModal" event="c:CloseParentModal" action="{!c.closeModal}"/>
+	<aura:attribute name="OpportunityId" type="String"  />
+    <aura:attribute name="RecordTypeName" type="String"  />
+    <aura:attribute name="OwnerId" type="String"  />
+    <aura:attribute name="Status" type="String"  />
+    <aura:attribute name="StartDate" type="String"  />
+    <aura:attribute name="EndDate" type="String"  />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:tabset selectedTabId="one">
+        <lightning:tab label="Ajout simple" id="one">
+            <lightning:recordEditForm onsubmit="{!c.handleSubmit}"
+                                      onsuccess="{!c.handleSuccessMessage}"
+                                      objectApiName="Insertion__c" aura:id="editForm"
+                                      >
+                <!-- the messages component is for error messages -->
+                <lightning:messages />
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:inputField fieldName="Opportunity__c" value="{!v.OpportunityId}" disabled="true"/>
+                        <lightning:inputField fieldName="OpportunityProduct__c" />
+                        <lightning:inputField fieldName="UnitPrice__c" />
+                        <lightning:inputField fieldName="Volume__c" />
+                        <lightning:inputField fieldName="Revenue__c" /><aura:if isTrue="{!v.RecordTypeName == 'Open Order'}">
+                            	<lightning:inputField fieldName="CampaignNumber__c" />
+                       			<lightning:inputField fieldName="OrderReference__c" />
+                        </aura:if>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:inputField fieldName="Status__c" value="{!v.Status}"/>
+                        <lightning:inputField fieldName="Product__c" required="true"/>
+                        <lightning:inputField fieldName="StartDate__c" value="{!v.StartDate}"/>
+                        <lightning:inputField fieldName="EndDate__c" value="{!v.EndDate}"/>
+                        <lightning:inputField fieldName="ExpectedRevenue__c" />
+                        <lightning:inputField fieldName="AdresaID__c" />
+                    </div>
+                </div>
+                
+                <div class="slds-m-top_medium">
+                    <lightning:button disabled="false" variant="brand" type="submit" name="save" label="Enregistrer" />
+                </div>
+            </lightning:recordEditForm>
+        </lightning:tab>
+        <lightning:tab label="Ajout multiple" id="two">
+            <c:io_catalog recordId="{!v.OpportunityId}" catalogTypes="[{'label': 'Produits d\'opération', 'value': 'TechnicalProduct'}]" catalogType="TechnicalProduct"/>
+        </lightning:tab>
+    </lightning:tabset>
+    
+</aura:component>

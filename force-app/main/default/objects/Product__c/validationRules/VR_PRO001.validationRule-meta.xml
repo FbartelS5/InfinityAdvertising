@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_PRO001</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT($Setup.CS1_ByPass__c.ByPass_Validation_Rules__c),
+    NOT($Permission.Admin_Fonctionnel),
+    ISPICKVAL(Opportunity__r.StageName,&apos;Signé&apos;),
+    ISCHANGED(StartDate__c) || 
+    ISCHANGED(EndDate__c) || 
+    ISCHANGED(PricingModel__c))</errorConditionFormula>
+    <errorMessage>Un produit d&apos;opportunité ne peut pas être modifié une fois l&apos;opportunité associée signée.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReferenceClient__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR(
+
+AND(
+RecordType.DeveloperName = &quot;Sales&quot;,
+ISPICKVAL( InvoicedAccount__c , &quot;Agence&quot; ),
+Agency__r.Recovery__c = true ,
+ISBLANK( CustomerReference__c ),
+IsClosed = false,
+datevalue(CreatedDate) &lt; date(2020,12,03)
+)
+,
+AND(
+RecordType.DeveloperName = &quot;Sales&quot;,
+ISPICKVAL( InvoicedAccount__c , &quot;Annonceur&quot; ),
+Account.Recovery__c = true ,
+ISBLANK( CustomerReference__c ),
+IsClosed = false,
+datevalue(CreatedDate) &lt; date(2020,12,03)
+
+)
+)</formula>
+    <label>Référence client nécessaire</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

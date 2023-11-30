@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Bonjour&nbsp;<span style="color:#c0392b;"><strong>[Insérer le prénom]</strong></span>,&nbsp;<br />
+<br />
+Tu trouveras, en pièce jointe, la fiche de programmation ainsi que les créas du format pour la campagne sur les <span style="color:#c0392b;"><strong>[Insérer les marques]</strong></span>&nbsp;qui aura lieu du&nbsp;{{{Case.StartDate__c}}} au&nbsp;{{{Case.EndDate__c}}}</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Dans l’attente de ton retour, je te souhaite une bonne journée.</span></span></span><br />
+<br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">{{{Sender.Name}}}<br />
+{{{Sender.Email}}}<br />
+{{{Sender.MobilePhone}}}</span></span></span></body>
+</html>

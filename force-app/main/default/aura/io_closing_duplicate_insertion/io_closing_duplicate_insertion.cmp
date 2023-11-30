@@ -1,0 +1,27 @@
+<aura:component controller="io_controller">
+    <lightning:overlayLibrary aura:id="popuplib"/>
+
+    <aura:attribute name="data" type="Object"  />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="errors" type="Object" default="[]"/>
+    <aura:attribute name="draftValues" type="Object" default="[]"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="OpportunityId" type="String"/>
+    
+    
+    <lightning:datatable aura:id="table"
+                         columns="{! v.columns }"
+                         data="{! v.data }"
+                         keyField="Id"
+                         hideCheckboxColumn="false"
+                         errors="{! v.errors }"
+                         onrowaction="{! c.handleRowAction }"
+                         draftValues="{! v.draftValues }"
+                         onsave="{! c.handleSaveEdition }"
+                         showRowNumberColumn="false"
+                         />
+    
+    <div class="slds-m-top_medium">
+        <lightning:button disabled="false" variant="brand" type="submit" name="save" label="Dupliquer" onclick="{!c.saveDuplicates}" />
+    </div>
+</aura:component>

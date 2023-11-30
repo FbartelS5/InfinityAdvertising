@@ -1,0 +1,11 @@
+.THIS.duplicateModal .slds-modal__container {
+    max-width: unset;
+    width: 85%;
+}
+
+.THIS .left-align {
+    text-align: left;
+}
+.THIS .right-align {
+    text-align: right;
+}

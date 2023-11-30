@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_de_produit__c</fullName>
+    <externalId>false</externalId>
+    <label>Type de produit</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Retail_Media_OnSite</fullName>
+                <default>false</default>
+                <label>Retail Media OnSite</label>
+            </value>
+            <value>
+                <fullName>Frais_Graphiques</fullName>
+                <default>false</default>
+                <label>Frais Graphiques</label>
+            </value>
+            <value>
+                <fullName>Mesure</fullName>
+                <default>false</default>
+                <label>Mesure</label>
+            </value>
+            <value>
+                <fullName>Extension_Audience</fullName>
+                <default>false</default>
+                <label>Extension d&apos;audience</label>
+            </value>
+            <value>
+                <fullName>Promogaming Multimarques</fullName>
+                <default>false</default>
+                <label>Promogaming Multimarques</label>
+            </value>
+            <value>
+                <fullName>Promogaming Monomarque</fullName>
+                <default>false</default>
+                <label>Promogaming Monomarque</label>
+            </value>
+            <value>
+                <fullName>Frais de Gestion</fullName>
+                <default>false</default>
+                <label>Frais de Gestion</label>
+            </value>
+            <value>
+                <fullName>Generosite</fullName>
+                <default>false</default>
+                <label>Générosité</label>
+            </value>
+            <value>
+                <fullName>Frais_de_setup</fullName>
+                <default>false</default>
+                <label>Frais de setup</label>
+            </value>
+            <value>
+                <fullName>Frais_de_performance</fullName>
+                <default>false</default>
+                <label>Frais de performance</label>
+            </value>
+            <value>
+                <fullName>Frais_de_media</fullName>
+                <default>false</default>
+                <label>Frais de média</label>
+            </value>
+            <value>
+                <fullName>Search</fullName>
+                <default>false</default>
+                <label>Search sponso</label>
+            </value>
+            <value>
+                <fullName>Autres</fullName>
+                <default>false</default>
+                <label>Autres</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

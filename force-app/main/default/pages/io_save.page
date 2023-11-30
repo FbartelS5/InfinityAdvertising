@@ -1,0 +1,443 @@
+<apex:page standardController="Opportunity" extensions="OIDocumentController" showHeader="false" renderAs="pdf">
+    <apex:stylesheet value="{!$Resource.io_css}"/>
+    <apex:stylesheet value="{!$Resource.io_operation_products_css}"/>
+    
+    <div>
+        <apex:panelGrid columns="3" width="100%" style="padding-bottom: 10px;" styleClass="header">
+            <apex:panelGroup >
+                <apex:outputtext value="{!Opportunity.BillingEntity__r.logo__c}" escape="false" styleClass="logo"/>
+            </apex:panelGroup>
+            <!-- Added -->
+            <apex:panelGroup style="width:60%;font-size:24px;" rendered="{!Test1}">
+                <span style="margin-top:20px">Ordre d'insertion</span>
+            </apex:panelGroup>
+            <apex:panelGroup style="width:60%;font-size:24px;" rendered="{!Test2}">
+                <span style="margin-top:20px">Bon de commande</span>
+            </apex:panelGroup>
+            <apex:panelGroup style="font-size:14px">
+                N° d'ordre <br/>
+                <apex:outputText value="{!Opportunity.Numero_OI_BDC__c}" /> <br/>
+                <span style="font-size:12px" class="">Date : 
+                    <apex:outputText value="{0, date, dd/MM/yyyy}">
+                        <apex:param value="{!TODAY()}" /> 
+                    </apex:outputText>
+                </span>
+            </apex:panelGroup>
+        </apex:panelGrid>
+        <div style="padding:5px;border:1px solid black">
+            <apex:panelGrid columns="3" width="100%" styleClass="NoBorder" columnClasses="trleftalign">
+                <apex:panelGroup >
+                    Contact commercial: <apex:outputText value="{!Opportunity.Owner.Name}" styleClass="bold" />
+                </apex:panelGroup>
+                <apex:panelGroup >
+                    Email: <apex:outputText value="{!Opportunity.Owner.Email}" styleClass="bold" />
+                </apex:panelGroup>
+            </apex:panelGrid>
+            <div style="margin-top:20px">
+                {!Opportunity.BillingEntity__r.Name} - {!Opportunity.BillingEntity__r.Street__c} {!Opportunity.BillingEntity__r.PostalCode__c} {!Opportunity.BillingEntity__r.City__c} - RCS : {!Opportunity.BillingEntity__r.Siret__c} RCS {!Opportunity.BillingEntity__r.RCS__c} - {!Opportunity.BillingEntity__r.IntracomVatNumber__c} 
+            </div>
+        </div>
+        <apex:panelGrid columns="2" width="100%" style="padding-bottom: 10px;" columnClasses="middle" styleClass="">
+            <apex:panelGroup rendered="{!Opportunity.Agency__c != null}" >
+                
+                <apex:panelGrid columns="2" width="100%" style="padding-bottom: 10px;" columnClasses="trleftalign" styleClass="NoBorder">
+                    <apex:panelGroup >
+                        AGENCE :
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!Opportunity.Agency__r.Name}" />
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup >
+                        N° TVA Intra :
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!Opportunity.Agency__r.IntracomVatNumber__c}" />
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup >
+                        Adresse : 
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!Opportunity.Agency__r.BillingStreet}" /><br/>
+                        <apex:outputText value="{!Opportunity.Agency__r.BillingPostalCode &' '& Opportunity.Agency__r.BillingCity }" />
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup >
+                        Contact :
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!Opportunity.AgencyContact__r.Name}" />
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup >
+                        Tél :
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!Opportunity.AgencyContact__r.Phone}" />
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup >
+                        Email :
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!Opportunity.AgencyContact__r.Email}" />
+                    </apex:panelGroup>
+                </apex:panelGrid>
+                
+            </apex:panelGroup>
+            <apex:panelGroup >
+                <apex:panelGrid columns="2" width="100%" style="padding-bottom: 10px;" columnClasses="trleftalign" styleClass="NoBorder">
+                    <apex:panelGroup >
+                        ANNONCEUR :
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!Opportunity.Account.Name}" />
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup >
+                        N° TVA Intra :
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!Opportunity.Account.IntracomVatNumber__c}" />
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup >
+                        Adresse : 
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!Opportunity.Account.BillingStreet}" /><br/>
+                        <apex:outputText value="{!Opportunity.Account.BillingPostalCode &' '& Opportunity.Account.BillingCity }" />
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup >
+                        Contact :
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!Opportunity.AdvertiserContact__r.Name}" />
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup >
+                        Tél :
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!Opportunity.AdvertiserContact__r.Phone}" />
+                    </apex:panelGroup>
+                    
+                    <apex:panelGroup >
+                        Email :
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!Opportunity.AdvertiserContact__r.Email}" />
+                    </apex:panelGroup>
+                    
+                </apex:panelGrid>
+            </apex:panelGroup>
+        </apex:panelGrid>
+        <div style="padding:5px;border:1px solid black;height:20px;display:{!IF( Opportunity.Agency__c == null, 'none', '')}">
+            <span style="float:left">Responsable du paiement :</span> 
+            <div class="box" style="background-color:{!IF( Opportunity.InvoicedAccount__c == 'Agence', 'black', 'white')}"/>
+            <span style="float:left">Agence</span> 
+            <div class="box" style="background-color:{!IF( Opportunity.InvoicedAccount__c == 'Annonceur', 'black', 'white')}"/>
+            <span style="float:left">Annonceur</span>
+        </div>
+        
+        <div style="border:1px solid black;margin-top:10px">
+            <apex:panelGrid columns="2" width="100%" style="padding-bottom: 10px;" columnClasses="middle" styleClass="NoBorder">
+                <apex:panelGroup >
+                    
+                    <apex:panelGrid columns="2" width="100%" style="padding-bottom: 10px;" columnClasses="trleftalign" styleClass="NoBorder">
+                        <apex:panelGroup >
+                            Référence à transmettre à la régie:
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.CustomerReference__c}" />
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            Date de début de campagne : 
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{0, date, dd/MM/yyyy}">
+                                <apex:param value="{!Opportunity.CampaignStartDate__c}" /> 
+                            </apex:outputText>
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            Observations :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.ioObservations__c}"/>
+                        </apex:panelGroup>
+                    </apex:panelGrid>
+                    
+                </apex:panelGroup>
+                <apex:panelGroup >
+                    <apex:panelGrid columns="2" width="100%" style="padding-bottom: 10px;" columnClasses="trleftalign" styleClass="NoBorder">
+                        <apex:panelGroup >
+                            Campagne :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{!Opportunity.Name}" />
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup >
+                            Date de fin de campagne :
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value="{0, date, dd/MM/yyyy}">
+                                <apex:param value="{!Opportunity.CampaignEndDate__c}" /> 
+                            </apex:outputText>
+                        </apex:panelGroup>
+                        
+                        <apex:panelGroup style="color:#fff">
+                            .
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputText value=""/>
+                        </apex:panelGroup>
+                        
+                    </apex:panelGrid>
+                </apex:panelGroup>
+            </apex:panelGrid>
+        </div>
+        <apex:outputPanel layout="block" rendered="{! Opportunity.BU__c != 'ESPPUBRP' && Opportunity.BU__c != 'Maxit' && Opportunity.hideProductPrices__c == false}">
+            <table border="0" cellpadding="3" cellspacing="0" style="width:100%;border-collapse:collapse;-fs-table-paginate:paginate;margin-top:20px;" class="table">
+                <thead>
+                    <tr style="background:#ccc;">
+                        <th width="70%">Produit</th>
+                        <th>Budget Net € HT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!Opportunity.Products__r}" var="line">
+                        <tr>
+                            <td class="trleftalign"> 
+                                <b><h3>{!line.Name}</h3></b><br/>
+                                <apex:outputText value="{!line.Description__c}<br/>" escape="false"/>
+                                <b>Période: </b><apex:outputField value="{!line.StartDate__c}"/> &nbsp; au <apex:outputField value="{!line.EndDate__c}"/><br/>
+                                <b>Mode de com: </b><apex:outputField value="{!line.PricingModel__c}"/><br/>
+
+                                <!--
+                                <apex:outputText value="<b>Volume: </b>" rendered="{!line.ioHideQuantity__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                <apex:outputField value="{!line.Quantity__c}" rendered="{!line.ioHideQuantity__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" />
+                                <apex:outputText value="<br/>" rendered="{!line.ioHideQuantity__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                
+                                <apex:outputText value="<b>Tarif Net: </b>" rendered="{!line.ioHideUnitPrice__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                <apex:outputField value="{!line.UnitPrice__c}" rendered="{!line.ioHideUnitPrice__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }"/>
+                                <apex:outputText value="<br/>" rendered="{!line.ioHideUnitPrice__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                
+                                -->
+                                <apex:outputText value="<b>Volume: </b>" rendered="{!Test3 !=True}" escape="false"/>
+                                <apex:outputField value="{!line.Quantity__c}" rendered="{!Test3 !=True }" />
+                                <apex:outputText value="<br/>" rendered="{!Test3 !=True}" escape="false"/>
+
+                                <apex:outputText value="<b>Prix unitaire : </b>" rendered="{!Test3 !=True}"   escape="false"/>
+                                <apex:outputField value="{!line.UnitPrice__c}" rendered="{!Test3 !=True}" />
+                                <apex:outputText value="<br/>" rendered="{!Test3 !=True}" escape="false"/>
+                                
+                               
+                                <apex:outputText value="<b>Offert: </b>" rendered="{!line.Offert__c == true}" escape="false"/>
+                                <apex:outputField value="{!line.UnitPrice__c}" rendered="{!line.Offert__c == true}"/>
+                                <apex:outputText value="<br/>" rendered="{!line.Offert__c == true}" escape="false"/>
+
+                                                                            
+                               <!-- Added -->
+                               <apex:outputText rendered="{!Test3}">
+                                <apex:outputText value="<b>Nb de coupons: </b>" rendered="{!line.Name == 'Frais de gestion'}"   escape="false"/>
+                                <apex:outputField value="{!line.Nb_de_coupons__c}" rendered="{!line.Name == 'Frais de gestion'}" />
+                                <apex:outputText value="<br/>" rendered="{!line.Name == 'Frais de gestion'}" escape="false"/>
+
+                                <apex:outputText value="<b>Prix unitaire : </b>" rendered="{!line.Name == 'Frais de gestion'}"   escape="false"/>
+                                <apex:outputField value="{!line.UnitPrice__c}" rendered="{!line.Name == 'Frais de gestion'}" />
+                                <apex:outputText value="<br/>" rendered="{!line.Name == 'Frais de gestion'}" escape="false"/>
+
+                                <apex:outputText value="<b>Montant : </b>" rendered="{!line.Name == 'Générosité'}"   escape="false"/>
+                                <apex:outputField value="{!line.Montant__c}" rendered="{!line.Name == 'Générosité'}" />
+                                <apex:outputText value="<br/>" rendered="{!line.Name == 'Générosité'}" escape="false"/>
+
+                                <apex:outputText value="<b>Volume: </b>" rendered="{!line.Name == 'Frais de média'}" escape="false"/>
+                                <apex:outputField value="{!line.Quantity__c}" rendered="{!line.Name == 'Frais de média'}"/>
+                                <apex:outputText value="<br/>" rendered="{!line.Name == 'Frais de média'}" escape="false"/>
+                                
+                                <apex:outputText value="<b>Tarif Net: </b>" rendered="{!line.Name == 'Frais de média'}" escape="false"/>
+                                <apex:outputField value="{!line.UnitPrice__c}" rendered="{!line.Name == 'Frais de média'}"/>
+                                <apex:outputText value="<br/>" rendered="{!line.Name == 'Frais de média'}" escape="false"/>
+
+                                <apex:outputText value="<b>Volume: </b>" rendered="{!line.Name == 'Frais de setup'}" escape="false"/>
+                                <apex:outputField value="{!line.Quantity__c}" rendered="{!line.Name == 'Frais de setup'}"/>
+                                <apex:outputText value="<br/>" rendered="{!line.Name == 'Frais de setup'}" escape="false"/>
+                                
+                                <apex:outputText value="<b>Tarif Net: </b>" rendered="{!line.Name == 'Frais de setup'}" escape="false"/>
+                                <apex:outputField value="{!line.UnitPrice__c}" rendered="{!line.Name == 'Frais de setup'}"/>
+                                <apex:outputText value="<br/>" rendered="{!line.Name == 'Frais de setup'}" escape="false"/>
+
+                                <apex:outputText value="<b> % de la générosité : </b>" rendered="{!line.Name == 'Frais de performance'}"   escape="false"/>
+                                <apex:outputField value="{!line.Pourcentage_de_la_generosite__c}" rendered="{!line.Name == 'Frais de performance'}" />
+                                <apex:outputText value="<br/>" rendered="{!line.Name == 'Frais de performance'}" escape="false"/>
+                                
+
+                                </apex:outputText>
+
+                                <apex:outputText value="<b>Remise: </b>" rendered="{!line.Name != 'Générosité'}"  escape="false"/>
+                                <apex:outputField value="{!line.CustomDiscount__c}" rendered="{!line.Name != 'Générosité'}" />
+                                <apex:outputText value="<br/>" rendered="{!line.Name != 'Générosité'}"  escape="false"/>
+                            </td>
+                            <td><apex:outputField value="{!line.Total__c}"/></td>
+                        </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+        </apex:outputPanel>
+        <apex:outputPanel layout="block" rendered="{! Opportunity.BU__c != 'ESPPUBRP' && Opportunity.BU__c != 'Maxit' && Opportunity.hideProductPrices__c == true}">
+            <table border="0"  cellspacing="0" style="width:100%;border-collapse:collapse;-fs-table-paginate:paginate;margin-top:20px;" class="table">
+                <thead>
+                    <tr style="background:#ccc;">
+                        <th width="70%">Produit</th>
+                        <th>Tarif unitaire Brut € HT</th>
+                        <th>Remise</th>
+                        <th>Budget Net € HT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="trleftalign" style="padding: 0px"> 
+                            <apex:repeat value="{!Opportunity.Products__r}" var="line">
+                                <div class="trleftalign" style="width:100%;border-bottom: 1px solid black;">
+                                    <div style="padding: 5px"> 
+                                        <b><h3> {!line.Name}</h3></b><br/>
+                                        <apex:outputText value=" {!line.Description__c}<br/>" escape="false"/>
+                                        <b> Période: </b><apex:outputField value="{!line.StartDate__c}"/> &nbsp; au <apex:outputField value="{!line.EndDate__c}"/><br/>
+                                        <apex:outputText value="<b>Ciblage: </b>{!line.Targeting__c}" rendered="{!line.Targeting__c != 'non applicable'}" escape="false"/><br/>
+                                        <b> Mode de com: </b><apex:outputField value="{!line.PricingModel__c}"/><br/> 
+                                        <apex:outputText value="<b>Volume: </b>" rendered="{!line.ioHideQuantity__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                        <apex:outputField value="{!line.Quantity__c}" rendered="{!line.ioHideQuantity__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" />
+                                        <apex:outputText value="<br/>" rendered="{!line.ioHideQuantity__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                        
+                                        <apex:outputText value="<b>Tarif Net: </b>" rendered="{!line.ioHideUnitPrice__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                        <apex:outputField value="{!line.UnitPrice__c}" rendered="{!line.ioHideUnitPrice__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }"/>
+                                        <apex:outputText value="<br/>" rendered="{!line.ioHideUnitPrice__c == false && (line.PricingModel__c =='CPM' ||line.PricingModel__c =='CPC') }" escape="false"/>
+                                    </div>
+                                </div>
+                            </apex:repeat>
+                        </td>
+                        <td><apex:outputField value="{!Opportunity.GrossTotal__c}"/></td>
+                        <td>85 %</td>
+                        <td><apex:outputField value="{!Opportunity.Amount}"/></td>
+                    </tr>
+                </tbody>
+            </table>
+        </apex:outputPanel>
+        
+        <apex:outputPanel layout="block" rendered="{! Opportunity.BU__c == 'ESPPUBRP' || Opportunity.BU__c == 'Maxit'}">
+            <table border="0" cellpadding="3" cellspacing="0" style="width:100%;border-collapse:collapse;-fs-table-paginate:paginate;margin-top:5px;" class="table">
+                <thead>
+                    <tr style="background:#ccc;">
+                        <th width="70%">Produit</th>
+                        <th>
+                            <apex:outputText value="Budget Brut € HT" rendered="{!Opportunity.InvoicedAccount__c == 'Agence'}"/>
+                            <apex:outputText value="Budget Net € HT" rendered="{!Opportunity.InvoicedAccount__c == 'Annonceur'}"/>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!Opportunity.Products__r}" var="line">
+                        <tr>
+                            <td class="trleftalign"> 
+                                <b>{!line.Name}</b><br/>
+                                Support: {!line.Type__c}<br/>
+                                Enseignes: {!line.Medium__c}<br/>
+                                Nombre de PDV Total: {!line.Number_of_POS__c}<br/>
+                            </td>
+                            
+                            <td class="trrightalign">
+                                <apex:outputField value="{!line.GrossTotalRegiePhysique__c}" rendered="{!Opportunity.InvoicedAccount__c == 'Agence'}"/>
+                                <apex:outputField value="{!line.Total__c}" rendered="{!Opportunity.InvoicedAccount__c == 'Annonceur'}"/>
+                            </td>
+                            
+                        </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+        </apex:outputPanel>
+        
+        <apex:panelGrid columns="2" width="100%" style="padding-top: 10px" styleClass="NoBorder" rowClasses="verticalAlignTop">
+            
+            <apex:panelGroup rendered="{! Opportunity.BU__c != 'ESPPUBRP'}">
+                <table style="float: right;width: 100%;" class="table">
+                    <tr style="background:#ccc;"  class="bold">
+                        <td colspan="2" class="trleftalign">TOTAL NET € HT</td>
+                        <td class="trrightalign"><apex:outputField value="{!Opportunity.Amount}"/></td>
+                    </tr>
+                </table>
+            </apex:panelGroup>
+        </apex:panelGrid>
+        
+        
+        
+        <div style="page-break-inside: avoid;font-size:10px;">
+            <!--
+            <div style="border:1px solid black;padding:3px;display:{!IF( Opportunity.Agency__c == null, 'none', '')}">
+                <span></span> Merci de nous faire parvenir dès signature une attestation de mandat et les références agences (bon de commande,…) à compta@infinity-advertising.fr ou à  <span class="colored bold"><apex:outputText value="{!Opportunity.Owner.Email}" /></span>
+            </div>
+        -->
+            <div style="border:1px solid black;padding:3px;">
+                <span></span> Merci de nous faire parvenir dès signature une attestation de mandat et les références agences (bon de commande,…) à compta@infinity-advertising.fr ou à  <span class="colored bold"><apex:outputText value="{!Opportunity.Owner.Email}" /></span>
+            </div>
+            <div style="border:1px solid black;padding:3px">
+                <span class="bold">Eléments techniques</span> à nous fournir dans les délais et selon les prescriptions techniques communiquées par Infinity Advertising pour une mise en ligne de l'Annonce aux dates convenues
+                dans le présent Ordre d'Insertion.  
+            </div>
+            <div style="border:1px solid black;padding:3px">
+                <span>Les Parties ont signé un contrat de mandat pour l’année 2023 au sein des Points de vente Intermarché participants. Par le présent Bon de commande, elles s’entendent pour préciser les modalités des opérations.Il est rappelé que ITM AI reste seule décisionnaire du Prix Public TTC qu'elle entend préconiser aux points de vente durant l'opération.</span>
+            </div>
+            <div style="border:1px solid black;padding:3px">
+                <span class="bold">Conditions de règlement</span> : <span class="colored">30 JOURS DATE FACTURE </span>
+            </div>
+            <div style="border:1px solid black;margin-top:8px;padding:3px">
+                <span class="bold">Ce document est édité et signé par une solution de signature électronique, dont chacune des parties dispose d’un exemplaire original.  </span> <br/>
+                <br/>
+                <span  class="bold">Nom </span> (dûment habilité aux fins des présentes) : <span style="margin-top:5px;float:right;margin-right:120px"><apex:outputText value="\n1\" style="color:white"/></span>
+                <br/><span style="font-size:8px;clear:both;">Annonceur et/ou Agence agissant en son nom et pour le compte de l'Annonceur</span>               
+                <br/>
+                <br/>
+                <apex:panelGroup >
+                    <span class="bold">Signature :</span>
+                </apex:panelGroup>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <apex:panelGroup >
+                    <span class="bold">Infinity Advertising</span>
+                </apex:panelGroup>
+                <br/>
+                <br/>
+                <apex:panelGroup >
+                    <span class="bold">Nom : </span>
+                </apex:panelGroup>
+                <br/>
+                <br/>
+                <apex:panelGroup >
+                    <span class="bold">Date : </span>
+                </apex:panelGroup>
+                <br/>
+                <br/>
+                <apex:panelGroup >
+                    <span class="bold">Signature:</span>
+                </apex:panelGroup>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <apex:outputText value="{!Opportunity.SpecialConditions__c}" escape="false" />
+        <apex:outputText value="{!IF(Opportunity.Developer_Name__c != $Label.OpportunityPromotionPersonnalisee, Opportunity.BillingEntity__r.ioConditions__c, '')}" escape="false" />
+    </div>
+    
+    <apex:repeat value="{!listDocs}" var="doc">
+        <div style="page-break-before:always;"/>
+        <apex:outputText value="{!doc}" escape="false"/>
+    </apex:repeat>
+</apex:page>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Postal_Code</fullName>
+    <active>false</active>
+    <description>API : autoriser la règle pour Isochronix afin d&apos;éviter les erreurs d&apos;import sur les encours</description>
+    <errorConditionFormula>OR(
+AND(
+ BillingCountry == &quot;France&quot;,
+ LEN( BillingPostalCode ) &lt;&gt; 5,
+ $User.Id &lt;&gt; &quot;0052p000008mZxs&quot;  /*Isochronix*/
+)
+,
+AND(
+ BillingCountry &lt;&gt; &quot;France&quot;,
+ LEN( BillingPostalCode ) &gt; 17,
+ $User.Id &lt;&gt; &quot;0052p000008mZxs&quot;  /*Isochronix*/
+)
+)&amp;&amp; NOT($Setup.lazyLoading__c.DisableValidationRule__c)</errorConditionFormula>
+    <errorDisplayField>BillingPostalCode</errorDisplayField>
+    <errorMessage>Le code postal de facturation est invalide (5 caractère pour la France et 17 caractères maximum pour les autres pays).</errorMessage>
+</ValidationRule>

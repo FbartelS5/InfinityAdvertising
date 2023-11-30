@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Casino</fullName>
+        <default>false</default>
+        <label>Casino</label>
+    </customValue>
+    <customValue>
+        <fullName>CasinoFr</fullName>
+        <default>false</default>
+        <label>Casino.fr</label>
+    </customValue>
+    <customValue>
+        <fullName>Cmax</fullName>
+        <default>false</default>
+        <label>Cmax</label>
+    </customValue>
+    <customValue>
+        <fullName>Franprix</fullName>
+        <default>false</default>
+        <label>Franprix</label>
+    </customValue>
+    <customValue>
+        <fullName>Intermarche</fullName>
+        <default>false</default>
+        <label>Intermarché</label>
+    </customValue>
+    <customValue>
+        <fullName>Monoprix</fullName>
+        <default>false</default>
+        <label>Monoprix</label>
+    </customValue>
+    <masterLabel>Enseignes</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

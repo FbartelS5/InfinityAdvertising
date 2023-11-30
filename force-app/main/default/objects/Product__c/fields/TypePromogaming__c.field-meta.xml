@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TypePromogaming__c</fullName>
+    <externalId>false</externalId>
+    <label>Type Promogaming</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Always on</fullName>
+                <default>false</default>
+                <label>Always on</label>
+            </value>
+            <value>
+                <fullName>Temps fort industriel</fullName>
+                <default>false</default>
+                <label>Temps fort industriel</label>
+            </value>
+            <value>
+                <fullName>Temps fort multimarque</fullName>
+                <default>false</default>
+                <label>Temps fort multimarque</label>
+            </value>
+            <value>
+                <fullName>Pimp your promo</fullName>
+                <default>false</default>
+                <label>Pimp your promo</label>
+            </value>
+            <value>
+                <fullName>Search</fullName>
+                <default>false</default>
+                <label>Search</label>
+            </value>
+            <value>
+                <fullName>Ultra personnalisé</fullName>
+                <default>false</default>
+                <label>Ultra personnalisé</label>
+            </value>
+            <value>
+                <fullName>Premier panier</fullName>
+                <default>false</default>
+                <label>Premier panier</label>
+            </value>
+            <value>
+                <fullName>Impulse</fullName>
+                <default>false</default>
+                <label>Impulse</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

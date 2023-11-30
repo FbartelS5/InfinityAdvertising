@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Month_Year__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Month__c,
+&quot;Janvier&quot;, Year__c &amp; &quot;-&quot; &amp; &quot;01&quot;,
+&quot;Février&quot;, Year__c &amp; &quot;-&quot; &amp; &quot;02&quot;,
+&quot;Mars&quot;, Year__c &amp; &quot;-&quot; &amp; &quot;03&quot;,
+&quot;Avril&quot;, Year__c &amp; &quot;-&quot; &amp; &quot;04&quot;,
+&quot;Mai&quot;, Year__c &amp; &quot;-&quot; &amp; &quot;05&quot;,
+&quot;Juin&quot;, Year__c &amp; &quot;-&quot; &amp; &quot;06&quot;,
+&quot;Juillet&quot;, Year__c &amp; &quot;-&quot; &amp; &quot;07&quot;,
+&quot;Août&quot;, Year__c &amp; &quot;-&quot; &amp; &quot;08&quot;,
+&quot;Septembre&quot;, Year__c &amp; &quot;-&quot; &amp; &quot;09&quot;,
+&quot;Octobre&quot;, Year__c &amp; &quot;-&quot; &amp; &quot;10&quot;,
+&quot;Novembre&quot;, Year__c &amp; &quot;-&quot; &amp; &quot;11&quot;,
+&quot;Décembre&quot;, Year__c &amp; &quot;-&quot; &amp; &quot;12&quot;,
+null
+)</formula>
+    <label>Mois / Année</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Equipe__c</fullName>
+    <externalId>false</externalId>
+    <label>Equipe</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Opérations</fullName>
+                <default>false</default>
+                <label>Opérations</label>
+            </value>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>DAF CDG</fullName>
+                <default>false</default>
+                <label>DAF CDG</label>
+            </value>
+            <value>
+                <fullName>Régie Physique</fullName>
+                <default>false</default>
+                <label>Régie Physique</label>
+            </value>
+            <value>
+                <fullName>Direction</fullName>
+                <default>false</default>
+                <label>Direction</label>
+            </value>
+            <value>
+                <fullName>Projet</fullName>
+                <default>false</default>
+                <label>Projet</label>
+            </value>
+            <value>
+                <fullName>Data / BI</fullName>
+                <default>false</default>
+                <label>Data / BI</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

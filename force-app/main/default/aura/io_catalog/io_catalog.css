@@ -1,0 +1,7 @@
+.THIS .closeBtn {
+    margin-top: -32px;
+}
+
+.THIS li.Offre, .THIS  li.Aucune {
+  display:none;
+}

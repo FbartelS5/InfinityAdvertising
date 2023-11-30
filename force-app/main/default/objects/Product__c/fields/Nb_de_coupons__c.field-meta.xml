@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nb_de_coupons__c</fullName>
+    <description>Sert à calculer le prix total des Frais de gestion.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Sert à calculer le prix total des Frais de gestion.</inlineHelpText>
+    <label>Nb de coupons</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

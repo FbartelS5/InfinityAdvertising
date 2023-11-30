@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Clôturé</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>OI clôturé</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>OI signé</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Proposition engagée</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Proposition perdue</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Proposition push</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Proposition suite brief</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Proposition sécurisée</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Signé</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

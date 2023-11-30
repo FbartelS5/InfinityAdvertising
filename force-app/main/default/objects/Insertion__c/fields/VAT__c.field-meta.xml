@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAT__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Opportunity__r.InvoicedAccount__c , &quot;Agence&quot;), Opportunity__r.Agency__r.VATpercent__c *  Revenue_Net__c,
+IF( ISPICKVAL( Opportunity__r.InvoicedAccount__c , &quot;Annonceur&quot;), Opportunity__r.Account.VATpercent__c *  Revenue_Net__c,
+NULL
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TVA</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

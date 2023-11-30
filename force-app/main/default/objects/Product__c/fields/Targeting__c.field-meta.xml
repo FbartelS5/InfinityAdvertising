@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Targeting__c</fullName>
+    <externalId>false</externalId>
+    <label>Ciblage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>data</fullName>
+                <default>false</default>
+                <label>data</label>
+            </value>
+            <value>
+                <fullName>Jumeaux transactionnels</fullName>
+                <default>false</default>
+                <label>Jumeaux transactionnels</label>
+            </value>
+            <value>
+                <fullName>personae</fullName>
+                <default>false</default>
+                <label>personae</label>
+            </value>
+            <value>
+                <fullName>rotation générale</fullName>
+                <default>false</default>
+                <label>rotation générale</label>
+            </value>
+            <value>
+                <fullName>Aucun</fullName>
+                <default>false</default>
+                <label>Aucun</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

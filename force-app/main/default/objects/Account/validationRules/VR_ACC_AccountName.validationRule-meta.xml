@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_ACC_AccountName</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($Setup.CS1_ByPass__c.ByPass_Validation_Rules__c),
+NOT($Permission.Admin_Fonctionnel),
+NOT($Permission.DAFCDG),
+ISCHANGED(Name))</errorConditionFormula>
+    <errorMessage>Vous ne pouvez pas modifier le nom du compte.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OI_Signed_Unavailable_When_Opp_Created</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ RecordType.DeveloperName = &quot;Sales&quot;,
+ ISNEW(),
+ ISPICKVAL(StageName, &quot;Signé&quot;)
+)&amp;&amp; NOT($Setup.lazyLoading__c.DisableValidationRule__c)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Il n&apos;est pas possible de sélectionner &quot;Signé&quot; lorsque l&apos;opportunité vient d&apos;être créée.</errorMessage>
+</ValidationRule>

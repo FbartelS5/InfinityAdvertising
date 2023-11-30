@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OI_Closed</fullName>
+    <active>true</active>
+    <errorConditionFormula>Opportunity__r.IsClosed = true &amp;&amp;
+NOT($Setup.CS1_ByPass__c.ByPass_Validation_Rules__c) &amp;&amp;
+(OR( ISCHANGED(PricingModel__c),
+    ISCHANGED(Quantity__c),
+    ISCHANGED(UnitPrice__c),
+    ISCHANGED(CustomDiscount__c),
+    ISCHANGED(Nb_de_coupons__c),
+    ISCHANGED(Montant__c),
+    ISCHANGED(StartDate__c),
+    ISCHANGED(EndDate__c)
+    ))</errorConditionFormula>
+    <errorMessage>Vous ne pouvez pas ajouter de nouveaux produits ou modifier le total d&apos;un produit sur une opportunité fermée</errorMessage>
+</ValidationRule>

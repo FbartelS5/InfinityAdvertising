@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ESPPUBALIMENTAIR</fullName>
+        <default>false</default>
+        <label>Alimentaire</label>
+    </customValue>
+    <customValue>
+        <fullName>ESPPUBAUTRES</fullName>
+        <default>false</default>
+        <label>Autres</label>
+    </customValue>
+    <customValue>
+        <fullName>ESPPUBCAPTIF</fullName>
+        <default>false</default>
+        <label>Non Alimentaire</label>
+    </customValue>
+    <customValue>
+        <fullName>ESPPUBHORSCAPTIF</fullName>
+        <default>false</default>
+        <label>Hors captif</label>
+    </customValue>
+    <customValue>
+        <fullName>ESPPUBRP</fullName>
+        <default>false</default>
+        <label>REGIES EXTERNES INSTORE</label>
+    </customValue>
+    <customValue>
+        <fullName>C08746385E</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>APPLICATION B2C</label>
+    </customValue>
+    <customValue>
+        <fullName>C08763385E</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>RC DATA MARKETING PLATFORM</label>
+    </customValue>
+    <customValue>
+        <fullName>C08764385E</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ANIMATION COMMERCIALE &amp; ACQUISITIONS</label>
+    </customValue>
+    <customValue>
+        <fullName>C08855193E</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>PLATEFORME COUPONING</label>
+    </customValue>
+    <customValue>
+        <fullName>C08856193E</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>PLATEFORME CASHBACK</label>
+    </customValue>
+    <customValue>
+        <fullName>C08864193E</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>PRESTATION INSIGHTS RETAILER</label>
+    </customValue>
+    <customValue>
+        <fullName>C08865193E</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>PLATEFORME RETAIL MEDIA</label>
+    </customValue>
+    <customValue>
+        <fullName>C08866193E</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>OPÉRATIONS SPÉCIALES START-UPS</label>
+    </customValue>
+    <customValue>
+        <fullName>C08867193E</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>RELEVANC AD FOOD</label>
+    </customValue>
+    <customValue>
+        <fullName>C08872193E</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>DIRECTION TECH</label>
+    </customValue>
+    <customValue>
+        <fullName>C08748385E</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ACQUISITION</label>
+    </customValue>
+    <customValue>
+        <fullName>ESPPUBW2S</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>WEB TO STORE</label>
+    </customValue>
+    <customValue>
+        <fullName>ESPPUBCLAB</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CLAB</label>
+    </customValue>
+    <customValue>
+        <fullName>C08783385E</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>RÉGIES EXTERNES ONLINE</label>
+    </customValue>
+    <customValue>
+        <fullName>ESPPUBNIP</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>INSIGHT</label>
+    </customValue>
+    <customValue>
+        <fullName>ESPPUBPART</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Cashback Webloyalty</label>
+    </customValue>
+    <customValue>
+        <fullName>ESPPUBPROG</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>AdEx</label>
+    </customValue>
+    <masterLabel>BUs</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

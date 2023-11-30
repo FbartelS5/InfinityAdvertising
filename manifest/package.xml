@@ -1,36 +1,208 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>AAFCreatorController</members>
+        <members>ForecastHelper</members>
+        <members>ForecastHelperTest</members>
+        <members>MultiSelectFlowValues</members>
+        <members>OIDocumentController</members>
+        <members>OpportunityClosingController</members>
+        <members>OpportunityTriggerHandler</members>
+        <members>invoicing_controller</members>
+        <members>invoicing_test</members>
+        <members>io_controller</members>
+        <members>io_test</members>
+        <members>DynamicCategorieController</members>
+        <members>DynamicCategorieControllerTest</members>
         <members>*</members>
         <name>ApexClass</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>ApexComponent</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexPage</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexTestSuite</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
-    <types>
-        <members>*</members>
+        <types>
+        <members>io_closing</members>
+        <members>io_closing_create_insertion</members>
+        <members>io_closing_duplicate_insertion</members>
+        <members>io_catalog</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
-        <members>*</members>
-        <name>LightningComponentBundle</name>
+        <members>OPS</members>
+        <members>CDG</members>
+        <members>ADMIN</members>
+        <members>W_RelevanC</members>
+        <name>CustomApplication</name>
     </types>
     <types>
-        <members>*</members>
-        <name>StaticResource</name>
+        <members>ioBrocker_pdf</members>
+        <members>io_pdf</members>
+        <members>io_save</members>
+        <name>ApexPage</name>
     </types>
-    <version>58.0</version>
+    <types>
+        <members>InsertionAfterTrigger</members>
+        <members>ProductTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>Case.S5_Process Infinity</members>
+        <members>Opportunity.Sales</members>
+        <name>BusinessProcess</name>
+    </types>
+    <types>
+        <members>Case.S5_compact_Layout</members>
+        <members>Product__c.S5_Produit_d_opp_Compact_Layout</members>
+        <members>Opportunity.Opportunity</members>
+        <members>Account.Comptes</members>
+        <name>CompactLayout</name>
+    </types>
+    <types>
+        <members>INFINITY_ADVERTISING_petitlogo_quad</members>
+        <members>INFINITY_ADVERTISING_petitlogo_quad1</members>
+        <members>INFINITY_ADVERTISING_petitlogo_quad2</members>
+        <members>INFINITY_ADVERTISING_petitlogo_quad3</members>
+    <name>ContentAsset</name>
+    </types>
+    <types>
+        <members>Email_Equipe_Mesure</members>
+        <members>Owner_Requete_Extension_audience_Retail_Media</members>
+        <members>OpportunityPromotionPersonnalisee</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>CS1_ByPass__c</members>
+        <members>Categorie_reservee__c</members>
+        <members>Categorie_reservee_produit__c</members>
+        <members>Plan_d_action__c</members>
+        <members>Product__c</members>
+        <members>TacheTemplate__c</members>
+        <members>Tache_Planifiee__c</members>
+        <members>BillingEntity__c</members>
+        <members>Account</members>
+        <members>Contact</members>
+        <members>Case</members>
+        <members>Opportunity</members>
+        <members>*</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>ByPass_VR_SalesUpdatesAfterSignature</members>
+        <members>Admin_Fonctionnel</members>
+        <name>CustomPermission</name>
+    </types>
+    <types>
+        <members>Categorie_reservee__c</members>
+        <members>Categorie_reservee_produit__c</members>
+        <members>Plan_d_action__c</members>
+        <members>TacheTemplate__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Categorie_reservee_Record_Page</members>
+        <members>Flexipage_Taches_Planifiees</members>
+        <members>Plan_d_action_Record_Page1</members>
+        <members>S5_Lightning_Page_Produit_d_Opportunit</members>
+        <members>Template_de_tache_Record_Page</members>
+        <members>Page_Compte</members>
+        <members>Lightning_Page_Requete</members>
+        <members>Contact_Record_Page</members>
+        <members>Opportunit_OPS</members>
+        <members>Opportunit_s_CDG</members>
+        <members>Opportunit_s</members>	
+        <members>Opportunity_Record_Page</members>
+        <members>Produit_Page_d_enregistrement</members>		
+        <name>FlexiPage</name>
+    </types>
+    <types>
+    <members>Ajouter_des_Produits_d_opportunite_ScreenFlow</members>
+    <members>CaseAfterInsert</members>
+    <members>CaseAfterUpdate</members>
+    <members>OpportunityAfterInsert</members>
+    <members>OpportunityAfterUpdate</members>
+    <members>Opportunity_Update</members>
+    <members>ProduitOpportuniteAfterInsert</members>
+    <members>Scheduled_flow_Creation_des_taches_planifiees</members>
+    <members>Scheduled_Flow_Rappel_Tache_Ouvertes_Opportunites</members>
+    <members>Screenflow_Generer_les_requetes</members>
+    <members>TaskAfterUpdate</members>
+    <members>Screenflow_Generer_les_requetes</members>
+    <members>TaskAfterUpdate</members>
+    <members>Product_Nomenclature</members>
+    <members>CaseUpdates</members>
+    <members>Opportunity_Update</members>
+    <name>Flow</name>	
+    </types>
+    <types>
+        <members>BUs</members>
+        <members>Enseignes</members>
+        <name>GlobalValueSet</name>
+    </types>
+    <types>
+        <members>Account-Comptes</members>
+        <members>Case-S5 Layout Requête</members>
+        <members>Categorie_reservee__c-Catégorie réservée Layout</members>
+        <members>Categorie_reservee_produit__c-Catégorie réservée - produit Layout</members>
+        <members>Contact-Contact Layout</members>
+        <members>Event-Event Layout</members>
+        <members>Plan_d_action__c-Plan d%27action Layout</members>
+        <members>Product2-Produit commercial</members>
+        <members>Product2-Produit d%27opération</members>
+        <members>Product__c-S5 Layout Produit d%27opportunité</members>
+        <members>TacheTemplate__c-Tâche template Layout</members>
+        <members>Tache_Planifiee__c-Tâche planifiée Layout</members>
+        <members>Task-Task Layout</members>
+        <members>Opportunity-Opportunity Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>categorie_request</members>
+        <name>LightningComponentBundle</name>
+    </types>
+     <types>
+        <members>Admin_CSM_en_charge</members>
+        <members>Admin_Fonctionnel</members>
+        <members>Admin_Categories_reservees</members>
+        <members>Admin_Templates_de_tache</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <members>INFINITY ADS - Cases Only</members>
+        <members>INFINITY ADS - DAF CDG</members>
+        <members>INFINITY ADS - Direction</members>
+        <members>INFINITY ADS - Opérations</members>
+        <members>INFINITY ADS - Sales</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Case.Envoyer_un_email</members>
+        <members>Case.SendEmail</members>
+        <members>Opportunity.Generer_les_requetes</members>	
+        <members>Opportunity.Ajouter_des_produits_d_opportunit</members>	
+        <name>QuickAction</name>
+    </types>
+    <types>
+    <members>Suivi_de_l_activit_commerciale/OpportunitesEnCours</members>
+    <members>Suivi_de_l_activit_commerciale/OpportunitesGagnees</members>
+    <name>Report</name>
+    </types>
+    <types>
+        <members>Case</members>
+        <name>SharingRules</name>
+    </types>
+    <types>
+    <members>AccountType</members>
+    <members>OpportunityStage</members>
+    <members>CaseStatus</members>
+    <name>StandardValueSet</name>
+    </types>
+    <types>
+         <members>TemplatesOpportunites/Pr_cisions_Diptyque_1677251046731</members>
+         <members>TemplatesOpportunites/Pr_cisions_Quadriptyque_1677250952738</members>
+         <members>TemplatesRequetes/Envoyer_la_pige_un_client_1677251135016</members>
+         <members>TemplatesRequetes/Validation_des_cr_as_par_un_client_1677251265477</members>
+         <members>TemplatesOpportunites/Collecte_des_informations_de_campagne_1677249769029</members>
+         <members>TemplatesRequetes/Confirmation_des_cr_as_et_FP_Enseigne_1677251386580</members>
+         <name>EmailTemplate</name>
+     </types>
+    <version>52.0</version>
+
 </Package>

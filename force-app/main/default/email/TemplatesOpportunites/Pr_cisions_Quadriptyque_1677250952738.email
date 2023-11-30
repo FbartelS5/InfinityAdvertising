@@ -1,0 +1,69 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Bonjour<span style="color:#e74c3c;"> [Insérer nom du contact],&nbsp;</span><br />
+<br />
+J’espère que tu vas bien.</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Je me permets de te contacter par rapport au quadriptyque <span style="color:#c0392b;">[Mettre les marques]</span>&nbsp;prévu à partir du {{{Opportunity.CampaignStartDate__c}}} &nbsp;sur Intermarché.</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Pourrais-tu, s’il te plaît, me partager :</span></span></span>
+<ul>
+	<li style="margin-left:8px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">La fiche de programmation avec les EANs des produits à animer en PJ (max 50)</span></span></span></li>
+	<li style="margin-left:8px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Les créas du quadriptyque selon les specs en PJ et avec tous les formats suivants :</span></span></span></li>
+</ul>
+&nbsp;
+
+<ul>
+	<li style="list-style-type:none">
+	<ul style="list-style-type:circle">
+		<li style="margin-left:16px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Desktop :</span></span></span></li>
+	</ul>
+	</li>
+	<li style="margin-left:80px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Foreground (logo, accroche, mentions…) : 496x706px en png</span></span></span></li>
+	<li style="margin-left:80px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Background (fond uni, couleur, photo…) : 624x818px en jpeg</span></span></span>
+	<ul>
+		<li style="margin-left:8px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">à envoyer séparément mais associés en production</span></span></span></li>
+	</ul>
+	</li>
+</ul>
+&nbsp;
+
+<ul>
+	<li style="list-style-type:none">
+	<ul style="list-style-type:circle">
+		<li style="margin-left:16px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Mobile web :</span></span></span></li>
+	</ul>
+	</li>
+	<li style="margin-left:80px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">foreground : 997x266px en jpeg</span></span></span></li>
+	<li style="margin-left:80px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">background : 1077x330px en png&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></li>
+</ul>
+&nbsp;
+
+<ul>
+	<li style="list-style-type:none">
+	<ul style="list-style-type:circle">
+		<li style="margin-left:16px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Application :</span></span></span></li>
+	</ul>
+	</li>
+	<li style="margin-left:80px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">foreground : 997x496 en png</span></span></span></li>
+	<li style="margin-left:80px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">background : 1077x1335 en jpeg</span></span></span></li>
+</ul>
+&nbsp;
+
+<ul style="list-style-type:circle">
+	<li style="margin-left:56px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Header web : 2048x500px</span></span></span></li>
+	<li style="margin-left:56px"><span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Header app : 1125x480px </span></span></span></li>
+</ul>
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">A titre d’exemple, je te mets en PJ le dernier quadriptyque marque afin que tu puisses avoir une vision de toutes les créas dont nous avons besoin.</span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Pour un démarrage au date de début de campagne, la deadline est au j-20.</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">Merci beaucoup et n’hésite pas si tu as des questions <span lang="EN-US" style="font-family:&quot;Segoe UI Emoji&quot;,sans-serif">😊</span></span></span></span><br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">A très vite,</span></span></span><br />
+<br />
+<span style="font-size:10pt"><span style="line-height:107%"><span style="font-family:&quot;Source Sans Pro&quot;,sans-serif">{{{Sender.Name}}}<br />
+{{{Sender.Email}}}<br />
+{{{Sender.MobilePhone}}}</span></span></span></body>
+</html>

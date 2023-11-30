@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CancelledInvoice_beforeSAP</fullName>
+    <active>true</active>
+    <errorConditionFormula>InvoiceDate__c = TODAY()
+&amp;&amp; ISPICKVAL( PRIORVALUE( Status__c ), &quot;validated&quot; )
+&amp;&amp; ISCHANGED( Status__c )
+&amp;&amp; ISPICKVAL( Status__c , &quot;canceled&quot; )</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>Vous ne pouvez pas valider puis annuler une facture le même jour</errorMessage>
+</ValidationRule>

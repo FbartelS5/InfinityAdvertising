@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VATpercent__c</fullName>
+    <description>Utilisé pour le reporting</description>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( VatType__c , &quot;20&quot;) , 0.2 ,
+IF( ISPICKVAL( VatType__c , &quot;2.1&quot;), 0.021 ,
+IF( ISPICKVAL( VatType__c , &quot;5.5&quot;), 0.055 ,
+IF( ISPICKVAL( VatType__c , &quot;0&quot;), 0 ,
+IF( ISPICKVAL( VatType__c , &quot;8.5&quot;), 0.085 ,
+IF( ISPICKVAL( VatType__c , &quot;00&quot;), 0 ,
+IF( ISPICKVAL( VatType__c , &quot;19.6&quot;), 0.196 ,
+NULL )))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TVA %</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

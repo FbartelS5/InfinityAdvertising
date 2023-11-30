@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Declencheur__c</fullName>
+    <externalId>false</externalId>
+    <label>Déclencheur</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Creation_Requete</fullName>
+                <default>false</default>
+                <label>Création d&apos;une requête</label>
+            </value>
+            <value>
+                <fullName>Assignation_CSM</fullName>
+                <default>false</default>
+                <label>Assignation d&apos;un CSM sur l&apos;opportunité</label>
+            </value>
+            <value>
+                <fullName>Fin_campagne</fullName>
+                <default>false</default>
+                <label>Fin de la campagne</label>
+            </value>
+            <value>
+                <fullName>Fin_Tache</fullName>
+                <default>false</default>
+                <label>Fin d&apos;une autre tâche</label>
+            </value>
+            <value>
+                <fullName>Debut_Campagne</fullName>
+                <default>false</default>
+                <label>Début de la campagne</label>
+            </value>
+            <value>
+                <fullName>Creation_Opportunite</fullName>
+                <default>false</default>
+                <label>Création d&apos;une opportunité</label>
+            </value>
+            <value>
+                <fullName>Passage_Signe</fullName>
+                <default>false</default>
+                <label>Passage à &quot;Signé&quot;</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

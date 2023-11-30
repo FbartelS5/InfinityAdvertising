@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Offert__c = true, 1,
+
+IF(
+
+OR(
+ AND(
+  Bundlecheckbox__c = true,
+  (INCLUDES( Type__c , &quot;Frais technique&quot;) || INCLUDES( Type__c , &quot;Frais technique push SMS&quot;))
+ )
+,
+ AND(
+  NOT(INCLUDES( Type__c , &quot;Frais technique&quot;)),
+  NOT(INCLUDES( Type__c , &quot;Frais technique push SMS&quot;))
+ )
+), 
+ 0.85,
+ NULL
+))</formula>
+    <label>Remise</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

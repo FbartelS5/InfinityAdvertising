@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_SIRET</fullName>
+    <active>false</active>
+    <description>API : autoriser la règle pour Isochronix afin d&apos;éviter les erreurs d&apos;import sur les encours</description>
+    <errorConditionFormula>AND(
+ ISNEW(),
+ BillingCountry == &quot;France&quot;,
+ ISBLANK( Siret__c ),
+ $User.Id &lt;&gt; &quot;0052p000008mZxs&quot; /*Isochronix*/
+)&amp;&amp; NOT($Setup.lazyLoading__c.DisableValidationRule__c)</errorConditionFormula>
+    <errorDisplayField>Siret__c</errorDisplayField>
+    <errorMessage>Le SIRET doit être renseigné</errorMessage>
+</ValidationRule>
